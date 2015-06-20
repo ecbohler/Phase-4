@@ -15,4 +15,10 @@ class SessionsController < ApplicationController
     end
   end
 
+  def delete
+    #signs a user out
+    session[user_id] = nil
+    #redirect to splash landing page
+  end
+
 end
