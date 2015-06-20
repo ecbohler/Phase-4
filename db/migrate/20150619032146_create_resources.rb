@@ -5,7 +5,6 @@ class CreateResources < ActiveRecord::Migration
       t.string :description
       t.references :user
       t.string :url
-      t.string :deployed_url
 
       t.timestamps null: false
     end
