@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :github
       t.string :location
       t.string :facebook
-      t.blob :profile_pic
+      t.string :profile_pic
       t.string :twitter_handle
       t.string :linkedin
       t.string :workplace
