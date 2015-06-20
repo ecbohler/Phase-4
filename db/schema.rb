@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619002235) do
+ActiveRecord::Schema.define(version: 20150619032320) do
 
   create_table "challenges", force: :cascade do |t|
     t.string   "title"
@@ -32,8 +32,30 @@ ActiveRecord::Schema.define(version: 20150619002235) do
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
+    t.string   "url"
+    t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "user_id"
+    t.string   "url"
+    t.string   "deployed_url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "user_id"
+    t.string   "url"
+    t.string   "deployed_url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "solutions", force: :cascade do |t|
@@ -57,6 +79,15 @@ ActiveRecord::Schema.define(version: 20150619002235) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "user_id"
+    t.integer  "voteable_id"
+    t.string   "voteable_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end

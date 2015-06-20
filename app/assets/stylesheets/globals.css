@@ -1,0 +1,15 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover, a:active, a:visited {
+  text-decoration: underline;
+}
+
