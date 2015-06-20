@@ -6,7 +6,7 @@ class CreateChallenges < ActiveRecord::Migration
       t.string :github_url
       t.string :external_url
       t.string :difficulty
-      t.blob :image_url
+      t.string :image_url
       t.references :user
 
       t.timestamps null: false
