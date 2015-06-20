@@ -3330,3 +3330,25 @@ ActionController::RoutingError (No route matches [GET] "/home"):
   [1m[35mSolution Load (0.5ms)[0m  SELECT  "solutions".* FROM "solutions"  ORDER BY "solutions"."id" ASC LIMIT 1
   [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.2ms)[0m  rollback transaction
+
+
+Started GET "/users" for ::1 at 2015-06-20 11:39:22 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 772ms (Views: 747.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/challenges.self-dc448ff99ab6a0232bcce01b523d19b6cdfd96ec03cfd5ef4037919098ec7c28.js?body=1" for ::1 at 2015-06-20 11:39:23 -0700
+
+
+Started GET "/assets/events.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-06-20 11:39:23 -0700
+
+
+Started GET "/assets/sessions.self-dc448ff99ab6a0232bcce01b523d19b6cdfd96ec03cfd5ef4037919098ec7c28.js?body=1" for ::1 at 2015-06-20 11:39:23 -0700
+
+
+Started GET "/assets/resources.self-dc448ff99ab6a0232bcce01b523d19b6cdfd96ec03cfd5ef4037919098ec7c28.js?body=1" for ::1 at 2015-06-20 11:39:23 -0700
+
+
+Started GET "/assets/solutions.self-dc448ff99ab6a0232bcce01b523d19b6cdfd96ec03cfd5ef4037919098ec7c28.js?body=1" for ::1 at 2015-06-20 11:39:23 -0700
