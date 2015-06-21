@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'home#index'
 
+   get '/auth/github' => 'home#github_sign_in'
+   get '/auth/github/callback' => 'sessions#create'
+   get '/signout' => 'sessions#destroy', :as => :signout
+   # get "/signout" => "sessions#destroy", :as => :signout
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

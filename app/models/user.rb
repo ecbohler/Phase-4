@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
   has_many :comments#, as: :commentable
   has_many :tags#, as: :taggable
   has_many :votes#, as: :voteable
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.name = auth["info"]["name"]
+      # user.gravatar_id = auth['avatar_url']["gravar_id"]
+    end
+  end
 end

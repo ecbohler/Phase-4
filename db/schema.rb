@@ -94,6 +94,8 @@ ActiveRecord::Schema.define(version: 20150619032320) do
     t.string   "twitter_handle"
     t.string   "linkedin"
     t.string   "workplace"
+    t.string   "provider"
+    t.string   "uid"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

@@ -6,3 +6,14 @@
 
 
 
+<%if current_user%>
+	Welcome <%=current_user.name%>
+	<%=link_to "Sign Out", signout_path%>
+<%else%>
+
+	<%=link_to 'github signin', auth_github_path%>
+<%end%>
+
+
+
+
