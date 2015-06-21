@@ -18,6 +18,7 @@ pc.comments.create(title: "Erica's comment about arrays", user_id: e.id)
 
 dc = d.comments.create(title: "Dan's comment about Erica's solution", commentable_id: 2)
 
+
 de.groups.create(user_id: p.id)
 de.groups.create(user_id: e.id)
 de.groups.create(user_id: d.id)
@@ -27,3 +28,4 @@ p.strengths.create(title: "css")
 
 p.weaknesses.create(title: "backbone")
 p.weaknesses.create(title: "ajax")
+
