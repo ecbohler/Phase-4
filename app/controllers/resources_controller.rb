@@ -1,4 +1,4 @@
-class ResourcesController < ApplicationController
+:class ResourcesController < ApplicationController
   def new
     # this takes us to a form page that allows a user to create a  new resources
   end

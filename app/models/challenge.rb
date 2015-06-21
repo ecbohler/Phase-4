@@ -1,9 +1,7 @@
+require 'shared_logic'
 class Challenge < ActiveRecord::Base
+  include UserInteractions
   belongs_to :user
   has_many :solutions
 
-  has_many :tags, as: :taggable
-  has_many :comments, as: :commentable
-  has_many :votes, as: :voteable
-  has_many :groups, as: :groupable
 end
