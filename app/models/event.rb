@@ -1,10 +1,6 @@
+require 'shared_logic'
 class Event < ActiveRecord::Base
+  include UserInteractions
   belongs_to :user
-  has_many :users, through: :groups
-
-  has_many :tags, as: :taggable
-  has_many :comments, as: :commentable
-  has_many :votes, as: :voteable
-  has_many :groups, as: :groupable
 
 end
