@@ -1,0 +1,10 @@
+.phase4-nav {
+  list-style: none;
+}
+
+.phase4-nav li { float: left; }
+
+.phase4-nav li a {
+  padding: 6px;
+  display: block;
+}
