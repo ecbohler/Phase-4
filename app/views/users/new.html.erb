@@ -1,4 +1,35 @@
-<div>
- <!--  This page should display a form for a user to create a new user profile.
-  Create new user form - this should be a partial to be used in user editing as well as this page. -->
+<div class="user_form_container">
+  <div class="form">
+  <h2> Create your Profile </h2>
+  <%= form_for @user do |f| %>
+
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :email %>:
+  <%= f.text_field :email %><br /><br />
+
+  <%= f.label :github %>:
+  <%= f.text_field :github %><br />
+
+  <%= f.label :location %>:
+  <%= f.text_field :location %><br />
+
+  <%= f.label :facebook %>:
+  <%= f.text_field :facebook %><br />
+
+  <%= f.label :profile_pic %>:
+  <%= f.text_field :profile_pic %><br />
+
+  <%= f.label :twitter_handle %>:
+  <%= f.text_field :twitter_handle %><br />
+
+  <%= f.label :linkedin %>:
+  <%= f.text_field :linkedin %><br />
+
+  <%= f.label :workplace %>:
+  <%= f.text_field :workplace %><br />
+  <%= f.submit %>
+  <% end %>
+  </div>
 </div>

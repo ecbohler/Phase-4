@@ -1,8 +1,6 @@
+require 'shared_logic'
 class Resource < ActiveRecord::Base
+  include UserInteractions
   belongs_to :user
-
-  has_many :tags, as: :taggable
-  has_many :comments, as: :commentable
-  has_many :votes, as: :voteable
 
 end
