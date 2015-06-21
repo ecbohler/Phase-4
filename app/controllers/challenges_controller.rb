@@ -1,29 +1,40 @@
 class ChallengesController < ApplicationController
   def new
-    # this takes us to a form page that allows a user to create a  new challenge
+    @challenge = Challenge.new
   end
 
   def create
-    # pulls from params the information for creating a new challenge - and creates the challenge
+    @challenge = Challenge.new(params)
+    if @challenge.save
+      redirect_to users_challenges_index
+    else
+      redirect_to :back
+    end
   end
 
   def edit
-    # this takes us to a form page that allows a user to edit an existing challenge
+    @challenge = current_challenge
   end
 
   def update
-    # performs the update
+    current_challenge.update(params)
+    redirect_to current_challenge
   end
 
   def index
-    # this displays all challenges
+    @challenges = Challenge.all
   end
 
   def show
-    # this displays a single challenge
+    @challenge = current_challenge
   end
 
   def destroy
-    # this is the method that deletes a challenge
+    current_challenge.destroy
+  end
+
+  private
+  def current_challenge
+    Challenge.find(params[:id])
   end
 end

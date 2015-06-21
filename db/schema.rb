@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619032320) do
+ActiveRecord::Schema.define(version: 20150620212907) do
 
   create_table "challenges", force: :cascade do |t|
     t.string   "title"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 20150619032320) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "groupable_id"
+    t.string   "groupable_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
@@ -73,6 +81,13 @@ ActiveRecord::Schema.define(version: 20150619032320) do
     t.integer  "challenge_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "strengths", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", force: :cascade do |t|
@@ -104,6 +119,13 @@ ActiveRecord::Schema.define(version: 20150619032320) do
     t.string   "voteable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "weaknesses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

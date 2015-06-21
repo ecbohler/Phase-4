@@ -1,18 +1,3 @@
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-a:link {
-  text-decoration: none;
-}
-
-a:hover, a:active, a:visited {
-  text-decoration: underline;
-}
-
 .form {
   background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
   background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
@@ -26,8 +11,7 @@ a:hover, a:active, a:visited {
 }
 
 .user_form_container{
-  border: 1px solid;
-  float:left;
+  float:right;
 }
 input    {
 margin: 5px;
