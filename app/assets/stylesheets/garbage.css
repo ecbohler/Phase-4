@@ -5,6 +5,29 @@
 .phase4-nav li { float: left; }
 
 .phase4-nav li a {
-  padding: 6px;
+  padding-top: 17px;
+  padding-bottom: 6px;
+  padding-left: 80px;
+  padding-right: 80px;
   display: block;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 100%;
+  font-style: normal;
+  font-weight: bold;
+  color: #666666;
+}
+
+.login {
+  width: 150px;
+  height: 50px;
+  border-radius: 8px;
+  background-clip: padding-box;
+  border-color: #00bfc6;
+  border-width: 3px;
+  border-style: solid;
+  text-align: center;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-weight: bold;
+  padding-top: 6px;
+  color: #00bfc6;
 }
