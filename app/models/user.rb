@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  validates :name, presence: true
+  validates :email, presence: true
+
   has_many :challenges
   has_many :solutions
   has_many :events
@@ -9,5 +12,4 @@ class User < ActiveRecord::Base
   has_many :votes
   has_many :strengths
   has_many :weaknesses
-
 end
