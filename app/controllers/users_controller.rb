@@ -5,18 +5,20 @@ class UsersController < ApplicationController
   end
 
   def new
-    # takes us to a form for entering in new user data
+
     @user = User.new
   end
 
   def create
 
-    @user = User.new(params)
-    if @user.save
-      redirect_to sessions_create_url
-    else
-      redirect_to :back
-    end
+    render json: params
+    # @user = User.new(user_params)
+    # if @user.save
+    #   redirect_to @user
+    #   else
+    #     render 'new'
+    #   end
+
   end
 
   def show
@@ -37,6 +39,22 @@ class UsersController < ApplicationController
     current_user.delete
     session[:user_id] = nil
     redirect_to home_index_url
+  end
+
+
+ private
+  def user_params
+    params.require(:user).permit(
+      :name,
+      :email,
+      :github,
+      :location,
+      :facebook,
+      :profile_pic,
+      :twitter_handle,
+      :linkedin,
+      :workplace
+      )
   end
 
 end
