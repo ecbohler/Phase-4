@@ -1,3 +1,32 @@
-<div>
-  <!-- this is the page that will display a (partial) form to create a new challenge -->
+<div class="user_form_container">
+  <div class="form">
+  <h2> Post a Challenge </h2>
+  <%= form_for @challenge, url: user_challenges_path(@user) do |f| %>
+
+    <%= f.label :title %>:
+
+      <%= f.text_field :title %><br />
+
+    <%= f.label :description %>:
+
+    <%= f.text_field :description %><br /><br />
+    <%= f.label :github_url %>:
+
+    <%= f.text_field :github_url %><br />
+
+    <%= f.label :external_url %>:
+
+    <%= f.text_field :external_url %><br /><br />
+  <%= f.label :image_url %>:
+  <%= f.text_field :image_url %><br /><br />
+Difficulty:
+  <%= f.radio_button :difficulty, 'Hard' %> Hard
+    <%= f.radio_button :difficulty, 'Medium' %> Medium
+<%= f.radio_button :difficulty, 'Basic' %> Basic
+  <br /><br />
+
+
+  <%= f.submit %>
+  <% end %>
+  </div>
 </div>
