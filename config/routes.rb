@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :sessions, :only => [:new, :create]
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :votes, :only => [:create]
+  resources :tags, :only => [:create]
+  resources :comments, :only => [:create, :index]
   resources :users do
     resources :challenges do
       resources :solutions
