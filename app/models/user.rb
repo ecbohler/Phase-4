@@ -20,10 +20,10 @@ class User < ActiveRecord::Base
     end
   end
 
-  has_many :comments
-  has_many :tags
-  has_many :votes
-  has_many :strengths
-  has_many :weaknesses
+  # has_many :comments
+  # has_many :tags
+  # has_many :votes
+  # has_many :strengths
+  # has_many :weaknesses
 
 end
