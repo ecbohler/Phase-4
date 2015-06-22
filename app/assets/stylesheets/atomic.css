@@ -1,3 +1,57 @@
 .fl-l { float: left; }
 .fl-r { float: right; }
-.p-sm { padding: 10px; }
+.p-sm { padding: 20px; }
+.c-hero {
+  background-image: url("http://www.fightyourticketsf.com/images/downtownsf.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  display: block;
+  box-sizing: border-box;
+  height: 900px;
+}
+hr.hr_intro {
+width: 560px;
+opacity: 0.5;
+}
+.hr_boxes_two {
+  display: inline-block;
+  position: relative;
+  top: -84px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  width: 18px;
+  height: 18px;
+}
+
+.c-hero-container {
+  background-color: black;
+  opacity: 0.7;
+  height: 600px;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 150px;
+  top: 100px;
+  color: white;
+  text-align: center;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-weight: bold;
+  font-size: 68px;
+}
+.c-hero-container_copy {
+  postion: relative;
+  margin-top: -40px;
+  font-weight: normal;
+  font-family: verdana;
+  font-size: 28px;
+}
+.center-login {
+ margin-left: auto;
+ margin-right: auto;
+ position: relative;
+ background-color: white;
+ font-size: 15px;
+}

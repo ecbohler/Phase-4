@@ -7,16 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="p-sm cf debug">
-    <h1 class="fl-l debug">
-      <a href="/">Logo</a>
+
+  <header class="p-sm cf ">
+    <h1 class="fl-l ">
+      <img src="http://devbootcamp.com/assets/img/devbootcamp-logo.png"></img>
     </h1>
-    <nav class="fl-r debug">
-      <ul class="cf debug phase4-nav">
-        <li><a href="/">Challenges</a></li>
-        <li><a href="/">Resources</a></li>
-        <li><a href="/">Projects</a></li>
-        <li><a href="/">Members</a></li>
+    <nav class="fl-r ">
+      <ul class="cf  phase4-nav">
+        <li><a href="/users">MEMBERS</a></li>
+        <li><a href="/users/#{user_id}/challenges">CHALLENGES</a></li>
+        <li><a href="/resources">RESOURCES</a></li>
+        <li><a href="/projects">PROJECTS</a></li>
+         <li>
+          <div class="login">
+            LOGIN
+            <br>
+            WITH GITHUB
+          </div>
+         </li>
       </ul>
     </nav>
   </header>

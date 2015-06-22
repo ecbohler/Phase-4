@@ -1,8 +1,35 @@
 <!-- this is the splash landing page - it should contail buttons for user sign-in/sign-up -->
-<section class="debug">
-  <div class="debug">
+<section class="c-hero">
+  <div class="c-hero-container">
+    PHASE IV
+    <hr class = "hr_intro"  />
+    <div class="hr_boxes_two"></div>
+    <div class="hr_boxes_two"></div>
+    <div class="hr_boxes_two"></div>
+    <div class="hr_boxes_two"></div>
+   <div class="c-hero-container_copy">
+      A place for DBC students & <br />
+      alumni to continue learning.
+    </div>
+    <br>
+    <div class="center-login login">
+      LOGIN
+      <br>
+      WITH GITHUB
+    </div>
   </div>
 </section>
 <%= link_to 'Sign Up', new_user_path %>
+
+
+<%if current_user%>
+	Welcome <%=current_user.name%>
+	<%=link_to "Sign Out", signout_path%>
+<%else%>
+
+	<%=link_to 'github signin', auth_github_path%>
+<%end%>
+
+
 
 
