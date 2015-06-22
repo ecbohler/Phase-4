@@ -1,7 +1,8 @@
 <div>
   <!-- this is the page that will display a (partial) form to edit a challenge -->
+
   <% @challenges.each do |challenge| %>
-  <%= challenge.title %><br>
+  <p><%=challenge.title %></p><br>
   <% end %>
   <br><br><br>
   <div class="element-show" id="<%= @challenges.first.id %>">

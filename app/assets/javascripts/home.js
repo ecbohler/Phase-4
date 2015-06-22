@@ -39,7 +39,7 @@ var upvotesListener = function(){
     e.preventDefault()
     console.log('in upvotes listener')
 
-      tID)
+
     // $.ajax({
     //     url: votes_create_path,
     //     type: 'post',
