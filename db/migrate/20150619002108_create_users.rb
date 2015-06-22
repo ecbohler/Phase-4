@@ -10,6 +10,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :twitter_handle
       t.string :linkedin
       t.string :workplace
+      t.string :provider
+      t.string :uid
 
       t.timestamps null: false
     end
