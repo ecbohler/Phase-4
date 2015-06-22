@@ -1,3 +1,6 @@
 <div>
   <!-- this is the page that will display a (partial) form to edit a challenge -->
+  <% @challenges.each do |challenge| %>
+  <%= challenge.title %><br>
+  <% end %>
 </div>

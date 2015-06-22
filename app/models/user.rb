@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  validates :name, presence: true
-  validates :email, presence: true
+  #validates :name, presence: true
+  #validates :email, presence: true
 
   has_many :challenges
   has_many :solutions
@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :comments#, as: :commentable
   has_many :tags#, as: :taggable
   has_many :votes#, as: :voteable
+  has_many :weaknesses
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
@@ -20,10 +21,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  # has_many :comments
-  # has_many :tags
-  # has_many :votes
-  # has_many :strengths
-  # has_many :weaknesses
+ 
 
 end
