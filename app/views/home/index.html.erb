@@ -7,27 +7,31 @@
     <div class="hr_boxes_two"></div>
     <div class="hr_boxes_two"></div>
     <div class="hr_boxes_two"></div>
-   <div class="c-hero-container_copy">
+    <div class="c-hero-container_copy">
       A place for DBC students & <br />
       alumni to continue learning.
     </div>
     <br>
     <div class="center-login login">
-      LOGIN
-      <br>
-      WITH GITHUB
-    </div>
-  </div>
+     <%if current_user%>
+     Welcome <%=current_user.name%>
+     <% else %>
+     LOGIN
+     <br>
+     WITH GITHUB
+     <% end %>
+   </div>
+ </div>
 </section>
-<%= link_to 'Sign Up', new_user_path %>
+
 
 
 <%if current_user%>
-	Welcome <%=current_user.name%>
-	<%=link_to "Sign Out", signout_path%>
+Welcome <%=current_user.name%>
+<%=link_to "Sign Out", signout_path%>
 <%else%>
 
-	<%=link_to 'github signin', auth_github_path%>
+<%=link_to 'github signin', auth_github_path%>
 <%end%>
 
 

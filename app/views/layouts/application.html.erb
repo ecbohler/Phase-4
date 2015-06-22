@@ -18,17 +18,21 @@
         <li><a href="/users/#{user_id}/challenges">CHALLENGES</a></li>
         <li><a href="/resources">RESOURCES</a></li>
         <li><a href="/projects">PROJECTS</a></li>
-         <li>
+        <li>
           <div class="login">
+            <%if current_user%>
+            Welcome <%=current_user.name%>
+            <% else %>
             LOGIN
             <br>
             WITH GITHUB
+            <% end %>
           </div>
-         </li>
+        </li>
       </ul>
     </nav>
   </header>
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

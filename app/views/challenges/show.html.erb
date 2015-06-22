@@ -1,14 +1,47 @@
  <h1>Challenge Show Page</h1><br>
 
-  <!-- this is a page that will display a single challenge - be sure to include an edit and delete button if creator id and session id match -->
+  User ID: <%= @challenge.user_id %>
 
-  <!-- this page will also  display all the solutions for this challange, as well as a form (ajax) that allows for the submission of a new solution -->
+  <br/ ><br/ >
 
-User ID: <%= @challenge.user_id %>
-<br/ ><br/ >
+<div class="asset-render">
+
+  <span class=""></span><span class=""></span><span class=""></span>
+
   <strong>Title:</strong> <%= @challenge.title %><br>
   Description: <%= @challenge.description %><br>
   Github url: <%= @challenge.github_url %><br>
   External url: <%= @challenge.external_url %><br>
   Image url: <%= @challenge.image_url %><br>
   Difficulty: <%= @challenge.difficulty %><br>
+  Class: <%= @challenge.class %>
+
+  <br /><br />
+
+  <!-- COMMENTS/SOLUTIONS LINKS START -->
+    <a href="#" class="show-comments">View Comments</a> |
+    <a href="#">View Solution</a>
+  <!-- COMMENTS/SOLUTIONS LINKS END -->
+
+  <br /><br />
+
+  <!-- TAG FORM START -->
+    <form class="asset-tag-form">
+      <label for='Tag It'>Tag this: </label>
+      <input type="text_field" />
+      <input type="submit" value="Tag It" />
+    </form>
+  <!-- TAG FORM END -->
+
+  <!-- VOTES START -->
+    Votes: <%= @challenge.votes.count %> -
+    <a href ="#" class="asset-create-vote">
+    <%= image_tag('thumbs_up.jpg', width:'18') %></a>
+  <!-- VOTES END -->
+
+  <br /><br />
+
+  <%= link_to "Challenges Home", user_challenges_path(@challenge.user_id) %>
+
+</div>
+
