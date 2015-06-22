@@ -14,6 +14,12 @@
     </h1>
     <nav class="fl-r ">
       <ul class="cf  phase4-nav">
+
+        <li><a href="/users">MEMBERS</a></li>
+        <li><a href="/users/#{user_id}/challenges">CHALLENGES</a></li>
+        <li><a href="/resources">RESOURCES</a></li>
+        <li><a href="/projects">PROJECTS</a></li>
+
         <li><%= link_to 'MEMBERS', users_path %></li>
 
         <li><%= link_to 'CHALLENGES', user_challenges_path(:user_id) %></li>
@@ -24,9 +30,13 @@
 
         <li>
           <div class="login">
+            <%if current_user%>
+            Welcome <%=current_user.name%>
+            <% else %>
             LOGIN
             <br>
             WITH GITHUB
+            <% end %>
           </div>
         </li>
       </ul>
