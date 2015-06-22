@@ -9,7 +9,7 @@ class HomeController < ApplicationController
 
   end
   def github_sign_in
-  	p "hello"
+  	
   end
 
 end

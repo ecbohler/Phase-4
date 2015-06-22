@@ -12,6 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :workplace
       t.string :provider
       t.string :uid
+      t.string :gravatar_id
 
       t.timestamps null: false
     end

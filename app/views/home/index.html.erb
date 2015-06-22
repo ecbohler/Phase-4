@@ -13,13 +13,11 @@
     </div>
     <br>
     <div class="center-login login">
-      LOGIN
-      <br>
-      WITH GITHUB
+      <%= link_to 'LOGIN WITH GITHUB', auth_github_path %>
     </div>
   </div>
 </section>
-<%= link_to 'Sign Up', new_user_path %>
+<%= link_to 'Sign Up', auth_github_path %>
 
 
 <%if current_user%>
