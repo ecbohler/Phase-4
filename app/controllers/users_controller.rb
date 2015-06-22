@@ -11,18 +11,19 @@ class UsersController < ApplicationController
 
   def create
 
-    render json: params
-    # @user = User.new(user_params)
-    # if @user.save
-    #   redirect_to @user
-    #   else
-    #     render 'new'
-    #   end
+    # render json: params
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to @user
+      else
+        render 'new'
+      end
 
   end
 
   def show
-    @user = current_user
+    # @user = current_user
+    @user = User.find(params[:id])
   end
 
   def edit
