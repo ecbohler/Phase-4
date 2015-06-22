@@ -14,21 +14,25 @@
     </h1>
     <nav class="fl-r ">
       <ul class="cf  phase4-nav">
-        <li><a href="/users">MEMBERS</a></li>
-        <li><a href="/users/#{user_id}/challenges">CHALLENGES</a></li>
-        <li><a href="/resources">RESOURCES</a></li>
-        <li><a href="/projects">PROJECTS</a></li>
-         <li>
+        <li><%= link_to 'MEMBERS', users_path %></li>
+
+        <li><%= link_to 'CHALLENGES', user_challenges_path(:user_id) %></li>
+
+        <li><%= link_to 'RESOURCES', user_resources_path(:user_id) %></li>
+
+        <li><%= link_to 'PROJECTS', user_projects_path(:user_id) %></li>
+
+        <li>
           <div class="login">
             LOGIN
             <br>
             WITH GITHUB
           </div>
-         </li>
+        </li>
       </ul>
     </nav>
   </header>
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>

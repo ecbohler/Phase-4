@@ -1,3 +1,17 @@
 <div>
-  <!-- this lists all resources -->
+  <div>
+  <div>
+    <h1>List of Resources</h1>
+  </div>
+  <br>
+  <div>
+    <% @resources.each do |resource| %>
+    <p><%= link_to "#{resource.title}", user_resource_path(id: resource.id) %></p>
+    <p>Title: <%= resource.title %></p>
+    <p>Description: <%= resource.description %></p>
+    <br>
+    <% end %>
+  </div>
+  <!-- this is the page that will display a (partial) form to edit a challenge -->
+</div>
 </div>
