@@ -1,15 +1,20 @@
 class ChallengesController < ApplicationController
   def new
     @challenge = Challenge.new
+    @user = User.find(1)
   end
 
   def create
-    @challenge = Challenge.new(params)
+     # render json: params
+    @user = User.find(params[:user_id])
+    @challenge = @user.challenges.build(challenge_params)
+
     if @challenge.save
-      redirect_to users_challenges_index
+      redirect_to user_challenge_path(id:@challenge.id)
     else
-      redirect_to :back
+      render :back
     end
+
   end
 
   def edit
@@ -26,7 +31,7 @@ class ChallengesController < ApplicationController
   end
 
   def show
-    @challenge = current_challenge
+    @challenge = Challenge.find(params[:id])
   end
 
   def destroy
@@ -36,5 +41,16 @@ class ChallengesController < ApplicationController
   private
   def current_challenge
     Challenge.find(params[:id])
+  end
+    def challenge_params
+    params.require(:challenge).permit(
+      :title,
+      :description,
+      :github_url,
+      :external_url,
+      :github_url,
+      :image_url,
+      :difficulty
+      )
   end
 end

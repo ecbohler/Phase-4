@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   def new
-
     @user = User.new
   end
 
@@ -27,12 +26,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-
     @user = current_user
   end
 
   def update
-
     current_user.update(params)
   end
 
