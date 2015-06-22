@@ -10,7 +10,7 @@ e = User.create(name: 'erica')
 d = User.create(name: 'dan')
 j = User.create(name: 'jerome')
 
-pc = p.challenges.create(title: "Arrays")
+pc = p.challenges.create(title: "Arrays", description: "Array challenge description", github_url: "https://github.arrays.com", external_url: "")
 es = pc.solutions.create(title: "Arrays Solution", user_id: 2)
 de = d.events.create(title: "BDay Party")
 
