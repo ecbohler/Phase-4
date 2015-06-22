@@ -25142,3 +25142,839 @@ Migrating to CreateWeaknesses (20150620212907)
   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "weaknesses" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ajax"], ["user_id", 1], ["created_at", "2015-06-21 23:38:12.601399"], ["updated_at", "2015-06-21 23:38:12.601399"]]
   [1m[35m (1.2ms)[0m  commit transaction
 >>>>>>> upstream/master
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150619002108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "github" varchar, "location" varchar, "facebook" varchar, "profile_pic" varchar, "twitter_handle" varchar, "linkedin" varchar, "workplace" varchar, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002108"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateComments (20150619002156)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "commentable_id" integer, "commentable_type" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002156"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateTags (20150619002203)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer, "taggable_id" integer, "taggable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002203"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateChallenges (20150619002219)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "github_url" varchar, "external_url" varchar, "difficulty" varchar, "image_url" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002219"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateSolutions (20150619002228)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "solutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "url" varchar, "user_id" integer, "challenge_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002228"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateEvents (20150619002235)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "location" varchar, "user_id" integer, "url" varchar, "date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002235"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Migrating to CreateProjects (20150619032108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "deployed_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032108"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateResources (20150619032146)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032146"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateVotes (20150619032320)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "voteable_id" integer, "voteable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032320"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateStrengths (20150620212625)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "strengths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212625"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateGroups (20150620212648)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "groupable_id" integer, "groupable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212648"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateWeaknesses (20150620212907)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "weaknesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212907"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "paul"], ["created_at", "2015-06-22 00:41:03.745468"], ["updated_at", "2015-06-22 00:41:03.745468"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "erica"], ["created_at", "2015-06-22 00:41:03.749094"], ["updated_at", "2015-06-22 00:41:03.749094"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "dan"], ["created_at", "2015-06-22 00:41:03.751616"], ["updated_at", "2015-06-22 00:41:03.751616"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jerome"], ["created_at", "2015-06-22 00:41:03.754416"], ["updated_at", "2015-06-22 00:41:03.754416"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Arrays"], ["user_id", 1], ["created_at", "2015-06-22 00:41:03.811686"], ["updated_at", "2015-06-22 00:41:03.811686"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hashes"], ["user_id", 2], ["created_at", "2015-06-22 00:41:03.816322"], ["updated_at", "2015-06-22 00:41:03.816322"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "methods"], ["user_id", 3], ["created_at", "2015-06-22 00:41:03.819713"], ["updated_at", "2015-06-22 00:41:03.819713"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "erica's arrays Solution"], ["user_id", 2], ["challenge_id", 1], ["created_at", "2015-06-22 00:41:03.839181"], ["updated_at", "2015-06-22 00:41:03.839181"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "dan's arrays Solution"], ["user_id", 3], ["challenge_id", 1], ["created_at", "2015-06-22 00:41:03.842953"], ["updated_at", "2015-06-22 00:41:03.842953"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "jerome's arrays solution"], ["user_id", 4], ["challenge_id", 1], ["created_at", "2015-06-22 00:41:03.846320"], ["updated_at", "2015-06-22 00:41:03.846320"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "BDay Party"], ["user_id", 3], ["created_at", "2015-06-22 00:41:03.914939"], ["updated_at", "2015-06-22 00:41:03.914939"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("title", "user_id", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Erica's comment about arrays"], ["user_id", 2], ["commentable_id", 1], ["commentable_type", "Challenge"], ["created_at", "2015-06-22 00:41:03.933969"], ["updated_at", "2015-06-22 00:41:03.933969"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("title", "commentable_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Dan's comment about Erica's solution"], ["commentable_id", 2], ["user_id", 3], ["created_at", "2015-06-22 00:41:03.940254"], ["updated_at", "2015-06-22 00:41:03.940254"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:41:03.978558"], ["updated_at", "2015-06-22 00:41:03.978558"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:41:03.982483"], ["updated_at", "2015-06-22 00:41:03.982483"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:41:03.985603"], ["updated_at", "2015-06-22 00:41:03.985603"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150619002108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "github" varchar, "location" varchar, "facebook" varchar, "profile_pic" varchar, "twitter_handle" varchar, "linkedin" varchar, "workplace" varchar, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002108"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateComments (20150619002156)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "commentable_id" integer, "commentable_type" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002156"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Migrating to CreateTags (20150619002203)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer, "taggable_id" integer, "taggable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002203"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to CreateChallenges (20150619002219)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "github_url" varchar, "external_url" varchar, "difficulty" varchar, "image_url" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002219"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateSolutions (20150619002228)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "solutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "url" varchar, "user_id" integer, "challenge_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002228"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Migrating to CreateEvents (20150619002235)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "location" varchar, "user_id" integer, "url" varchar, "date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002235"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Migrating to CreateProjects (20150619032108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "deployed_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032108"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateResources (20150619032146)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032146"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Migrating to CreateVotes (20150619032320)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "voteable_id" integer, "voteable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032320"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateStrengths (20150620212625)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "strengths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212625"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Migrating to CreateGroups (20150620212648)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "groupable_id" integer, "groupable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212648"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Migrating to CreateWeaknesses (20150620212907)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "weaknesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212907"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "paul"], ["created_at", "2015-06-22 00:43:53.884606"], ["updated_at", "2015-06-22 00:43:53.884606"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "erica"], ["created_at", "2015-06-22 00:43:53.888836"], ["updated_at", "2015-06-22 00:43:53.888836"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "dan"], ["created_at", "2015-06-22 00:43:53.891893"], ["updated_at", "2015-06-22 00:43:53.891893"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jerome"], ["created_at", "2015-06-22 00:43:53.895080"], ["updated_at", "2015-06-22 00:43:53.895080"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Arrays"], ["user_id", 1], ["created_at", "2015-06-22 00:43:53.933255"], ["updated_at", "2015-06-22 00:43:53.933255"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hashes"], ["user_id", 2], ["created_at", "2015-06-22 00:43:53.937421"], ["updated_at", "2015-06-22 00:43:53.937421"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "methods"], ["user_id", 3], ["created_at", "2015-06-22 00:43:53.941006"], ["updated_at", "2015-06-22 00:43:53.941006"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "erica's arrays Solution"], ["user_id", 2], ["challenge_id", 1], ["created_at", "2015-06-22 00:43:53.962099"], ["updated_at", "2015-06-22 00:43:53.962099"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "dan's arrays Solution"], ["user_id", 3], ["challenge_id", 1], ["created_at", "2015-06-22 00:43:53.967096"], ["updated_at", "2015-06-22 00:43:53.967096"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "jerome's arrays solution"], ["user_id", 4], ["challenge_id", 1], ["created_at", "2015-06-22 00:43:53.971827"], ["updated_at", "2015-06-22 00:43:53.971827"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "BDay Party"], ["user_id", 3], ["created_at", "2015-06-22 00:43:54.034399"], ["updated_at", "2015-06-22 00:43:54.034399"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("title", "user_id", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Erica's comment about arrays"], ["user_id", 2], ["commentable_id", 1], ["commentable_type", "Challenge"], ["created_at", "2015-06-22 00:43:54.056802"], ["updated_at", "2015-06-22 00:43:54.056802"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("title", "commentable_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Dan's comment about Erica's solution"], ["commentable_id", 2], ["user_id", 3], ["created_at", "2015-06-22 00:43:54.062979"], ["updated_at", "2015-06-22 00:43:54.062979"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:43:54.075499"], ["updated_at", "2015-06-22 00:43:54.075499"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:43:54.080140"], ["updated_at", "2015-06-22 00:43:54.080140"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:43:54.084318"], ["updated_at", "2015-06-22 00:43:54.084318"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (2.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150619002108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "github" varchar, "location" varchar, "facebook" varchar, "profile_pic" varchar, "twitter_handle" varchar, "linkedin" varchar, "workplace" varchar, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002108"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateComments (20150619002156)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "commentable_id" integer, "commentable_type" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002156"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateTags (20150619002203)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer, "taggable_id" integer, "taggable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002203"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateChallenges (20150619002219)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "github_url" varchar, "external_url" varchar, "difficulty" varchar, "image_url" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002219"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateSolutions (20150619002228)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "solutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "url" varchar, "user_id" integer, "challenge_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002228"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateEvents (20150619002235)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "location" varchar, "user_id" integer, "url" varchar, "date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002235"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateProjects (20150619032108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "deployed_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032108"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateResources (20150619032146)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032146"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateVotes (20150619032320)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "voteable_id" integer, "voteable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032320"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateStrengths (20150620212625)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "strengths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212625"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateGroups (20150620212648)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "groupable_id" integer, "groupable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212648"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateWeaknesses (20150620212907)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "weaknesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212907"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "paul"], ["created_at", "2015-06-22 00:44:43.454005"], ["updated_at", "2015-06-22 00:44:43.454005"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "erica"], ["created_at", "2015-06-22 00:44:43.457452"], ["updated_at", "2015-06-22 00:44:43.457452"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "dan"], ["created_at", "2015-06-22 00:44:43.460669"], ["updated_at", "2015-06-22 00:44:43.460669"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jerome"], ["created_at", "2015-06-22 00:44:43.463315"], ["updated_at", "2015-06-22 00:44:43.463315"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Arrays"], ["user_id", 1], ["created_at", "2015-06-22 00:44:43.496813"], ["updated_at", "2015-06-22 00:44:43.496813"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hashes"], ["user_id", 2], ["created_at", "2015-06-22 00:44:43.502184"], ["updated_at", "2015-06-22 00:44:43.502184"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "methods"], ["user_id", 3], ["created_at", "2015-06-22 00:44:43.506490"], ["updated_at", "2015-06-22 00:44:43.506490"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "erica's arrays Solution"], ["user_id", 2], ["challenge_id", 1], ["created_at", "2015-06-22 00:44:43.526776"], ["updated_at", "2015-06-22 00:44:43.526776"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "dan's arrays Solution"], ["user_id", 3], ["challenge_id", 1], ["created_at", "2015-06-22 00:44:43.531211"], ["updated_at", "2015-06-22 00:44:43.531211"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "jerome's arrays solution"], ["user_id", 4], ["challenge_id", 1], ["created_at", "2015-06-22 00:44:43.535456"], ["updated_at", "2015-06-22 00:44:43.535456"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "BDay Party"], ["user_id", 3], ["created_at", "2015-06-22 00:44:43.600184"], ["updated_at", "2015-06-22 00:44:43.600184"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("title", "user_id", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Erica's comment about arrays"], ["user_id", 2], ["commentable_id", 1], ["commentable_type", "Challenge"], ["created_at", "2015-06-22 00:44:43.621312"], ["updated_at", "2015-06-22 00:44:43.621312"]]
+  [1m[35m (2.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("title", "commentable_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Dan's comment about Erica's solution"], ["commentable_id", 2], ["user_id", 3], ["created_at", "2015-06-22 00:44:43.630209"], ["updated_at", "2015-06-22 00:44:43.630209"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:44:43.644574"], ["updated_at", "2015-06-22 00:44:43.644574"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:44:43.648613"], ["updated_at", "2015-06-22 00:44:43.648613"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:44:43.651754"], ["updated_at", "2015-06-22 00:44:43.651754"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150619002108)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "github" varchar, "location" varchar, "facebook" varchar, "profile_pic" varchar, "twitter_handle" varchar, "linkedin" varchar, "workplace" varchar, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002108"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateComments (20150619002156)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "commentable_id" integer, "commentable_type" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002156"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateTags (20150619002203)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer, "taggable_id" integer, "taggable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002203"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateChallenges (20150619002219)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "github_url" varchar, "external_url" varchar, "difficulty" varchar, "image_url" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002219"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateSolutions (20150619002228)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "solutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "url" varchar, "user_id" integer, "challenge_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002228"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to CreateEvents (20150619002235)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "location" varchar, "user_id" integer, "url" varchar, "date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002235"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateProjects (20150619032108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "deployed_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032108"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateResources (20150619032146)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032146"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to CreateVotes (20150619032320)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "voteable_id" integer, "voteable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032320"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateStrengths (20150620212625)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "strengths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212625"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateGroups (20150620212648)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "groupable_id" integer, "groupable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212648"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateWeaknesses (20150620212907)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "weaknesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212907"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "paul"], ["created_at", "2015-06-22 00:47:37.377458"], ["updated_at", "2015-06-22 00:47:37.377458"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "erica"], ["created_at", "2015-06-22 00:47:37.381532"], ["updated_at", "2015-06-22 00:47:37.381532"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "dan"], ["created_at", "2015-06-22 00:47:37.385221"], ["updated_at", "2015-06-22 00:47:37.385221"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jerome"], ["created_at", "2015-06-22 00:47:37.388502"], ["updated_at", "2015-06-22 00:47:37.388502"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Arrays"], ["user_id", 1], ["created_at", "2015-06-22 00:47:37.464689"], ["updated_at", "2015-06-22 00:47:37.464689"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hashes"], ["user_id", 2], ["created_at", "2015-06-22 00:47:37.470042"], ["updated_at", "2015-06-22 00:47:37.470042"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "methods"], ["user_id", 3], ["created_at", "2015-06-22 00:47:37.474520"], ["updated_at", "2015-06-22 00:47:37.474520"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "erica's arrays Solution"], ["user_id", 2], ["challenge_id", 1], ["created_at", "2015-06-22 00:47:37.494811"], ["updated_at", "2015-06-22 00:47:37.494811"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "dan's arrays Solution"], ["user_id", 3], ["challenge_id", 1], ["created_at", "2015-06-22 00:47:37.498815"], ["updated_at", "2015-06-22 00:47:37.498815"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "jerome's arrays solution"], ["user_id", 4], ["challenge_id", 1], ["created_at", "2015-06-22 00:47:37.502470"], ["updated_at", "2015-06-22 00:47:37.502470"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "BDay Party"], ["user_id", 3], ["created_at", "2015-06-22 00:47:37.569677"], ["updated_at", "2015-06-22 00:47:37.569677"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("title", "user_id", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Erica's comment about arrays"], ["user_id", 2], ["commentable_id", 1], ["commentable_type", "Challenge"], ["created_at", "2015-06-22 00:47:37.590713"], ["updated_at", "2015-06-22 00:47:37.590713"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("title", "commentable_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Dan's comment about Erica's solution"], ["commentable_id", 2], ["user_id", 3], ["created_at", "2015-06-22 00:47:37.597066"], ["updated_at", "2015-06-22 00:47:37.597066"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:47:37.611355"], ["updated_at", "2015-06-22 00:47:37.611355"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:47:37.616676"], ["updated_at", "2015-06-22 00:47:37.616676"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:47:37.620963"], ["updated_at", "2015-06-22 00:47:37.620963"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150619002108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "github" varchar, "location" varchar, "facebook" varchar, "profile_pic" varchar, "twitter_handle" varchar, "linkedin" varchar, "workplace" varchar, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002108"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateComments (20150619002156)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "commentable_id" integer, "commentable_type" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002156"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateTags (20150619002203)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer, "taggable_id" integer, "taggable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002203"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Migrating to CreateChallenges (20150619002219)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "github_url" varchar, "external_url" varchar, "difficulty" varchar, "image_url" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002219"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateSolutions (20150619002228)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "solutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "url" varchar, "user_id" integer, "challenge_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002228"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateEvents (20150619002235)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "location" varchar, "user_id" integer, "url" varchar, "date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002235"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateProjects (20150619032108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "deployed_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032108"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateResources (20150619032146)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032146"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateVotes (20150619032320)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "voteable_id" integer, "voteable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032320"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateStrengths (20150620212625)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "strengths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212625"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to CreateGroups (20150620212648)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "groupable_id" integer, "groupable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212648"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateWeaknesses (20150620212907)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "weaknesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212907"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "paul"], ["created_at", "2015-06-22 00:48:35.590669"], ["updated_at", "2015-06-22 00:48:35.590669"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "erica"], ["created_at", "2015-06-22 00:48:35.595328"], ["updated_at", "2015-06-22 00:48:35.595328"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "dan"], ["created_at", "2015-06-22 00:48:35.598971"], ["updated_at", "2015-06-22 00:48:35.598971"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jerome"], ["created_at", "2015-06-22 00:48:35.602129"], ["updated_at", "2015-06-22 00:48:35.602129"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Arrays"], ["user_id", 1], ["created_at", "2015-06-22 00:48:35.636044"], ["updated_at", "2015-06-22 00:48:35.636044"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hashes"], ["user_id", 2], ["created_at", "2015-06-22 00:48:35.641223"], ["updated_at", "2015-06-22 00:48:35.641223"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "methods"], ["user_id", 3], ["created_at", "2015-06-22 00:48:35.645732"], ["updated_at", "2015-06-22 00:48:35.645732"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "erica's arrays Solution"], ["user_id", 2], ["challenge_id", 1], ["created_at", "2015-06-22 00:48:35.666916"], ["updated_at", "2015-06-22 00:48:35.666916"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "dan's arrays Solution"], ["user_id", 3], ["challenge_id", 1], ["created_at", "2015-06-22 00:48:35.671249"], ["updated_at", "2015-06-22 00:48:35.671249"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "jerome's arrays solution"], ["user_id", 4], ["challenge_id", 1], ["created_at", "2015-06-22 00:48:35.675408"], ["updated_at", "2015-06-22 00:48:35.675408"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "BDay Party"], ["user_id", 3], ["created_at", "2015-06-22 00:48:35.739967"], ["updated_at", "2015-06-22 00:48:35.739967"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("title", "user_id", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Erica's comment about arrays"], ["user_id", 2], ["commentable_id", 1], ["commentable_type", "Challenge"], ["created_at", "2015-06-22 00:48:35.761169"], ["updated_at", "2015-06-22 00:48:35.761169"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("title", "commentable_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Dan's comment about Erica's solution"], ["commentable_id", 2], ["user_id", 3], ["created_at", "2015-06-22 00:48:35.766813"], ["updated_at", "2015-06-22 00:48:35.766813"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:48:35.779610"], ["updated_at", "2015-06-22 00:48:35.779610"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:48:35.783472"], ["updated_at", "2015-06-22 00:48:35.783472"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:48:35.786590"], ["updated_at", "2015-06-22 00:48:35.786590"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "strengths" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "javascript"], ["user_id", 1], ["created_at", "2015-06-22 00:48:35.819928"], ["updated_at", "2015-06-22 00:48:35.819928"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "strengths" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "css"], ["user_id", 1], ["created_at", "2015-06-22 00:48:35.824178"], ["updated_at", "2015-06-22 00:48:35.824178"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "weaknesses" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "backbone"], ["user_id", 1], ["created_at", "2015-06-22 00:48:35.850675"], ["updated_at", "2015-06-22 00:48:35.850675"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "weaknesses" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ajax"], ["user_id", 1], ["created_at", "2015-06-22 00:48:35.855065"], ["updated_at", "2015-06-22 00:48:35.855065"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150619002108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "github" varchar, "location" varchar, "facebook" varchar, "profile_pic" varchar, "twitter_handle" varchar, "linkedin" varchar, "workplace" varchar, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002108"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateComments (20150619002156)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "commentable_id" integer, "commentable_type" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002156"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateTags (20150619002203)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer, "taggable_id" integer, "taggable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002203"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateChallenges (20150619002219)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "github_url" varchar, "external_url" varchar, "difficulty" varchar, "image_url" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002219"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateSolutions (20150619002228)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "solutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "url" varchar, "user_id" integer, "challenge_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002228"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateEvents (20150619002235)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "location" varchar, "user_id" integer, "url" varchar, "date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002235"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateProjects (20150619032108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "deployed_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032108"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateResources (20150619032146)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032146"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateVotes (20150619032320)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "voteable_id" integer, "voteable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032320"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateStrengths (20150620212625)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "strengths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212625"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateGroups (20150620212648)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "groupable_id" integer, "groupable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212648"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Migrating to CreateWeaknesses (20150620212907)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "weaknesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212907"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "paul"], ["created_at", "2015-06-22 00:48:52.981067"], ["updated_at", "2015-06-22 00:48:52.981067"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "erica"], ["created_at", "2015-06-22 00:48:52.985107"], ["updated_at", "2015-06-22 00:48:52.985107"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "dan"], ["created_at", "2015-06-22 00:48:52.988938"], ["updated_at", "2015-06-22 00:48:52.988938"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jerome"], ["created_at", "2015-06-22 00:48:52.992612"], ["updated_at", "2015-06-22 00:48:52.992612"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Arrays"], ["user_id", 1], ["created_at", "2015-06-22 00:48:53.027151"], ["updated_at", "2015-06-22 00:48:53.027151"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hashes"], ["user_id", 2], ["created_at", "2015-06-22 00:48:53.031650"], ["updated_at", "2015-06-22 00:48:53.031650"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "methods"], ["user_id", 3], ["created_at", "2015-06-22 00:48:53.035539"], ["updated_at", "2015-06-22 00:48:53.035539"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "erica's arrays Solution"], ["user_id", 2], ["challenge_id", 1], ["created_at", "2015-06-22 00:48:53.060646"], ["updated_at", "2015-06-22 00:48:53.060646"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "dan's arrays Solution"], ["user_id", 3], ["challenge_id", 1], ["created_at", "2015-06-22 00:48:53.065258"], ["updated_at", "2015-06-22 00:48:53.065258"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "jerome's arrays solution"], ["user_id", 4], ["challenge_id", 1], ["created_at", "2015-06-22 00:48:53.069383"], ["updated_at", "2015-06-22 00:48:53.069383"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "BDay Party"], ["user_id", 3], ["created_at", "2015-06-22 00:48:53.132484"], ["updated_at", "2015-06-22 00:48:53.132484"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("title", "user_id", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Erica's comment about arrays"], ["user_id", 2], ["commentable_id", 1], ["commentable_type", "Challenge"], ["created_at", "2015-06-22 00:48:53.154682"], ["updated_at", "2015-06-22 00:48:53.154682"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("title", "commentable_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Dan's comment about Erica's solution"], ["commentable_id", 2], ["user_id", 3], ["created_at", "2015-06-22 00:48:53.160678"], ["updated_at", "2015-06-22 00:48:53.160678"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:48:53.173313"], ["updated_at", "2015-06-22 00:48:53.173313"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:48:53.177204"], ["updated_at", "2015-06-22 00:48:53.177204"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:48:53.180384"], ["updated_at", "2015-06-22 00:48:53.180384"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "strengths" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "javascript"], ["user_id", 1], ["created_at", "2015-06-22 00:48:53.192574"], ["updated_at", "2015-06-22 00:48:53.192574"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "strengths" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "css"], ["user_id", 1], ["created_at", "2015-06-22 00:48:53.197577"], ["updated_at", "2015-06-22 00:48:53.197577"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "weaknesses" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "backbone"], ["user_id", 1], ["created_at", "2015-06-22 00:48:53.211545"], ["updated_at", "2015-06-22 00:48:53.211545"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "weaknesses" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ajax"], ["user_id", 1], ["created_at", "2015-06-22 00:48:53.215357"], ["updated_at", "2015-06-22 00:48:53.215357"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20150619002108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "github" varchar, "location" varchar, "facebook" varchar, "profile_pic" varchar, "twitter_handle" varchar, "linkedin" varchar, "workplace" varchar, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002108"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to CreateComments (20150619002156)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "commentable_id" integer, "commentable_type" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002156"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Migrating to CreateTags (20150619002203)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer, "taggable_id" integer, "taggable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002203"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateChallenges (20150619002219)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "challenges" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "github_url" varchar, "external_url" varchar, "difficulty" varchar, "image_url" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002219"]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Migrating to CreateSolutions (20150619002228)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "solutions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "url" varchar, "user_id" integer, "challenge_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002228"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateEvents (20150619002235)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "location" varchar, "user_id" integer, "url" varchar, "date" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619002235"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateProjects (20150619032108)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "deployed_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032108"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to CreateResources (20150619032146)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "resources" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "user_id" integer, "url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032146"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Migrating to CreateVotes (20150619032320)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "voteable_id" integer, "voteable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150619032320"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to CreateStrengths (20150620212625)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "strengths" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212625"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to CreateGroups (20150620212648)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "groupable_id" integer, "groupable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212648"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateWeaknesses (20150620212907)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "weaknesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150620212907"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "paul"], ["created_at", "2015-06-22 00:49:41.755080"], ["updated_at", "2015-06-22 00:49:41.755080"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "erica"], ["created_at", "2015-06-22 00:49:41.758767"], ["updated_at", "2015-06-22 00:49:41.758767"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "dan"], ["created_at", "2015-06-22 00:49:41.761603"], ["updated_at", "2015-06-22 00:49:41.761603"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "jerome"], ["created_at", "2015-06-22 00:49:41.764333"], ["updated_at", "2015-06-22 00:49:41.764333"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Arrays"], ["user_id", 1], ["created_at", "2015-06-22 00:49:41.797586"], ["updated_at", "2015-06-22 00:49:41.797586"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Hashes"], ["user_id", 2], ["created_at", "2015-06-22 00:49:41.802874"], ["updated_at", "2015-06-22 00:49:41.802874"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "challenges" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "methods"], ["user_id", 3], ["created_at", "2015-06-22 00:49:41.807211"], ["updated_at", "2015-06-22 00:49:41.807211"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "erica's arrays Solution"], ["user_id", 2], ["challenge_id", 1], ["created_at", "2015-06-22 00:49:41.828636"], ["updated_at", "2015-06-22 00:49:41.828636"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "dan's arrays Solution"], ["user_id", 3], ["challenge_id", 1], ["created_at", "2015-06-22 00:49:41.833526"], ["updated_at", "2015-06-22 00:49:41.833526"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "solutions" ("title", "user_id", "challenge_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "jerome's arrays solution"], ["user_id", 4], ["challenge_id", 1], ["created_at", "2015-06-22 00:49:41.837763"], ["updated_at", "2015-06-22 00:49:41.837763"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "events" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "BDay Party"], ["user_id", 3], ["created_at", "2015-06-22 00:49:41.903546"], ["updated_at", "2015-06-22 00:49:41.903546"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("title", "user_id", "commentable_id", "commentable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Erica's comment about arrays"], ["user_id", 2], ["commentable_id", 1], ["commentable_type", "Challenge"], ["created_at", "2015-06-22 00:49:41.921673"], ["updated_at", "2015-06-22 00:49:41.921673"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("title", "commentable_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["title", "Dan's comment about Erica's solution"], ["commentable_id", 2], ["user_id", 3], ["created_at", "2015-06-22 00:49:41.927779"], ["updated_at", "2015-06-22 00:49:41.927779"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:49:41.940615"], ["updated_at", "2015-06-22 00:49:41.940615"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["user_id", 2], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:49:41.944493"], ["updated_at", "2015-06-22 00:49:41.944493"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "groups" ("user_id", "groupable_id", "groupable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 3], ["groupable_id", 1], ["groupable_type", "Event"], ["created_at", "2015-06-22 00:49:41.948459"], ["updated_at", "2015-06-22 00:49:41.948459"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "strengths" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "javascript"], ["user_id", 1], ["created_at", "2015-06-22 00:49:41.961834"], ["updated_at", "2015-06-22 00:49:41.961834"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "strengths" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "css"], ["user_id", 1], ["created_at", "2015-06-22 00:49:41.966224"], ["updated_at", "2015-06-22 00:49:41.966224"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "weaknesses" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "backbone"], ["user_id", 1], ["created_at", "2015-06-22 00:49:41.979403"], ["updated_at", "2015-06-22 00:49:41.979403"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "weaknesses" ("title", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ajax"], ["user_id", 1], ["created_at", "2015-06-22 00:49:41.983188"], ["updated_at", "2015-06-22 00:49:41.983188"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mStrength Load (0.3ms)[0m  SELECT "strengths".* FROM "strengths"
