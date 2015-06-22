@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    # this displays all projects
+    @projects = Project.all
   end
 
   def show

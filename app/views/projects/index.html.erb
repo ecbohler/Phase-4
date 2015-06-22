@@ -1,3 +1,19 @@
 <div>
-  <!-- this is the page that will display a (partial) form to edit a project -->
+  <div>
+  <div>
+  <div>
+    <h1>List of Projects</h1>
+  </div>
+  <br>
+  <div>
+    <% @projects.each do |project| %>
+    <p><%= link_to "#{project.title}", user_project_path(id: project.id) %></p>
+    <p>Title: <%= project.title %></p>
+    <p>Description: <%= project.description %></p>
+    <br>
+    <% end %>
+  </div>
+  <!-- this is the page that will display a (partial) form to edit a challenge -->
+</div>
+</div>
 </div>

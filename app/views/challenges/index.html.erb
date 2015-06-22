@@ -1,11 +1,20 @@
 <div>
+  <div>
+    <h1>List of Challenges</h1>
+  </div>
+  <br>
+  <div>
+    <% @challenges.each do |challenge| %>
+    <p><%= link_to "#{challenge.title}", user_challenge_path(id: challenge.id) %></p>
+    <p>Title: <%= challenge.title %></p>
+    <p>Description: <%= challenge.description %></p>
+    <br>
+    <% end %>
+  </div>
   <!-- this is the page that will display a (partial) form to edit a challenge -->
 
-  <% @challenges.each do |challenge| %>
-  <p><%=challenge.title %></p><br>
-  <% end %>
-  <br><br><br>
-  <div class="element-show" id="<%= @challenges.first.id %>">
+
+ <!--  <div class="element-show" id="<%= @challenges.first.id %>">
     <% challenge = @challenges.first %>
     <p class="show-comments">show comments</p>
     <p class="upvote">upvote</p>
@@ -17,5 +26,6 @@
     <span style="display:none;" class="class-name"><%= challenge.class %></span>
 
 
-  </div>
+  </div> -->
+
 </div>
