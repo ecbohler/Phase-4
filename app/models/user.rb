@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :tags#, as: :taggable
   has_many :votes#, as: :voteable
   has_many :weaknesses
+  has_many :strengths
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
@@ -21,6 +22,6 @@ class User < ActiveRecord::Base
     end
   end
 
- 
+
 
 end
