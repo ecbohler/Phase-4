@@ -1,15 +1,15 @@
 <div>
-  <h1>List of Challenges</h1>
-  <% @challenges.each do |challenge| %>
-  <%= challenge.title %>
-  <%= challenge.description %>
-  <%= challenge.github_url %>
-  <%= challenge.external_url %>
-  <%= challenge.difficulty %>
-  <%= challenge.image_url %>
-  <% end %>
+  <div>
+    <h1>List of Challenges</h1>
+  </div>
+  <br>
+  <div>
+    <% @challenges.each do |challenge| %>
+    <p><%= link_to "#{challenge.title}", user_challenge_path(id: challenge.id) %></p>
+    <p>Title: <%= challenge.title %></p>
+    <p>Description: <%= challenge.description %></p>
+    <br>
+    <% end %>
+  </div>
   <!-- this is the page that will display a (partial) form to edit a challenge -->
-  <% @challenges.each do |challenge| %>
-  <%= challenge.title %><br>
-  <% end %>
 </div>
