@@ -11,6 +11,7 @@
 # j = User.create(name: 'jerome')
 
 
+
 # pc = p.challenges.create(title: "Arrays")
 # ec = e.challenges.create(title: "Hashes")
 # dc = d.challenges.create(title: "methods")
@@ -43,17 +44,23 @@
 # dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
 # >>>>>>> upstream/master
 
+# dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
+
+
 # # pces = pc.solutions.create(title: "erica's arrays Solution", user_id: 2)
 # # pcds = pc.solutions.create(title: "dan's arrays Solution", user_id: 3)
 # # pcjs = pc.solutions.create(title: "jerome's arrays solution", user_id: 4)
 
-# <<<<<<< HEAD
 
 
 # # de = d.events.create(title: "BDay Party")
-# =======
 # de = d.events.create(title: "BDay Party")
-# >>>>>>> upstream/master
+
+
+
+# de = d.events.create(title: "BDay Party")
+
+# de = d.events.create(title: "BDay Party")
 
 # pc.comments.create(title: "Erica's comment about arrays", user_id: e.id)
 
