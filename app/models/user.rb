@@ -26,16 +26,12 @@ class User < ActiveRecord::Base
     end
    
   end
-  # def downcase_email
-  # self.email.downcase!
-  # end
-  # def downcase_email
-  #   self.email.downcase!
-  # end
-  # def get_gravatar
-  #   email_hash = Digest::MD5.hexdigest(self.email)
-  #   self.gravatar_url = "http://www.gravatar.com/avatar/#{email_hash}"
-  # end
+  
+  
+  def get_gravatar(email)
+    email_hash = Digest::MD5.hexdigest(email.downcase)
+    "http://www.gravatar.com/avatar/#{email_hash}"
+  end
 # <img src="<%= current_user.gravatar_url %>">
 
 
