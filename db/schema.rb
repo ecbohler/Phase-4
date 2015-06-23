@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20150620212907) do
     t.string   "workplace"
     t.string   "provider"
     t.string   "uid"
+    t.string   "gravatar_url"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
