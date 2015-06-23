@@ -31,6 +31,7 @@ class ChallengesController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @challenge = Challenge.find(params[:id])
   end
 

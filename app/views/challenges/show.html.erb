@@ -1,12 +1,12 @@
  <h1>Challenge Show Page</h1><br>
 
-  User ID: <%= @challenge.user_id %>
-
   <br/ ><br/ >
 
 <div class="asset-render">
 
-  <span class=""></span><span class=""></span><span class=""></span>
+  <span style="display:none" class="user-id"><%= current_user.id %></span>
+  <span style="display:none" class="asset-class-type"><%=@challenge.class  %></span>
+  <span style="display:none" class="asset-class-id"><%= @challenge.id %></span>
 
   <strong>Title:</strong> <%= @challenge.title %><br>
   Description: <%= @challenge.description %><br>
@@ -14,7 +14,7 @@
   External url: <%= @challenge.external_url %><br>
   Image url: <%= @challenge.image_url %><br>
   Difficulty: <%= @challenge.difficulty %><br>
-  Class: <%= @challenge.class %>
+
 
   <br /><br />
 
@@ -32,10 +32,10 @@
       <input type="submit" value="Tag It" />
     </form>
   <!-- TAG FORM END -->
-
+<P> This is the current users</p>
   <!-- VOTES START -->
-    Votes: <%= @challenge.votes.count %> -
-    <a href ="#" class="asset-create-vote">
+    <span>Votes: <%= @challenge.votes.count %></span> -
+    <a href ="/votes" class="asset-create-vote">
     <%= image_tag('thumbs_up.jpg', width:'18') %></a>
   <!-- VOTES END -->
 
