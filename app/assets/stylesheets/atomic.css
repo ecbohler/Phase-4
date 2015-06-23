@@ -83,8 +83,7 @@ h2.c-hero-container_pages {
   right:0;
   margin-left:auto;
   margin-right:auto;
-  padding-top: 120px;
-  top: 100px;
+  top: 99px;
   color: white;
   text-align: center;
   font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
@@ -183,20 +182,26 @@ h2.c-hero-container_pages {
 }
 .comment-votes {
   margin-top:15px;
+  margin-right: 5px;
   font-family: verdana;
   font-size: 11px;
   float: right;
 }
-.challenge-tagit {
+.comment-button {
+  padding-bottom: 10px;
+  float: left;
+}
+.tagit-form {
+  padding-bottom: 10px;
   float: right;
 }
 .comment-box {
   padding: 4px;
   position: absolute;
-  transform: translate(-50%, 0);
+  transform: translate(-47%, 0);
   z-index: 2;
-  width: 550px;
-  top: 333px;
+  width: 515px;
+  top: 372px;
   left: 50%;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
