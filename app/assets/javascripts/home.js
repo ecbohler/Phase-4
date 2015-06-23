@@ -41,6 +41,8 @@ var commentsListener = function(){
         var path = $(this).attr('href')
         var assetClassType = $(this).parent().find(".asset-class-type").html()
         var assetTypeId =  $(this).parent().find(".asset-class-id").html()
+        var that = this
+        // debugger
 
         $.ajax({
             url: path,
@@ -49,7 +51,12 @@ var commentsListener = function(){
                     assetTypeId: assetTypeId
                   },
             success: function (data) {
-              console.log(data)
+              if (data.sucess){
+                // $(that).parent().find('.comments-div')
+                for (var i = 0; i < data.comments.length; i++)
+                  {$(that).parent().find('.comments-div').append(data.comments[i].title + '<br>' + data.comments[i].description + '<br><br>')
+                }
+              }
             }
           });
     })

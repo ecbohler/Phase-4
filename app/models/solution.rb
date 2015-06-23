@@ -1,6 +1,8 @@
-require 'shared_logic'
+require 'polymorphic_associations'
 class Solution < ActiveRecord::Base
-  include UserInteractions
+  include PolymorphicAssociations
+
+
   belongs_to :user
   belongs_to :challenge
 end

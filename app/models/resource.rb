@@ -1,6 +1,8 @@
-require 'shared_logic'
+require 'polymorphic_associations'
 class Resource < ActiveRecord::Base
-  include UserInteractions
+  include PolymorphicAssociations
+
+
   belongs_to :user
 
 end

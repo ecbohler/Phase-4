@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
   def index
-    p 'YOU HIT YOUR ROUTE!!!!'
-    p params
 
     asset_class = params[:assetClassType]
     asset_id = params[:assetTypeId]
