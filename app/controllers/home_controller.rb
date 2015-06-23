@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
   def index
-    p cookies.signed
 
   end
   def sign_in
