@@ -19,6 +19,21 @@ $(document).on('page:change', function(){
       e.preventDefault();
       gitLogin();
     });
+    $('.asset-create-comment').hover(function(){
+      $(this).css('cursor','pointer');
+    });
+    $('.asset-create-comment').click(function(e){
+      e.preventDefault();
+      alert("post a comment");
+    });
+      $('.asset-close-comment').hover(function(){
+      $(this).css('cursor','pointer');
+
+    });
+     $('.asset-close-comment').click(function(e){
+      e.preventDefault();
+      alert("close window");
+    });
 
     bindListeners();
 
