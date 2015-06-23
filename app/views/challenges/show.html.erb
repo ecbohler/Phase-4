@@ -1,47 +1,99 @@
- <h1>Challenge Show Page</h1><br>
+ <section class="c-hero-challenge">
 
-  User ID: <%= @challenge.user_id %>
+  <h2 class="c-hero-container_pages">Challenges</h2>
+  <div class="c-hero-container-outer"></div>
 
-  <br/ ><br/ >
+</section>
 
 <div class="asset-render">
 
-  <span class=""></span><span class=""></span><span class=""></span>
+  <span style="display: none" class="asset-class-type"><%= @challenge.class %></span>
+  <span style="display: none" class="asset-class-id"><%= @challenge.id %></span>
+  <span style="display: none" class="user-id"><%= session[:user_id] %></span>
 
-  <strong>Title:</strong> <%= @challenge.title %><br>
-  Description: <%= @challenge.description %><br>
-  Github url: <%= @challenge.github_url %><br>
-  External url: <%= @challenge.external_url %><br>
-  Image url: <%= @challenge.image_url %><br>
-  Difficulty: <%= @challenge.difficulty %><br>
-  Class: <%= @challenge.class %>
+<!-- CONTENT BOX ALL START -->
+<!-- CONTENT BOX HEADER START -->
+  <div class = "content-box-header-icon img-shadowed">
+    <%= image_tag('jquery-icon.png', width:'110') %>
+  </div>
+  <div class = "content-box-header">
+    <%= @challenge.title %>
+  </div>
+  <!-- CONTENT BOX HEADER END -->
+  <!-- CONTENT BOX BODY START -->
+  <div class = "content-box">
+    <br /><br /><br />
+    <!-- VOTES START -->
+      <div class="challenge-votes">
+         Votes: <%= @challenge.votes.count %>
+         <a href ="#" class="asset-create-vote">
+          <%= image_tag('thumbs_up.jpg', width:'18') %></a>
+      </div>
+      <br />
+    <!-- VOTES END -->
+    <!-- CHALLENGE CONTENT START -->
+    <div class="content-box-body">
+    <div class="content-titles">Description: </div>
+    <div class="content-body">
+      <%= @challenge.description %></div><br />
+    <div class="content-titles">Github url: </div>
+    <div class="content-body">
+    <%=link_to @challenge.github_url %></div><br />
+    <span class="content-titles">Author: </span>
+    <span class="content-body">
+      <%= @user.name %>
+    </span><br /><br />
+    <span class="content-titles">Created on: </span>
+    <span class="content-body">
+      <%= @challenge.created_at.strftime("%b %d, %Y") %>
+    </span><br /><br />
+    <!-- CHALLENGE CONTENT END -->
+    <!-- COMMENTS/SOLUTIONS LINKS START -->
+    <div class="content-body">
+      <a href="#" class="show-comments">View Comments</a> |
+      <a href="#">View Solution</a>
+    </div>
+    <!-- COMMENTS/SOLUTIONS LINKS END -->
+    <br />
+    <div class="content-body">
+    <%= link_to "Challenges Home", user_challenges_path(@challenge.user_id) %></div>
+    <!-- TAG FORM START -->
+     <div class="challenge-tagit">
+      <form class="asset-tag-form">
+        <span class="content-titles">
+          <label for='Tag It'>Tag this: </label>
+        </span>
+        <input type="text_field" />
+        <input type="submit" value="Tag It" />
+      </form>
+    </div>
+  </div>
+    <!-- TAG FORM END -->
+    <!-- CONTENT BOX BODY END -->
+    <!-- CONTENT BOX ALL END -->
 
-  <br /><br />
-
-  <!-- COMMENTS/SOLUTIONS LINKS START -->
-    <a href="#" class="show-comments">View Comments</a> |
-    <a href="#">View Solution</a>
-  <!-- COMMENTS/SOLUTIONS LINKS END -->
-
-  <br /><br />
-
-  <!-- TAG FORM START -->
-    <form class="asset-tag-form">
-      <label for='Tag It'>Tag this: </label>
-      <input type="text_field" />
-      <input type="submit" value="Tag It" />
-    </form>
-  <!-- TAG FORM END -->
-
-  <!-- VOTES START -->
-    Votes: <%= @challenge.votes.count %> -
-    <a href ="#" class="asset-create-vote">
-    <%= image_tag('thumbs_up.jpg', width:'18') %></a>
-  <!-- VOTES END -->
-
-  <br /><br />
-
-  <%= link_to "Challenges Home", user_challenges_path(@challenge.user_id) %>
-
+     <!-- COMMENT BOX START -->
+    <div class = "comment-box">
+        <div class="comment-votes">
+          Votes: <%= @challenge.votes.count %>
+          <a href ="#" class="asset-create-vote">
+          <%= image_tag('thumbs_up.jpg', width:'18') %></a>
+        </div>
+        <%= image_tag('Close.png', width:'18', :class => "close_box") %>
+        <div class="comment-box-body">
+          <div class="content-titles">Comment:
+          </div>
+          <div class="content-body"><%= @comment.description %></div><br  />
+          <span class="content-titles">Author: </span>
+          <span class="content-body">
+          <%= @commenter.name %>
+          </span><br /><br />
+          <span class="content-titles">Posted: </span>
+          <span class="content-body">
+          <%= @comment.created_at.strftime("%b %d, %Y") %>
+          </span><br /><br />
+        </div>
+    </div>
+    <!-- COMMENT BOX END -->
 </div>
 

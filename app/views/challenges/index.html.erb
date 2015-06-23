@@ -1,31 +1,36 @@
 <div>
-  <div>
-    <h1>List of Challenges</h1>
+
+  <div class="center">
+    <h1>CHALLENGES</h1>
   </div>
-  <br>
+
+  <div class="u-hero"></div>
+
+<br>
+
   <div>
     <% @challenges.each do |challenge| %>
-    <p><%= link_to "#{challenge.title}", user_challenge_path(id: challenge.id) %></p>
-    <p>Title: <%= challenge.title %></p>
-    <p>Description: <%= challenge.description %></p>
-    <br>
+    <div class="chal-box">
+
+      <img src="data:image/png;base64,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"></img><br>
+
+      <div class="user-name">
+        <p><%= link_to "#{challenge.title}", user_challenge_path(id: challenge.id) %></p>
+      </div><br>
+
+      <div class="user-name">
+        <p>Title: <%= challenge.title %></p>
+      </div><br>
+
+      <div class="user-name">
+        <p>Description: <%= challenge.description[0..50] + '...' %></p>
+      </div><br>
+
+           <div class="user-name">
+        <p>created by: <%= User.find(challenge.user_id).name %></p><br>
+      </div>
+
+    </div>
     <% end %>
   </div>
-  <!-- this is the page that will display a (partial) form to edit a challenge -->
-
-
- <!--  <div class="element-show" id="<%= @challenges.first.id %>">
-    <% challenge = @challenges.first %>
-    <p class="show-comments">show comments</p>
-    <p class="upvote">upvote</p>
-    <p>votes: <%= challenge.votes.count %></p>
-    <form class="comments-form">
-      <input type='text' name='hashtag'>
-      <input type='submit' name='submit' class='comments-submit'>
-    </form>
-    <span style="display:none;" class="class-name"><%= challenge.class %></span>
-
-
-  </div> -->
-
 </div>

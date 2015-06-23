@@ -15,13 +15,14 @@
     <nav class="fl-r ">
       <ul class="cf  phase4-nav">
 
+        <li><%= link_to 'HOME', root_path %></li>
         <li><%= link_to 'MEMBERS', users_path %></li>
 
-        <li><%= link_to 'CHALLENGES', user_challenges_path(:user_id) %></li>
+        <li><%= link_to 'CHALLENGES', user_challenges_path(session[:user_id]) %></li>
 
-        <li><%= link_to 'RESOURCES', user_resources_path(:user_id) %></li>
+        <li><%= link_to 'RESOURCES', user_resources_path(session[:user_id]) %></li>
 
-        <li><%= link_to 'PROJECTS', user_projects_path(:user_id) %></li>
+        <li><%= link_to 'PROJECTS', user_projects_path(session[:user_id]) %></li>
 
         <li>
           <div class="login">
