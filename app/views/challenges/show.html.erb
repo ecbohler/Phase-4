@@ -29,7 +29,7 @@
          <a href ="#" class="asset-create-vote">
           <%= image_tag('thumbs_up.jpg', width:'18') %></a>
       </div>
-      <br />
+      <br /><br />
     <!-- VOTES END -->
     <!-- CHALLENGE CONTENT START -->
     <div class="content-box-body">
@@ -56,9 +56,16 @@
     <!-- COMMENTS/SOLUTIONS LINKS END -->
     <br />
     <div class="content-body">
-    <%= link_to "Challenges Home", user_challenges_path(@challenge.user_id) %></div>
+    <%= link_to "Challenges Home", user_challenges_path(@challenge.user_id) %></div><br />
+    <!-- POST COMMENT BUTTON START -->
+        <div class="comment-button">
+            <form>
+              <input type="submit" class="asset-create-comment" value="Post a comment">
+            </form>
+        </div>
+    <!-- POST COMMENT BUTTON END -->
     <!-- TAG FORM START -->
-     <div class="challenge-tagit">
+     <div class="tagit-form">
       <form class="asset-tag-form">
         <span class="content-titles">
           <label for='Tag It'>Tag this: </label>
@@ -67,8 +74,9 @@
         <input type="submit" value="Tag It" />
       </form>
     </div>
-  </div>
     <!-- TAG FORM END -->
+  </div>
+
     <!-- CONTENT BOX BODY END -->
     <!-- CONTENT BOX ALL END -->
 
@@ -79,7 +87,7 @@
           <a href ="#" class="asset-create-vote">
           <%= image_tag('thumbs_up.jpg', width:'18') %></a>
         </div>
-        <%= image_tag('Close.png', width:'18', :class => "close_box") %>
+        <%= image_tag('Close.png', width:'18', :class => "asset-close-comment") %>
         <div class="comment-box-body">
           <div class="content-titles">Comment:
           </div>
@@ -92,6 +100,24 @@
           <span class="content-body">
           <%= @comment.created_at.strftime("%b %d, %Y") %>
           </span><br /><br />
+          <!-- POST COMMENT BUTTON START -->
+            <div class="comment-button">
+              <form>
+                <input type="submit" class="asset-create-comment" value="Post a comment">
+              </form>
+            </div>
+          <!-- POST COMMENT BUTTON END -->
+          <!-- TAG FORM START -->
+           <div class="tagit-form">
+            <form class="asset-tag-form">
+              <span class="content-titles">
+                <label for='Tag It'>Tag this: </label>
+              </span>
+              <input type="text_field" />
+              <input type="submit" value="Tag It" />
+            </form>
+          </div>
+        <!-- TAG FORM END -->
         </div>
     </div>
     <!-- COMMENT BOX END -->

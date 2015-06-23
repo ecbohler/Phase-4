@@ -10,50 +10,49 @@
 # d = User.create(name: 'dan')
 # j = User.create(name: 'jerome')
 
-<<<<<<< HEAD
+
 # pc = p.challenges.create(title: "Arrays")
 # ec = e.challenges.create(title: "Hashes")
 # dc = d.challenges.create(title: "methods")
-=======
 
-pc = p.challenges.create(title: "Arrays", description: "Array challenge description", github_url: "https://github.arrays.com", external_url: "https://arrays.com", difficulty: "Intermediate", image_url: "https://ruby.com")
 
-pr = p.resources.create(title: "Array Resource", description: "Array resource description", url: "https://github.arrayresource.com")
+# pc = p.challenges.create(title: "Arrays", description: "Array challenge description", github_url: "https://github.arrays.com", external_url: "https://arrays.com", difficulty: "Intermediate", image_url: "https://ruby.com")
 
-pp = p.projects.create(title: "Array Project", description: "Array project description", url: "https://github.arrayproject.com")
+# pr = p.resources.create(title: "Array Resource", description: "Array resource description", url: "https://github.arrayresource.com")
 
-es = pc.solutions.create(title: "Arrays Solution", user_id: 2)
+# pp = p.projects.create(title: "Array Project", description: "Array project description", url: "https://github.arrayproject.com")
 
-ec = p.challenges.create(title: "Javascript", description: "javascript challenge description", github_url: "https://github.javascripts.com", external_url: "https://javascripts.com", difficulty: "Intermediate", image_url: "https://javascript.com")
+# es = pc.solutions.create(title: "Arrays Solution", user_id: 2)
 
-er = p.resources.create(title: "javascript Resource", description: "javascript resource description", url: "https://github.javascriptresource.com")
+# ec = p.challenges.create(title: "Javascript", description: "javascript challenge description", github_url: "https://github.javascripts.com", external_url: "https://javascripts.com", difficulty: "Intermediate", image_url: "https://javascript.com")
 
-ep = p.projects.create(title: "javascript Project", description: "javascript project description", url: "https://github.javascriptproject.com")
+# er = p.resources.create(title: "javascript Resource", description: "javascript resource description", url: "https://github.javascriptresource.com")
 
-jc = e.challenges.create(title: "Hashes", description: "Hashes challenge description", github_url: "https://github.Hashes.com", external_url: "https://Hashes.com", difficulty: "Intermediate", image_url: "https://ruby.com")
+# ep = p.projects.create(title: "javascript Project", description: "javascript project description", url: "https://github.javascriptproject.com")
 
-jr = p.resources.create(title: "hash Resource", description: "hash resource description", url: "https://github.hashresource.com")
+# jc = e.challenges.create(title: "Hashes", description: "Hashes challenge description", github_url: "https://github.Hashes.com", external_url: "https://Hashes.com", difficulty: "Intermediate", image_url: "https://ruby.com")
 
-jp = p.projects.create(title: "hash Project", description: "hash project description", url: "https://github.hashproject.com")
+# jr = p.resources.create(title: "hash Resource", description: "hash resource description", url: "https://github.hashresource.com")
 
-dc = d.challenges.create(title: "Methods", description: "methods challenge description", github_url: "https://github.methods.com", external_url: "https://methods.com", difficulty: "Intermediate", image_url: "https://ruby.com")
+# jp = p.projects.create(title: "hash Project", description: "hash project description", url: "https://github.hashproject.com")
 
-dr = p.resources.create(title: "method Resource", description: "method resource description", url: "https://github.methodresource.com")
+# dc = d.challenges.create(title: "Methods", description: "methods challenge description", github_url: "https://github.methods.com", external_url: "https://methods.com", difficulty: "Intermediate", image_url: "https://ruby.com")
 
-dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
->>>>>>> upstream/master
+# dr = p.resources.create(title: "method Resource", description: "method resource description", url: "https://github.methodresource.com")
+
+# dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
+
 
 # pces = pc.solutions.create(title: "erica's arrays Solution", user_id: 2)
 # pcds = pc.solutions.create(title: "dan's arrays Solution", user_id: 3)
 # pcjs = pc.solutions.create(title: "jerome's arrays solution", user_id: 4)
 
-<<<<<<< HEAD
+
 
 
 # de = d.events.create(title: "BDay Party")
-=======
-de = d.events.create(title: "BDay Party")
->>>>>>> upstream/master
+
+# de = d.events.create(title: "BDay Party")
 
 # pc.comments.create(title: "Erica's comment about arrays", user_id: e.id)
 
