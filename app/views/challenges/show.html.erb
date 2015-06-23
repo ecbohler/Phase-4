@@ -22,12 +22,13 @@
   </div>
   <!-- CONTENT BOX HEADER END -->
   <!-- CONTENT BOX BODY START -->
+
   <div class = "content-box">
     <br /><br /><br />
     <!-- VOTES START -->
       <div class="challenge-votes">
-         Votes: <%= @challenge.votes.count %>
-         <a href ="#" class="asset-create-vote">
+         <span>Votes: <%= @challenge.votes.count %></span>
+         <a href ="/votes" class="asset-create-vote">
           <%= image_tag('thumbs_up.jpg', width:'18') %></a>
       </div>
       <br /><br />
@@ -67,7 +68,7 @@
     <!-- POST COMMENT BUTTON END -->
     <!-- TAG FORM START -->
      <div class="tagit-form">
-      <form class="asset-tag-form">
+      <form class="asset-tag-form" action="/tags">
         <span class="content-titles">
           <label for='Tag It'>Tag this: </label>
         </span>
@@ -77,6 +78,7 @@
     </div>
     <!-- TAG FORM END -->
   </div>
+
 
     <!-- CONTENT BOX BODY END -->
     <!-- CONTENT BOX ALL END -->

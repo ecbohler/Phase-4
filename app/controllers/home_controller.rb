@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    p cookies.signed
+    # session[:user_id] = nil
 
   end
   def sign_in
