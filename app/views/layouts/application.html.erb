@@ -13,28 +13,30 @@
       <img src="http://devbootcamp.com/assets/img/devbootcamp-logo.png"></img>
     </h1>
     <nav class="fl-r ">
-      <ul class="cf  phase4-nav">
+      <% if session[:user_id] %>
+        <ul class="cf  phase4-nav">
 
-        <li><%= link_to 'MEMBERS', users_path %></li>
+          <li><%= link_to 'MEMBERS', users_path %></li>
 
-        <li><%= link_to 'CHALLENGES', user_challenges_path(:user_id) %></li>
+          <li><%= link_to 'CHALLENGES', user_challenges_path(session[:user_id]) %></li>
 
-        <li><%= link_to 'RESOURCES', user_resources_path(:user_id) %></li>
+          <li><%= link_to 'RESOURCES', user_resources_path(session[:user_id]) %></li>
 
-        <li><%= link_to 'PROJECTS', user_projects_path(:user_id) %></li>
+          <li><%= link_to 'PROJECTS', user_projects_path(session[:user_id]) %></li>
 
-        <li>
-          <div class="login">
-            <%if current_user%>
-            Welcome <%=current_user.name%>
-            <% else %>
-            LOGIN
-            <br>
-            WITH GITHUB
-            <% end %>
-          </div>
-        </li>
-      </ul>
+          <li>
+            <div class="login">
+              <%if current_user%>
+              Welcome <%=current_user.name%>
+              <% else %>
+              LOGIN
+              <br>
+              WITH GITHUB
+              <% end %>
+            </div>
+          </li>
+        </ul>
+      <% end %>
     </nav>
   </header>
   <%= yield %>
