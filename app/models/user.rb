@@ -19,10 +19,20 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      # user.gravatar_id = auth['avatar_url']["gravar_id"]
-    end
-  end
+      # ADDED
 
+      user.gravatar_url = auth["info"]["image"]
+      
+    end
+   
+  end
+  
+  
+  def get_gravatar(email)
+    email_hash = Digest::MD5.hexdigest(email.downcase)
+    "http://www.gravatar.com/avatar/#{email_hash}"
+  end
+# <img src="<%= current_user.gravatar_url %>">
 
 
 end

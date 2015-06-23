@@ -1,3 +1,46 @@
-<div>
-  <!-- this is a page that will display a single project - be sure to include an edit and delete button if creator id and session id match -->
+<h1>Projects Show Page</h1><br>
+
+  <br/ ><br/ >
+
+<div class="asset-render">
+
+  <span style="display: none" class="asset-class-type"><%= @project.class %></span>
+  <span style="display: none" class="asset-class-id"><%= @project.id %></span>
+  <span style="display: none" class="user-id"><%= session[:user_id] %></span>
+
+  <strong>Title:</strong> <%= @project.title %><br>
+  Description: <%= @project.description %><br>
+  Url: <%= @project.url %><br>
+  Deployed Url: <%= @project.deployed_url %><br>
+
+
+  <br /><br />
+
+  <!-- COMMENTS/SOLUTIONS LINKS START -->
+    <a href="#" class="show-comments">View Comments</a> |
+    <a href="#">View Solution</a>
+  <!-- COMMENTS/SOLUTIONS LINKS END -->
+
+  <br /><br />
+
+  <!-- TAG FORM START -->
+    <form class="asset-tag-form">
+      <label for='Tag It'>Tag this: </label>
+      <input type="text_field" />
+      <input type="submit" value="Tag It" />
+    </form>
+  <!-- TAG FORM END -->
+
+  <!-- VOTES START -->
+    Votes: <%= @project.votes.count %> -
+    <a href ="#" class="asset-create-vote">
+    <%= image_tag('thumbs_up.jpg', width:'18') %></a>
+  <!-- VOTES END -->
+
+  <br /><br />
+
+  <%= link_to "projects Home", user_projects_path(@project.user_id) %>
+
 </div>
+
+

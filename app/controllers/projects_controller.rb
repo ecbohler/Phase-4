@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    # this displays a single project
+    @project = Project.find(params[:id])
   end
 
   def destroy

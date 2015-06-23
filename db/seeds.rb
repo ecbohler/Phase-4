@@ -11,6 +11,7 @@
 # j = User.create(name: 'jerome')
 
 
+
 # pc = p.challenges.create(title: "Arrays")
 # ec = e.challenges.create(title: "Hashes")
 # dc = d.challenges.create(title: "methods")
@@ -19,6 +20,7 @@
 # pc = p.challenges.create(title: "Arrays", description: "Array challenge description", github_url: "https://github.arrays.com", external_url: "https://arrays.com", difficulty: "Intermediate", image_url: "https://ruby.com")
 
 # pr = p.resources.create(title: "Array Resource", description: "Array resource description", url: "https://github.arrayresource.com")
+
 
 # pp = p.projects.create(title: "Array Project", description: "Array project description", url: "https://github.arrayproject.com")
 
@@ -43,16 +45,52 @@
 # dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
 
 
-# pces = pc.solutions.create(title: "erica's arrays Solution", user_id: 2)
-# pcds = pc.solutions.create(title: "dan's arrays Solution", user_id: 3)
-# pcjs = pc.solutions.create(title: "jerome's arrays solution", user_id: 4)
 
+# pp = p.projects.create(title: "Array Project", description: "Array project description", url: "https://github.arrayproject.com")
+
+# es = pc.solutions.create(title: "Arrays Solution", user_id: 2)
+
+# ec = p.challenges.create(title: "Javascript", description: "javascript challenge description", github_url: "https://github.javascripts.com", external_url: "https://javascripts.com", difficulty: "Intermediate", image_url: "https://javascript.com")
+
+# er = p.resources.create(title: "javascript Resource", description: "javascript resource description", url: "https://github.javascriptresource.com")
+
+# ep = p.projects.create(title: "javascript Project", description: "javascript project description", url: "https://github.javascriptproject.com")
+
+# jc = e.challenges.create(title: "Hashes", description: "Hashes challenge description", github_url: "https://github.Hashes.com", external_url: "https://Hashes.com", difficulty: "Intermediate", image_url: "https://ruby.com")
+
+# jr = p.resources.create(title: "hash Resource", description: "hash resource description", url: "https://github.hashresource.com")
+
+# jp = p.projects.create(title: "hash Project", description: "hash project description", url: "https://github.hashproject.com")
+
+# dc = d.challenges.create(title: "Methods", description: "methods challenge description", github_url: "https://github.methods.com", external_url: "https://methods.com", difficulty: "Intermediate", image_url: "https://ruby.com")
+
+# dr = p.resources.create(title: "method Resource", description: "method resource description", url: "https://github.methodresource.com")
+
+# dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
+# >>>>>>> upstream/master
+
+# dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
+
+
+# # pces = pc.solutions.create(title: "erica's arrays Solution", user_id: 2)
+# # pcds = pc.solutions.create(title: "dan's arrays Solution", user_id: 3)
+# # pcjs = pc.solutions.create(title: "jerome's arrays solution", user_id: 4)
+
+
+
+
+
+# # de = d.events.create(title: "BDay Party")
+# de = d.events.create(title: "BDay Party")
 
 
 
 # de = d.events.create(title: "BDay Party")
 
 # de = d.events.create(title: "BDay Party")
+
+# de = d.events.create(title: "BDay Party")
+
 
 
 # pc.comments.create(title: "Erica's comment about arrays", user_id: e.id)
@@ -103,7 +141,7 @@ alex_carpenter = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 
 # User 2 *******************************************************
@@ -119,7 +157,7 @@ angie_ellis = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 
 # User 3 *******************************************************
@@ -135,7 +173,7 @@ anthony_hernandez = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 4 *******************************************************
 colette_speer = User.create(
@@ -150,7 +188,7 @@ colette_speer = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 5 *******************************************************
 teresa_martyny = User.create(
@@ -165,7 +203,7 @@ teresa_martyny = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 6 *******************************************************
 danielle_rigsby = User.create(
@@ -179,7 +217,7 @@ danielle_rigsby = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 7 *******************************************************
 jacob_moyle = User.create(
@@ -194,7 +232,7 @@ jacob_moyle = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 8 *******************************************************
 joshua_croff = User.create(
@@ -209,7 +247,7 @@ joshua_croff = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 9 *******************************************************
 katy_duncan = User.create(
@@ -223,7 +261,7 @@ katy_duncan = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 10 *******************************************************
 miranda_pakozdi = User.create(
@@ -238,7 +276,7 @@ miranda_pakozdi = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 11 *******************************************************
 mary_wallace = User.create(
@@ -253,7 +291,7 @@ mary_wallace = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 11 *******************************************************
 majd_murad = User.create(
@@ -268,7 +306,7 @@ majd_murad = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 12 *******************************************************
 kei_oka = User.create(
@@ -283,7 +321,7 @@ kei_oka = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 13 *******************************************************
 robert_austin = User.create(
@@ -298,7 +336,7 @@ robert_austin = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 14 *******************************************************
 sebastien_cheraux = User.create(
@@ -313,7 +351,7 @@ sebastien_cheraux = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 15 *******************************************************
 spenser_huang = User.create(
@@ -328,7 +366,7 @@ spenser_huang = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 16 *******************************************************
 tania_abdollahi = User.create(
@@ -343,7 +381,7 @@ tania_abdollahi = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 # User 17 *******************************************************
 tapley_stephenson = User.create(
@@ -357,7 +395,7 @@ tapley_stephenson = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("tapley.stephenson@gmail.com")
   )
 
 
