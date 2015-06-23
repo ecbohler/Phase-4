@@ -38,6 +38,20 @@ var commentsListener = function(){
     $('body').on('click', '.asset-render .show-comments', function(e){
         e.preventDefault()
         console.log('in comments listener')
+        var path = $(this).attr('href')
+        var assetClassType = $(this).parent().find(".asset-class-type").html()
+        var assetTypeId =  $(this).parent().find(".asset-class-id").html()
+
+        $.ajax({
+            url: path,
+            type: 'get',
+            data: { assetClassType: assetClassType,
+                    assetTypeId: assetTypeId
+                  },
+            success: function (data) {
+              console.log(data)
+            }
+          });
     })
 }
 
@@ -75,6 +89,25 @@ var hashtagListener = function(){
   $('body').on('submit', '.asset-render .asset-tag-form', function(e){
     e.preventDefault()
     console.log('in comments-form listener')
+    var path = $(this).attr('action')
+    var assetUserId = $(this).parent().find(".user-id").html()
+    var assetClassType = $(this).parent().find(".asset-class-type").html()
+    var tagName = $(this).parent().find(".tag-field").val()
+    var assetTypeId =  $(this).parent().find(".asset-class-id").html()
+    var that = this
+    $.ajax({
+        url: path,
+        type: 'post',
+        data: {assetUserId: assetUserId,
+              assetClassType: assetClassType,
+              assetTypeId: assetTypeId,
+              tagName: tagName
+              },
+        success: function (data) {
+          console.log(data.success)
+          $(that).parent().find(".tag-field").val('')
+        }
+      });
   })
 }
 
