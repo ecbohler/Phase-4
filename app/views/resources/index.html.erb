@@ -12,14 +12,15 @@
 
     <div class="c-hero-container-outer">
     </div>
-
-    <div>
+    <br>
+    <div class="p-name">
       <% @resources.each do |resource| %>
+      <div class="p-bubble">
       <p><%= link_to "#{resource.title}", user_resource_path(id: resource.id) %></p>
       <p>Title: <%= resource.title %></p>
       <p>Description: <%= resource.description %></p>
-      <br>
       <% end %>
+      </div>
     </div>
     <!-- this is the page that will display a (partial) form to edit a challenge -->
   </div>

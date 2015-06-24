@@ -351,6 +351,17 @@
   width:100%;
 }
 
+.p-name {
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 18px;
+}
+
+.p-bubble{
+  border: 5px solid black;
+  border-radius: 10px;
+}
+
 
 
 
