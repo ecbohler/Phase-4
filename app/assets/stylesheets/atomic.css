@@ -110,28 +110,36 @@ h2.c-hero-container_pages {
  font-size: 15px;
 }
 .content-box {
-  padding-top: 13px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top:130px;
+  padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 5px;
   padding-left: 0px;
-  position: absolute;
-  transform: translate(-50%, 0);
-  z-index: 2;
+  z-index: 0;
   width: 550px;
-  top: 450px;
-  left: 50%;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 
 }
 .content-box-body {
-  padding-top: 13px;
+  z-index: 0;
+  padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 5px;
   padding-left: 15px;
 }
+.content-box-title {
+  padding-top: 12px;
+  padding-left: 12px;
+  font-family: Futura;
+  color: #000066;
+  font-size: 24px;
+}
 .content-box-header {
+  opacity: 0.0;
   text-align: right;
   font-family: Futura;
   color: #000066;
@@ -175,7 +183,7 @@ h2.c-hero-container_pages {
   font-weight: normal;
 }
 .challenge-votes {
-  margin-top:25px;
+  margin-top:16px;
   font-family: verdana;
   font-size: 11px;
   float: right;
@@ -188,21 +196,19 @@ h2.c-hero-container_pages {
   float: right;
 }
 .comment-button {
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   float: left;
 }
 .tagit-form {
   padding-bottom: 10px;
-  float: right;
+  margin-left: 185px;
+  /*float: right;*/
 }
 .comment-box {
+  margin-right: auto;
+  margin-left: auto;
   padding: 4px;
-  position: absolute;
-  transform: translate(-47%, 0);
-  z-index: 2;
   width: 515px;
-  top: 372px;
-  left: 50%;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
@@ -213,7 +219,13 @@ h2.c-hero-container_pages {
   padding-bottom: 5px;
   padding-left: 15px;
 }
-
+.challenge-home-link {
+  text-align: center;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+}
 
 
 
