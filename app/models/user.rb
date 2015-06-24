@@ -19,10 +19,13 @@ class User < ActiveRecord::Base
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      # user.gravatar_id = auth['avatar_url']["gravar_id"]
-    end
-  end
+      # ADDED
 
+      user.gravatar_url = auth["info"]["image"]
+
+    end
+
+  end
 
 
 end
