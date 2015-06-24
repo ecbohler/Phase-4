@@ -1,18 +1,27 @@
 class ProjectsController < ApplicationController
   def new
-    # this takes us to a form page that allows a user to create a  new project
+    @project = Project.new
+    @user = User.find(1)
   end
 
   def create
-    # pulls from params the information for creating a new project - and creates the project
+    @user = User.find(params[:user_id])
+    @project = @user.projects.build(project_params)
+
+    if @project.save
+      redirect_to user_project_path(id:@project.id)
+    else
+      render :back
+    end
   end
 
   def edit
-    # this takes us to a form page that allows a user to edit an existing project
+    @project = current_project
   end
 
   def update
-    # performs the update
+    current_project.update(params)
+    redirect_to current_project
   end
 
   def index
@@ -20,10 +29,30 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @project = Project.find(params[:id])
+    user_id = @project.user_id
+    @user = User.find(user_id)
+    @comment = @project.comments.first
+    p @comment
+    commenter_id = @comment.user_id
+    @commenter = User.find(commenter_id)
   end
 
   def destroy
-    # this is the method that deletes an project
+    current_project.destroy
+  end
+
+  private
+  def current_project
+    Project.find(params[:id])
+  end
+
+  def project_params
+    params.require(:project).permit(
+      :title,
+      :description,
+      :url,
+      :deployed_url,)
   end
 end
