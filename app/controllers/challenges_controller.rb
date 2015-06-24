@@ -29,7 +29,7 @@ class ChallengesController < ApplicationController
   end
 
   def index
-    @challenges = get_resources(Challenge.all)
+    @challenges = get_filtered_resources(Challenge.all)
   end
 
   def show
@@ -37,9 +37,9 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     user_id = @challenge.user_id
     @user = User.find(user_id)
-    @comment = @challenge.comments.first
-    commenter_id = @comment.user_id
-    @commenter = User.find(commenter_id)
+    # @comment = @challenge.comments.first
+    # commenter_id = @comment.user_id
+    # @commenter = User.find(commenter_id)
   end
 
   def destroy

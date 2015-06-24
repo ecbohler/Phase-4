@@ -27,7 +27,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = get_filtered_resources(Project.all)
   end
 
   def show

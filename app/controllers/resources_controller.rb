@@ -18,7 +18,7 @@ class ResourcesController < ApplicationController
   end
 
   def index
-    @resources = Resource.all
+    @resources = get_filtered_resources(Resource.all)
   end
 
   def show
