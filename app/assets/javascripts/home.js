@@ -72,6 +72,7 @@ var commentsListener = function(){
               if (data.success){
 
                 for (var i = 0; i < data.list.length; i++){
+                  // debugger
                   var commentsTemplate = $('.comments-template').last().clone()
                   $('.comments-container').append(commentsTemplate)
 
@@ -86,7 +87,7 @@ var commentsListener = function(){
 
 
 
-                  debugger
+                  // debugger
                 }
 
                 }
