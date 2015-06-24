@@ -1,6 +1,7 @@
 .fl-l { float: left; }
 .fl-r { float: right; }
 .p-sm { padding: 20px; }
+
 .c-hero {
   background-image: url("http://www.fightyourticketsf.com/images/downtownsf.jpg");
   background-repeat: no-repeat;
@@ -10,6 +11,12 @@
   box-sizing: border-box;
   height: 900px;
 }
+
+.hr_intro {
+  width: 560px;
+  opacity: 0.5;
+}
+
 .c-hero-challenge {
   background-image: url("challenge_hero.jpg");
   background-repeat: no-repeat;
@@ -19,6 +26,7 @@
   box-sizing: border-box;
   height: 265px;
 }
+<<<<<<< HEAD
 .c-hero-user-profile {
   background-image: url("user_profile_1.jpg");
   background-repeat: no-repeat;
@@ -31,7 +39,14 @@
 hr.hr_intro {
 width: 560px;
 opacity: 0.5;
+=======
+
+.hr_intro {
+  width: 560px;
+  opacity: 0.5;
+>>>>>>> upstream/master
 }
+
 .hr_boxes_two {
   display: inline-block;
   position: relative;
@@ -60,6 +75,7 @@ opacity: 0.5;
   font-weight: bold;
   font-size: 68px;
 }
+
 .c-hero-container-title {
   margin-left: auto;
   margin-right: auto;
@@ -71,7 +87,8 @@ opacity: 0.5;
   font-weight: bold;
   font-size: 68px;
 }
-h2.c-hero-container_pages {
+
+.c-hero-container_pages {
   z-index: 2;
   position: absolute;
   top: 200px;
@@ -82,6 +99,7 @@ h2.c-hero-container_pages {
   color: #ffffff;
   font-size: 48px;
 }
+
 .c-hero-container-outer {
   background-color: black;
   opacity: 0.5;
@@ -99,6 +117,7 @@ h2.c-hero-container_pages {
   font-weight: bold;
   font-size: 68px;
 }
+
 .c-hero-container-mission {
   top: -425px;
   margin-left: auto;
@@ -110,38 +129,113 @@ h2.c-hero-container_pages {
   color: #ffffff;
   font-size: 27px;
 }
+
 .center-login {
   top: -355px;
- margin-left: auto;
- margin-right: auto;
- position: relative;
- background-color: white;
- font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: white;
+  font-size: 15px;
 }
+
+
+.u-hero {
+  background-image: url("http://www.fightyourticketsf.com/images/downtownsf.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  display: block;
+  box-sizing: border-box;
+  height: 300px;
+}
+
+.center {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 48px;
+}
+
+.user-img {
+  padding-right: 10px;
+  float: left;
+  position:relative;
+  left:65px;
+  margin-right: 30px;
+  width: 375px;
+  display: block;
+  height: 150px;
+  /*top: -75px;*/
+  text-align: center;
+  /*margin-bottom: 25px;*/
+}
+
+.user-img-border {
+  border:5px solid #021a40;
+  border-radius: 30px;
+}
+
+.user-name {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 18px;
+}
+
+.chal-box {
+  padding-right: 10px;
+  float: left;
+  position:relative;
+  left:185px;
+  margin-right: 300px;
+  width: 375px;
+  display: block;
+  height: 380px; c
+  background: black;
+  border: 1px solid black;
+  top: -75px;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
 .content-box {
-  padding-top: 13px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top:130px;
+  padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 5px;
   padding-left: 0px;
-  position: absolute;
-  transform: translate(-50%, 0);
-  z-index: 2;
+  z-index: 0;
   width: 550px;
-  top: 450px;
-  left: 50%;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
 
 }
 .content-box-body {
-  padding-top: 13px;
+  z-index: 0;
+  padding-top: 0px;
   padding-right: 10px;
   padding-bottom: 5px;
   padding-left: 15px;
 }
 
+
+
+.content-box-title {
+  padding-top: 12px;
+  padding-left: 12px;
+  font-family: Futura;
+  color: #000066;
+  font-size: 24px;
+}
+
 .content-box-header {
+  opacity: 0.0;
   text-align: right;
   font-family: Futura;
   color: #000066;
@@ -167,10 +261,10 @@ h2.c-hero-container_pages {
   transform: translate(-50%, 0);
 }
 .img-shadowed {
-    -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
-    filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='drop-shadow'><feGaussianBlur in='SourceAlpha' stdDeviation='4'/><feOffset dx='12' dy='12' result='offsetblur'/><feFlood flood-color='rgba(0,0,0,0.5)'/><feComposite in2='offsetblur' operator='in'/><feMerge><feMergeNode/><feMergeNode in='SourceGraphic'/></feMerge></filter></svg>#drop-shadow");
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
+  filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='drop-shadow'><feGaussianBlur in='SourceAlpha' stdDeviation='4'/><feOffset dx='12' dy='12' result='offsetblur'/><feFlood flood-color='rgba(0,0,0,0.5)'/><feComposite in2='offsetblur' operator='in'/><feMerge><feMergeNode/><feMergeNode in='SourceGraphic'/></feMerge></filter></svg>#drop-shadow");
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 .content-titles {
   font-size: 14px;
@@ -185,7 +279,7 @@ h2.c-hero-container_pages {
   font-weight: normal;
 }
 .challenge-votes {
-  margin-top:25px;
+  margin-top:16px;
   font-family: verdana;
   font-size: 11px;
   float: right;
@@ -198,21 +292,19 @@ h2.c-hero-container_pages {
   float: right;
 }
 .comment-button {
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   float: left;
 }
 .tagit-form {
   padding-bottom: 10px;
-  float: right;
+  margin-left: 185px;
+  /*float: right;*/
 }
 .comment-box {
+  margin-right: auto;
+  margin-left: auto;
   padding: 4px;
-  position: absolute;
-  transform: translate(-47%, 0);
-  z-index: 2;
   width: 515px;
-  top: 372px;
-  left: 50%;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
@@ -223,6 +315,7 @@ h2.c-hero-container_pages {
   padding-bottom: 5px;
   padding-left: 15px;
 }
+
 /* USER PROFILE ---------------------------------*/
 .user-container-all{
   display: table;
@@ -253,6 +346,17 @@ h2.c-hero-container_pages {
   width: 420px;
 }
 /*-------------------------------------------------*/
+
+
+.challenge-home-link {
+  text-align: center;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+}
+
+
 
 
 

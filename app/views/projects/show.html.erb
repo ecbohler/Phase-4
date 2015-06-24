@@ -1,6 +1,10 @@
-<h1>Projects Show Page</h1><br>
+<section class="c-hero-challenge">
 
-  <br/ ><br/ >
+
+  <h2 class="c-hero-container_pages">Projects</h2>
+  <div class="c-hero-container-outer"></div>
+
+</section>
 
 <div class="asset-render">
 
@@ -8,39 +12,71 @@
   <span style="display: none" class="asset-class-id"><%= @project.id %></span>
   <span style="display: none" class="user-id"><%= session[:user_id] %></span>
 
-  <strong>Title:</strong> <%= @project.title %><br>
-  Description: <%= @project.description %><br>
-  Url: <%= @project.url %><br>
-  Deployed Url: <%= @project.deployed_url %><br>
+<!-- CONTENT BOX ALL START -->
+   <!-- CONTENT BOX BODY START -->
+  <div class = "content-box">
+    <!-- VOTES START -->
+      <div class="project-votes">
+         <span>Votes: <%= @project.votes.count %></span>
+         <a href ="/votes" class="asset-create-vote">
+          <%= image_tag('thumbs_up.jpg', width:'18') %></a>
+      </div>
+    <!-- VOTES END -->
+    <!-- project CONTENT START -->
+    <div class="content-box-title">
+      <%= @project.title %></div><br />
+    <div class="content-box-body">
+    <div class="content-titles">Description: </div>
+    <div class="content-body">
+      <%= @project.description %></div><br />
+    <div class="content-titles">Project url: </div>
+    <div class="content-body">
+    <%=link_to @project.url %></div><br />
+    <span class="content-titles">Author: </span>
+    <span class="content-body">
+      <%= @user.name %>
+    </span><br /><br />
+    <span class="content-titles">Created on: </span>
+    <span class="content-body">
+      <%= @project.created_at.strftime("%b %d, %Y") %>
+    </span><br /><br />
+    <!-- PROJECT CONTENT END -->
+    <!-- COMMENTS/SOLUTIONS LINKS START -->
+    <div class="content-body">
+      <a href="/comments" class="show-comments">View Comments</a> |
+      <a href="#">View Solution</a>
+    </div>
+    <!-- COMMENTS/SOLUTIONS LINKS END -->
+    <br />
+    <div class="content-body">
+
+    <!-- POST COMMENT BUTTON START -->
+        <div class="comment-button">
+            <form>
+              <input type="submit" class="asset-create-comment" value="Post a comment">
+            </form>
+        </div>
+    <!-- POST COMMENT BUTTON END -->
+    <!-- TAG FORM START -->
+     <div class="tagit-form">
+      <form class="asset-tag-form" action="/tags">
+        <span class="content-titles">
+          <label for='Tag It'>Tag this: </label>
+        </span>
+        <input type="text_field" />
+        <input type="submit" value="Tag It" />
+      </form>
+    </div>
+    <!-- TAG FORM END -->
+  </div>
+    <!-- CONTENT BOX BODY END -->
 
 
-  <br /><br />
 
-  <!-- COMMENTS/SOLUTIONS LINKS START -->
-    <a href="#" class="show-comments">View Comments</a> |
-    <a href="#">View Solution</a>
-  <!-- COMMENTS/SOLUTIONS LINKS END -->
 
-  <br /><br />
-
-  <!-- TAG FORM START -->
-    <form class="asset-tag-form">
-      <label for='Tag It'>Tag this: </label>
-      <input type="text_field" />
-      <input type="submit" value="Tag It" />
-    </form>
-  <!-- TAG FORM END -->
-
-  <!-- VOTES START -->
-    Votes: <%= @project.votes.count %> -
-    <a href ="#" class="asset-create-vote">
-    <%= image_tag('thumbs_up.jpg', width:'18') %></a>
-  <!-- VOTES END -->
-
-  <br /><br />
-
-  <%= link_to "projects Home", user_projects_path(@project.user_id) %>
-
+</div></div>
+<div class="comments-container" style="border: 1px black solid">comments div</div>
+<div class="project-home-link">
+<%= link_to "Projects Home", user_projects_path(@project.user_id) %>
 </div>
-
-
+<!-- CONTENT BOX ALL END -->

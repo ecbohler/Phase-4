@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
 
+  def get_gravatar(email)
+    email_hash = Digest::MD5.hexdigest(email.downcase)
+    "http://www.gravatar.com/avatar/#{email_hash}"
+  end
   # validates :name, presence: true
   # validates :email, presence: true
 
@@ -14,15 +18,21 @@ class User < ActiveRecord::Base
   has_many :votes#, as: :voteable
   has_many :weaknesses
   has_many :strengths
+
   def self.create_with_omniauth(auth)
+
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
-      # user.gravatar_id = auth['avatar_url']["gravar_id"]
-    end
-  end
+      # ADDED
+      user.gravatar_url = user.get_gravatar(auth["info"]["email"])
 
+      # user.gravatar_url = auth["info"]["image"]
+
+    end
+
+  end
 
 
 end
