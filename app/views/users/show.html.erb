@@ -1,54 +1,36 @@
-    <div class="c-hero-challenge"></div>
+ <section class="c-hero-user-profile">
 
-    <h2 class="c-hero-container_pages"><%= @user.name %>'s Profile</h2>
+  <h2 class="c-hero-container_pages">User Profile</h2>
+  <div class="c-hero-container-outer"></div>
 
-    <div class="c-hero-container-outer">
-    </div>
-
-  <br/ ><br/ >
+</section>
 
 <div class="asset-render">
 
   <span style="display: none" class="asset-class-type"><%= @user.class %></span>
   <span style="display: none" class="asset-class-id"><%= @user.id %></span>
   <span style="display: none" class="user-id"><%= session[:user_id] %></span>
-
-  Name:<%= @user.name %><br>
-  Email: <%= @user.email %><br>
-  Github: <%= @user.github %><br>
-  Location: <%= @user.location %><br>
-  Facebook: <%= @user.facebook %><br>
-  Profile_pic: <%= @user.profile_pic %><br>
-  Twitter_handle: <%= @user.twitter_handle %><br>
-  Linkedin: <%= @user.linkedin %><br>
-  Workplace: <%= @user.workplace %><br>
-  Provider: <%= @user.provider %><br>
-  uid: <%= @user.uid %><br>
-
-
-  <br /><br />
-
-  <!-- COMMENTS/SOLUTIONS LINKS START -->
-    <a href="#" class="show-comments">View Comments</a> |
-    <a href="#">View Solution</a>
-  <!-- COMMENTS/SOLUTIONS LINKS END -->
-
-  <br /><br />
-
-  <!-- TAG FORM START -->
-    <form class="asset-tag-form">
-      <label for='Tag It'>Tag this: </label>
-      <input type="text_field" />
-      <input type="submit" value="Tag It" />
-    </form>
-  <!-- TAG FORM END -->
-
-  <!-- VOTES START -->
-    Votes: <%= @user.votes.count %> -
-    <a href ="#" class="asset-create-vote">
-    <%= image_tag('thumbs_up.jpg', width:'18') %></a>
-  <!-- VOTES END -->
-
+  <div class="user-container-all">
+    <div class="user_pic"><img src="http://i242.photobucket.com/albums/ff306/dutchart2/Saurondetail1.jpg" width="250" height="250"/></div>
+      <div class="user-content-box">
+      <span class="content-titles">Name:</span>
+      <div class="content-body"><%= @user.name %><br>
+      <span class="content-titles">Email:</span>
+      <div class="content-body"><%= @user.email %></div>
+      <span class="content-titles">Github:</span>
+      <div class="content-body"><%= @user.github %><br>
+      <span class="content-titles">Location:</span>
+      <div class="content-body"><%= @user.location %><br>
+      <span class="content-titles">Facebook:</span>
+      <div class="content-body"><%= @user.facebook %><br>
+      <span class="content-titles">Twitter_handle:</span>
+      <div class="content-body"><%= @user.twitter_handle %><br>
+      <span class="content-titles">Linkedin:</span>
+      <div class="content-body"><%= @user.linkedin %><br>
+      <span class="content-titles">Workplace:</span>
+      <div class="content-body"><%= @user.workplace %><br>
+  </div>
+</div>
   <br /><br />
 
   <%= link_to "Home", root_path %>
