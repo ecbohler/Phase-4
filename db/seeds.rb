@@ -132,8 +132,23 @@
 #     end
 
 #******************************************************* CREATE USERS *******************************************************
+# User 1 THIS IS THE ADMIN USER *******************************************************
+dbc_sanfrancisco = User.create(
+  name: "DBC San Francisco",
+  email: "admin@devbootcamp.com",
+  github: "https://github.com/Devbootcamp",
+  location: "San Francisco, CA",
+  facebook: "https://www.facebook.com/devbootcamp",
+  # profile_pic:
+  twitter_handle:"https://twitter.com/devbootcamp",
+  linkedin: "https://www.linkedin.com/company/dev-bootcamp",
+  # workplace:
+  # provider:
+  # uid:
+  gravatar_url: "https://avatars0.githubusercontent.com/u/1266578?v=3&s=200")
+  )
 
-# User 1 *******************************************************
+# User 2 *******************************************************
 alex_carpenter = User.create(
   name: "Andrew Carpenter",
   email: "andrewryancarpenter77@gmail.com",
@@ -149,7 +164,7 @@ alex_carpenter = User.create(
   gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 
-# User 2 *******************************************************
+# User 3 *******************************************************
 angie_ellis = User.create(
   name: "Angie Ellis",
   email: "angiegrace84@gmail.com",
@@ -165,7 +180,7 @@ angie_ellis = User.create(
   gravatar_url: get_gravatar("angiegrace84@gmail.com")
   )
 
-# User 3 *******************************************************
+# User 4 *******************************************************
 anthony_hernandez = User.create(
   name: "Anthony Hernandez",
   email: "tony91139@gmail.com",
@@ -180,7 +195,7 @@ anthony_hernandez = User.create(
   # uid:
   gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
-# User 4 *******************************************************
+# User 5 *******************************************************
 colette_speer = User.create(
   name: "Colette Speer",
   email: "colette@nmh.com",
@@ -195,7 +210,7 @@ colette_speer = User.create(
   # uid:
   gravatar_url: get_gravatar("colette@nmh.com")
   )
-# User 5 *******************************************************
+# User 6 *******************************************************
 teresa_martyny = User.create(
   name: "Teresa Martyny",
   email: "teresamartyny@gmail.com",
@@ -210,7 +225,7 @@ teresa_martyny = User.create(
   # uid:
   gravatar_url: get_gravatar("teresamartyny@gmail.com")
   )
-# User 6 *******************************************************
+# User 7 *******************************************************
 danielle_rigsby = User.create(
   name: "Danielle Rigsby",
   email: "drigsby@hotmail.com",
@@ -224,7 +239,7 @@ danielle_rigsby = User.create(
   # uid:
   gravatar_url: get_gravatar("drigsby@hotmail.com")
   )
-# User 7 *******************************************************
+# User 8 *******************************************************
 jacob_moyle = User.create(
   name: "Jacob Moyle",
   email: "jacobmoyle@gmail.com",
@@ -239,7 +254,7 @@ jacob_moyle = User.create(
   # uid:
   gravatar_url: get_gravatar("jacobmoyle@gmail.com")
   )
-# User 8 *******************************************************
+# User 9 *******************************************************
 joshua_croff = User.create(
   name: "Joshua Croff",
   email: "joshua.croff@gmail.com",
@@ -254,7 +269,7 @@ joshua_croff = User.create(
   # uid:
   gravatar_url: get_gravatar("joshua.croff@gmail.com")
   )
-# User 9 *******************************************************
+# User 10 *******************************************************
 katy_duncan = User.create(
   name: "Katy Duncan",
   email: "duncan.katya@gmail.com",
@@ -268,7 +283,7 @@ katy_duncan = User.create(
   # uid:
   gravatar_url: get_gravatar("duncan.katya@gmail.com")
   )
-# User 10 *******************************************************
+# User 11 *******************************************************
 miranda_pakozdi = User.create(
   name: "Miranda Pakozdi",
   email: "super.y4n@gmail.com",
@@ -283,7 +298,7 @@ miranda_pakozdi = User.create(
   # uid:
   gravatar_url: get_gravatar("super.y4n@gmail.com")
   )
-# User 11 *******************************************************
+# User 12 *******************************************************
 mary_wallace = User.create(
   name: "Mary Wallace",
   email: "wallaceemee@gmail.com",
@@ -298,7 +313,7 @@ mary_wallace = User.create(
   # uid:
   gravatar_url: get_gravatar("wallaceemee@gmail.com")
   )
-# User 11 *******************************************************
+# User 13 *******************************************************
 majd_murad = User.create(
   name: "Majd Murad",
   email: "murad.majd@gmail.com",
@@ -313,7 +328,7 @@ majd_murad = User.create(
   # uid:
   gravatar_url: get_gravatar("murad.majd@gmail.com")
   )
-# User 12 *******************************************************
+# User 14 *******************************************************
 kei_oka = User.create(
   name: "Kei Oka",
   email: "koka0828us@gmail.com",
@@ -328,7 +343,7 @@ kei_oka = User.create(
   # uid:
   gravatar_url: get_gravatar("koka0828us@gmail.com")
   )
-# User 13 *******************************************************
+# User 15 *******************************************************
 robert_austin = User.create(
   name: "Robert Austin",
   email: "rob@jugglerdigital.com",
@@ -343,7 +358,7 @@ robert_austin = User.create(
   # uid:
   gravatar_url: get_gravatar("rob@jugglerdigital.com")
   )
-# User 14 *******************************************************
+# User 16 *******************************************************
 sebastien_cheraux = User.create(
   name: "Sebastien Cheraux",
   email: "scheraux@gmail.com",
@@ -358,7 +373,7 @@ sebastien_cheraux = User.create(
   # uid:
   gravatar_url: get_gravatar("scheraux@gmail.com")
   )
-# User 15 *******************************************************
+# User 17 *******************************************************
 spenser_huang = User.create(
   name: "Spenser Huang",
   email: "spenserhuang515@gmail.com",
@@ -373,7 +388,7 @@ spenser_huang = User.create(
   # uid:
   gravatar_url: get_gravatar("spenserhuang515@gmail.com")
   )
-# User 16 *******************************************************
+# User 18 *******************************************************
 tania_abdollahi = User.create(
   name: "Tania Abdollahi",
   email: "abdollahi.tania@gmail.com",
@@ -388,7 +403,7 @@ tania_abdollahi = User.create(
   # uid:
   gravatar_url: get_gravatar("abdollahi.tania@gmail.com")
   )
-# User 17 *******************************************************
+# User 19 *******************************************************
 tapley_stephenson = User.create(
   name: "Tapley Stephenson",
   email: "tapley.stephenson@gmail.com",
@@ -454,6 +469,90 @@ anthony_hernandez_challenge1 = anthony_hernandez.challenges.create(
                                                                     # image_url:
                                                                     # user:
                                                                     )
+# Challenge 4 THIS IS MADE BY THE ADMIN *******************************************************
+
+dbc_sanfrancisco_challenge1 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Create a PezDispenser Class from User Stories",
+                                                                    description: "In this challenge, you will translate user stories into a Ruby class object. If you aren't sure what a user story is, use the power of Google to do some research.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+                                                                
+# Challenge 5 THIS IS MADE BY THE ADMIN *******************************************************
+dbc_sanfrancisco_challenge2 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Cipher Challenge",
+                                                                    description: "In this challenge, you'll work with a pair to refactor some existing code to make it more readable and follow Ruby best practices. Then you will compare your solution with the other solutions. This is a long method. Use your newly-developed skills with classes and driver test code to break this code into a class structure and call the methods within it.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-6/PezDispenser",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 6 THIS IS MADE BY THE ADMIN *******************************************************
+dbc_sanfrancisco_challenge3 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Validate Credit Card",
+                                                                    description: "In this challenge you want to create a simple guessing game. Think in terms of when you were 7 and asked your friends to identify the number you were thinking.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 7 THIS IS MADE BY THE ADMIN 1- jquery*******************************************************
+dbc_sanfrancisco_challenge4 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Validate a Credit Card Number",
+                                                                    description: "For this challenge, you will need to break down the algorithm into the following steps. You will probably want to break these down into individual methods.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/validate-credit-card",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 8 THIS IS MADE BY THE ADMIN 2- jquery*******************************************************
+dbc_sanfrancisco_challenge5 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Searching the DOM",
+                                                                    description: "Use jquery selectors to manipulate the DOM",
+                                                                    # github_url:
+                                                                    external_url: "http://try.jquery.com/levels/2/sections/2",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 9 THIS IS MADE BY THE ADMIN 3- jquery*******************************************************
+dbc_sanfrancisco_challenge6 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Descendant Selector",
+                                                                    description: "Use jquery to change the content of the page. First, select all of the li elements within the #tours list using a descendant selector.",
+                                                                    # github_url:
+                                                                    external_url: "http://try.jquery.com/levels/2/sections/2",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 10 THIS IS MADE BY THE ADMIN 4- jquery*******************************************************
+dbc_sanfrancisco_challenge7 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Selecting Multiple Elements",
+                                                                    description: "Use Jquery to slect multiple elements. To sort the tours on the page, let's select all tours that are from Asia and all tours that are On Sale. You'll need to use multiple selectors for this, with the classes for .asia and .sale.",
+                                                                    # github_url:
+                                                                    external_url: "http://try.jquery.com/levels/2/sections/5",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 11 THIS IS MADE BY THE ADMIN 4- jquery*******************************************************
+dbc_sanfrancisco_challenge8 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Selecting Multiple Elements",
+                                                                    description: "Use jquery :first Pseudo Selector. Let's try a selector for finding the first tour. Use the :first pseudo selector to select the first tour in the list.",
+                                                                    # github_url:
+                                                                    external_url: "http://try.jquery.com/levels/2/sections/6",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+
+
 #******************************************************* CREATE SOLUTIONS ON CHALLENGES *******************************************************
 # class CreateSolutions < ActiveRecord::Migration
 #   def change
