@@ -104,12 +104,15 @@ var upvotesListener = function(){
     console.log('in upvotes listener')
     // console.log($(this).parent().find(".user-id").html());
 
-    var assetUserId = $(this).parents('asset-render').find(".user-id").html()
-    var assetClassType = $(this).parents('asset-render').find(".asset-class-type").html()
-    var assetTypeId =  $(this).parents('asset-render').find(".asset-class-id").html()
+    var assetUserId = $(this).parents('.asset-render').find(".user-id").html()
+    var assetClassType = $(this).parents('.asset-render').find(".asset-class-type").html()
+    var assetTypeId =  $(this).parents('.asset-render').find(".asset-class-id").html()
     var path = $(this).attr('href')
     var that = this
-
+    console.log('asset user id:' + assetUserId)
+    console.log('asset class type:' + assetClassType)
+    console.log('asset type id:' + assetTypeId)
+    debugger
 
 
     $.ajax({
@@ -151,7 +154,9 @@ var hashtagListener = function(){
         success: function (data) {
           console.log(data.success)
           $(that).parents('.asset-render').find(".tag-field").val('')
+          debugger
         }
+
       });
   })
 }
