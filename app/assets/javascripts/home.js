@@ -54,8 +54,8 @@ var commentsListener = function(){
         e.preventDefault()
         console.log('in comments listener')
         var path = $(this).attr('href')
-        var assetClassType = $(this).parent().find(".asset-class-type").html()
-        var assetTypeId =  $(this).parent().find(".asset-class-id").html()
+        var assetClassType = $(this).parents('.asset-render').find(".asset-class-type").html()
+        var assetTypeId =  $(this).parents('.asset-render').find(".asset-class-id").html()
         var that = this
         // debugger
 
@@ -67,9 +67,9 @@ var commentsListener = function(){
                   },
             success: function (data) {
               if (data.sucess){
-                // $(that).parent().find('.comments-div')
+                // $(that).parents('.asset-render').find('.comments-div')
                 for (var i = 0; i < data.comments.length; i++)
-                  {$(that).parent().find('.comments-div').append(data.comments[i].title + '<br>' + data.comments[i].description + '<br><br>')
+                  {$(that).parents('.asset-render').find('.comments-div').append(data.comments[i].title + '<br>' + data.comments[i].description + '<br><br>')
                 }
               }
             }
@@ -83,11 +83,12 @@ var upvotesListener = function(){
     console.log('in upvotes listener')
     // console.log($(this).parent().find(".user-id").html());
 
-    var assetUserId = $(this).parent().find(".user-id").html()
-    var assetClassType = $(this).parent().find(".asset-class-type").html()
-    var assetTypeId =  $(this).parent().find(".asset-class-id").html()
+    var assetUserId = $(this).parents('asset-render').find(".user-id").html()
+    var assetClassType = $(this).parents('asset-render').find(".asset-class-type").html()
+    var assetTypeId =  $(this).parents('asset-render').find(".asset-class-id").html()
     var path = $(this).attr('href')
     var that = this
+
 
 
     $.ajax({
@@ -112,11 +113,12 @@ var hashtagListener = function(){
     e.preventDefault()
     console.log('in comments-form listener')
     var path = $(this).attr('action')
-    var assetUserId = $(this).parent().find(".user-id").html()
-    var assetClassType = $(this).parent().find(".asset-class-type").html()
-    var tagName = $(this).parent().find(".tag-field").val()
-    var assetTypeId =  $(this).parent().find(".asset-class-id").html()
+    var assetUserId = $(this).parents('.asset-render').find(".user-id").html()
+    var assetClassType = $(this).parents('.asset-render').find(".asset-class-type").html()
+    var tagName = $(this).parents('.asset-render').find(".tag-field").val()
+    var assetTypeId =  $(this).parents('.asset-render').find(".asset-class-id").html()
     var that = this
+    // debugger
     $.ajax({
         url: path,
         type: 'post',
@@ -127,7 +129,7 @@ var hashtagListener = function(){
               },
         success: function (data) {
           console.log(data.success)
-          $(that).parent().find(".tag-field").val('')
+          $(that).parents('.asset-render').find(".tag-field").val('')
         }
       });
   })

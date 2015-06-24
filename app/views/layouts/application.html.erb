@@ -47,5 +47,59 @@
   </header>
   <%= yield %>
 
-</body>
+
+
+  <div class="comments-template" >
+
+    <div class = "comment-box asset-render" >
+
+      <span style="display: none" class="asset-class-type"></span>
+      <span style="display: none" class="asset-class-id"></span>
+      <span style="display: none" class="user-id"></span>
+
+      <div class="comment-votes">
+        <span class="asset-vote-count">Votes:</span>
+        <a href="/votes" class="asset-create-vote"><%= image_tag('thumbs_up.jpg', width:'18') %></a>
+      </div>
+      <%= image_tag('Close.png', width:'18', :class => "asset-close-comment") %>
+      <div class="comment-box-body">
+        <div class="content-titles">Comment:
+        </div>
+        <div class="content-body"></div><br  />
+        <span class="content-titles">Author: </span>
+        <span class="content-body comment-author">
+
+        </span><br /><br />
+        <span class="content-titles">Posted: </span>
+        <span class="content-body">
+
+        </span><br /><br />
+        <!-- POST COMMENT BUTTON START -->
+          <div class="comment-button">
+            <form>
+              <input type="submit" class="asset-create-comment" value="Post a comment">
+            </form>
+          </div>
+        <!-- POST COMMENT BUTTON END -->
+        <!-- TAG FORM START -->
+         <div class="tagit-form">
+          <form class="asset-tag-form" action="/tags">
+            <span class="content-titles">
+              <label for='Tag It'>Tag this: </label>
+            </span>
+            <input type="text_field" class="tag-field"/>
+            <input type="submit" value="Tag It" />
+          </form>
+        </div>
+      <!-- TAG FORM END -->
+      </div>
+    </div>
+    <div class="comments-div">
+    </div>
+  </div>
+    <!-- COMMENT BOX END -->
+
+
+
+  </body>
 </html>
