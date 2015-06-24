@@ -112,7 +112,7 @@ var upvotesListener = function(){
     console.log('asset user id:' + assetUserId)
     console.log('asset class type:' + assetClassType)
     console.log('asset type id:' + assetTypeId)
-    debugger
+
 
 
     $.ajax({
@@ -154,7 +154,7 @@ var hashtagListener = function(){
         success: function (data) {
           console.log(data.success)
           $(that).parents('.asset-render').find(".tag-field").val('')
-          debugger
+
         }
 
       });

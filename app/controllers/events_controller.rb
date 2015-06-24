@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  include Filterable
+
   def new
     # this takes us to a form page that allows a user to create a  new event
   end

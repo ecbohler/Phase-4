@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  include Filterable
+
   def new
     @project = Project.new
     @user = User.find(1)

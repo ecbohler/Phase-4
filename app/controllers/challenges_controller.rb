@@ -1,4 +1,6 @@
 class ChallengesController < ApplicationController
+  include Filterable
+
   def new
     @challenge = Challenge.new
     @user = User.find(1)
@@ -27,7 +29,7 @@ class ChallengesController < ApplicationController
   end
 
   def index
-    @challenges = Challenge.all
+    @challenges = get_resources(Challenge.all)
   end
 
   def show
