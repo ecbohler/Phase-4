@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  include Filterable
+
   def new
     @project = Project.new
     @user = User.find(1)
@@ -25,7 +27,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = get_filtered_resources(Project.all)
   end
 
   def show

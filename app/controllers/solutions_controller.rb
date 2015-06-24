@@ -1,4 +1,6 @@
 class SolutionsController < ApplicationController
+  include Filterable
+
   def new
     # this takes us to a form page that allows a user to create a  new solution
   end
@@ -16,7 +18,7 @@ class SolutionsController < ApplicationController
   end
 
   def index
-    # this displays all solutions
+    @solutions = get_filtered_resources(Solution.all)
   end
 
   def show

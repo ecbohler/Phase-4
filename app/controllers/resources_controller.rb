@@ -1,4 +1,6 @@
 class ResourcesController < ApplicationController
+  include Filterable
+
   def new
     @resource = Resource.new
     @user = User.find(1)
@@ -25,7 +27,7 @@ class ResourcesController < ApplicationController
   end
 
   def index
-    @resources = Resource.all
+    @resources = get_filtered_resources(Resource.all)
   end
 
   def show

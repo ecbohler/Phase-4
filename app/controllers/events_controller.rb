@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  include Filterable
+
   def new
     # this takes us to a form page that allows a user to create a  new event
   end
@@ -16,7 +18,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    # this displays all events
+    @events = get_filtered_resources(Event.all)
   end
 
   def show

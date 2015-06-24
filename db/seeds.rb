@@ -72,7 +72,7 @@
 # dr = p.resources.create(title: "method Resource", description: "method resource description", url: "https://github.methodresource.com")
 
 # dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
-# >>>>>>> upstream/master
+
 
 # dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
 
