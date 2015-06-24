@@ -145,7 +145,7 @@ dbc_sanfrancisco = User.create(
   # workplace:
   # provider:
   # uid:
-  gravatar_url: "https://avatars0.githubusercontent.com/u/1266578?v=3&s=200")
+  gravatar_url: ("https://avatars0.githubusercontent.com/u/1266578?v=3&s=200")
   )
 
 # User 2 *******************************************************

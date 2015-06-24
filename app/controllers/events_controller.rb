@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    # this displays all events
+    @events = get_filtered_resources(Event.all)
   end
 
   def show

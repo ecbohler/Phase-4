@@ -18,8 +18,7 @@ class SolutionsController < ApplicationController
   end
 
   def index
-    get_filtered_resource
-    # this displays all solutions
+    @solutions = get_filtered_resources(Solution.all)
   end
 
   def show

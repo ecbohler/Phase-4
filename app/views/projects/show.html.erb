@@ -16,7 +16,7 @@
    <!-- CONTENT BOX BODY START -->
   <div class = "content-box">
     <!-- VOTES START -->
-      <div class="project-votes">
+      <div class="project-votes fl-r">
          <span>Votes: <%= @project.votes.count %></span>
          <a href ="/votes" class="asset-create-vote">
           <%= image_tag('thumbs_up.jpg', width:'18') %></a>
@@ -63,7 +63,7 @@
         <span class="content-titles">
           <label for='Tag It'>Tag this: </label>
         </span>
-        <input type="text_field" />
+        <input type="text_field" class="tag-field"/>
         <input type="submit" value="Tag It" />
       </form>
     </div>
@@ -75,7 +75,7 @@
 
 
 </div></div>
-<div class="comments-container" style="border: 1px black solid">comments div</div>
+<div class="comments-container" ></div>
 <div class="project-home-link">
 <%= link_to "Projects Home", user_projects_path(@project.user_id) %>
 </div>
