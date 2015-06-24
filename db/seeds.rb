@@ -454,6 +454,66 @@ anthony_hernandez_challenge1 = anthony_hernandez.challenges.create(
                                                                     # image_url:
                                                                     # user:
                                                                     )
+# Challenge 4 *******************************************************
+colette_speer_challenge1 = colette_speer.challenges.create(
+                                                                    title: "Build a Simple Guessing Game",
+                                                                    description: "In this challenge you want to create a simple guessing game. Think in terms of when you were 7 and asked your friends to identify the number you were thinking.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 5 *******************************************************
+teresa_martyny_challenge1 = teresa_martyny.challenges.create(
+                                                                    title: "Build a Simple Guessing Game",
+                                                                    description: "In this challenge you want to create a simple guessing game. Think in terms of when you were 7 and asked your friends to identify the number you were thinking.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 6 *******************************************************
+danielle_rigsby_challenge1 = danielle_rigsby.challenges.create(
+                                                                    title: "Build a Simple Guessing Game",
+                                                                    description: "In this challenge you want to create a simple guessing game. Think in terms of when you were 7 and asked your friends to identify the number you were thinking.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 7 *******************************************************
+jacob_moyle_challenge1 = jacob_moyle.challenges.create(
+                                                                    title: "Build a Simple Guessing Game",
+                                                                    description: "In this challenge you want to create a simple guessing game. Think in terms of when you were 7 and asked your friends to identify the number you were thinking.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 8 *******************************************************
+joshua_croff_challenge1 = joshua_croff.challenges.create(
+                                                                    title: "Build a Simple Guessing Game",
+                                                                    description: "In this challenge you want to create a simple guessing game. Think in terms of when you were 7 and asked your friends to identify the number you were thinking.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 9 *******************************************************
+katy_duncan_challenge1 = katy_duncan.challenges.create(
+                                                                    title: "Build a Simple Guessing Game",
+                                                                    description: "In this challenge you want to create a simple guessing game. Think in terms of when you were 7 and asked your friends to identify the number you were thinking.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
 #******************************************************* CREATE SOLUTIONS ON CHALLENGES *******************************************************
 # class CreateSolutions < ActiveRecord::Migration
 #   def change
@@ -646,6 +706,38 @@ alex_carpenter_comment3 = alex_carpenter_project1.comments.create(
                                                                   description: "sounds like fun - lets do this again sometime in March",
                                                                   user: robert_austin
   )
+alex_carpenter_comment4 = alex_carpenter_project2.comments.create(
+                                                                  title: "Wish I could join",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+
+alex_carpenter_comment5 = alex_carpenter_project2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "Any ideas?",
+                                                                  user: mary_wallace
+  )
+alex_carpenter_comment6 = alex_carpenter_project2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
+alex_carpenter_comment7 = alex_carpenter_project3.comments.create(
+                                                                  title: "Wish I could join",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+
+alex_carpenter_comment8 = alex_carpenter_project3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "Any ideas?",
+                                                                  user: mary_wallace
+  )
+alex_carpenter_comment9 = alex_carpenter_project3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
 #******************************************************* CREATE COMMENTS ON PROJECT1 robert_austin *******************************************************
 robert_austin_comment1 = robert_austin_project1.comments.create(
                                                                   title: "I'm in!",
@@ -730,6 +822,68 @@ alex_carpenter_challenge3 = alex_carpenter_challenge1.comments.create(
                                                                   description: "sounds like fun - lets do this again sometime in March",
                                                                   user: teresa_martyny
   )
+
+#******************************************************* CREATE RESOURCES *******************************************************
+
+andrew_carpenter_resource = alex_carpenter.resources.create(title: "jQuery and the DOM",
+                                                             description: "jQuery and the DOM",
+                                                             url: "http://www.jquery.com")
+
+angie_ellis_resource = angie_ellis.resources.create(title: "javascript and the DOM",
+                                                   description: "javascript and the DOM",
+                                                   url: "http://www.javascript.com")
+
+anthony_hernandez_resource = anthony_hernandez.resources.create(title: "ajax and the DOM",
+                                                               description: "ajax and the DOM",
+                                                               url: "http://www.ajax.com")
+
+colette_speer_resource = colette_speer.resources.create(title: "Ruby",
+                                                       description: "Ruby Fundamentals",
+                                                       url: "http://www.ruby.com")
+
+teresa_martyny_resource = teresa_martyny.resources.create(title: "Javascript",
+                                                         description: "Javascript Fundamentals",
+                                                         url: "http://www.Javascript.com")
+
+danielle_rigsby_resource = danielle_rigsby.resources.create(title: "jQuery",
+                                                           description: "jQuery Fundamentals",
+                                                           url: "http://www.jQuery.com")
+
+jacob_moyle_resource = jacob_moyle.resources.create(title: "ActiveRecord",
+                                                           description: "ActiveRecord Fundamentals",
+                                                           url: "http://www.ActiveRecord.com")
+
+joshua_croff_resource = joshua_croff.resources.create(title: "Rails",
+                                                     description: "Rails Fundamentals",
+                                                     url: "http://www.Rails.com")
+
+katy_duncan_resource = katy_duncan.resources.create(title: "Discrete Math",
+                                                   description: "Discrete Math Fundamentals",
+                                                   url: "http://www.DiscreteMath.com")
+
+miranda_pakozdi_resource = miranda_pakozdi.resources.create(title: "Algorithms",
+                                                           description: "Algorithms Fundamentals",
+                                                           url: "http://www.Algorithms.com")
+
+mary_wallace_resource = mary_wallace.resources.create(title: "Sinatra",
+                                                     description: "Sinatra Fundamentals",
+                                                     url: "http://www.Sinatra.com")
+
+majd_murad_resource = majd_murad.resources.create(title: "HTML",
+                                                 description: "HTML Fundamentals",
+                                                 url: "http://www.HTML.com")
+
+kei_oka_resource = kei_oka.resources.create(title: "CSS",
+                                           description: "CSS Fundamentals",
+                                           url: "http://www.CSS.com")
+
+robert_austin_resource = robert_austin.resources.create(title: "Magic",
+                                                       description: "Magic Fundamentals",
+                                                       url: "http://www.Magic.com")
+
+sebastien_cheraux_resource = sebastien_cheraux.resources.create(title: "More Magic",
+                                                               description: "More Magic Fundamentals",
+                                                               url: "http://www.MoreMagic.com")
 
 #******************************************************* CREATE VOTES ON THINGS *******************************************************
 

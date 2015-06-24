@@ -27,11 +27,6 @@
   height: 265px;
 }
 
-.hr_intro {
-  width: 560px;
-  opacity: 0.5;
-}
-
 .hr_boxes_two {
   display: inline-block;
   position: relative;
@@ -176,8 +171,8 @@
   margin-right: 300px;
   width: 375px;
   display: block;
-  height: 380px; c
-  background: black;
+  height: 380px;
+  background: #0087FF;
   border: 1px solid black;
   top: -75px;
   text-align: center;
@@ -303,6 +298,17 @@
   margin-left: auto;
   margin-right: auto;
   width:100%;
+}
+
+.p-name {
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 18px;
+}
+
+.p-bubble{
+  border: 5px solid black;
+  border-radius: 10px;
 }
 
 
