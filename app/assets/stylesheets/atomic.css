@@ -26,6 +26,7 @@
   box-sizing: border-box;
   height: 265px;
 }
+
 .c-hero-user-profile {
   background-image: url("user_profile_1.jpg");
   background-repeat: no-repeat;
@@ -186,7 +187,7 @@
   width: 375px;
   display: block;
   height: 380px;
-  background: #0087FF;
+  background: black;
   border: 1px solid black;
   top: -75px;
   text-align: center;
