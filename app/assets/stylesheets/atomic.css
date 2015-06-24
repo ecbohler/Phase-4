@@ -19,6 +19,15 @@
   box-sizing: border-box;
   height: 265px;
 }
+.c-hero-user-profile {
+  background-image: url("user_profile_1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  display: block;
+  box-sizing: border-box;
+  height: 265px;
+}
 hr.hr_intro {
 width: 560px;
 opacity: 0.5;
@@ -131,6 +140,7 @@ h2.c-hero-container_pages {
   padding-bottom: 5px;
   padding-left: 15px;
 }
+
 .content-box-header {
   text-align: right;
   font-family: Futura;
@@ -163,13 +173,13 @@ h2.c-hero-container_pages {
     filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 .content-titles {
-  font-size: 12px;
+  font-size: 14px;
   font-family: verdana;
   color: #000066;
   font-weight: bold;
 }
 .content-body {
-  font-size: 12px;
+  font-size: 14px;
   font-family: verdana;
   color: #000000;
   font-weight: normal;
@@ -213,7 +223,36 @@ h2.c-hero-container_pages {
   padding-bottom: 5px;
   padding-left: 15px;
 }
-
+/* USER PROFILE ---------------------------------*/
+.user-container-all{
+  display: table;
+  margin: auto;
+  border: 1px dotted;
+  margin-left: auto;
+  margin-right: auto;
+}
+.user_pic {
+  z-index: 15;
+  margin-top: -50px;
+  float:left;
+  background-color: #000000;
+  margin-left: 50px;
+  border: solid 5px #000000;
+  width: 260px;
+  height: 260px;
+}
+.user-content-box {
+  left: 25px;
+  overflow: hidden;
+  padding-top: 13px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  position: relative;
+  z-index: 2;
+  width: 420px;
+}
+/*-------------------------------------------------*/
 
 
 
