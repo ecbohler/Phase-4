@@ -1,6 +1,7 @@
 class VotesController < ApplicationController
   def create
     #current_user
+    p params
     asset_class = params[:assetClassType]
     asset_id = params[:assetTypeId]
     asset_user_id = params[:assetUserId]
