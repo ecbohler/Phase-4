@@ -57,7 +57,8 @@ var commentsListener = function(){
         var assetClassType = $(this).parents('.asset-render').find(".asset-class-type").html()
         var assetTypeId =  $(this).parents('.asset-render').find(".asset-class-id").html()
         var that = this
-        // debugger
+        var commentsTemplate = $('.comments-template').clone()
+
 
         $.ajax({
             url: path,
@@ -66,12 +67,31 @@ var commentsListener = function(){
                     assetTypeId: assetTypeId
                   },
             success: function (data) {
-              if (data.sucess){
-                // $(that).parents('.asset-render').find('.comments-div')
-                for (var i = 0; i < data.comments.length; i++)
-                  {$(that).parents('.asset-render').find('.comments-div').append(data.comments[i].title + '<br>' + data.comments[i].description + '<br><br>')
+              console.log(data)
+
+              if (data.success){
+
+                for (var i = 0; i < data.list.length; i++){
+                  var commentsTemplate = $('.comments-template').last().clone()
+                  $('.comments-container').append(commentsTemplate)
+
+                  var currentComment = $('.comments-container').children().last()
+                  $('.comments-container').children().last().find('.hider').css('display', 'block')
+                  $(currentComment).find('.asset-vote-count').html('Votes: '+ data.list[i].votes)
+                  $(currentComment).find('.asset-class-type').html(data.list[i].asset_class)
+                  $(currentComment).find('.asset-class-id').html(data.list[i].asset_id)
+                  $(currentComment).find('.user-id').html(data.list[i].user_id)
+                  $(currentComment).find('.content-body').html(data.list[i].content_body)
+                  $(currentComment).find('.comment-author').html(data.list[i].creator)
+
+
+
+                  debugger
                 }
-              }
+
+                }
+
+                // <%= @comment.created_at.strftime("%b %d, %Y") %>
             }
           });
     })
