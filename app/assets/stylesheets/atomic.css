@@ -27,10 +27,9 @@
   height: 265px;
 }
 
-hr.hr_intro {
-width: 560px;
-opacity: 0.5;
-
+.hr_intro {
+  width: 560px;
+  opacity: 0.5;
 }
 
 .hr_boxes_two {
@@ -61,6 +60,7 @@ opacity: 0.5;
   font-weight: bold;
   font-size: 68px;
 }
+
 .c-hero-container-title {
   margin-left: auto;
   margin-right: auto;
@@ -72,7 +72,8 @@ opacity: 0.5;
   font-weight: bold;
   font-size: 68px;
 }
-h2.c-hero-container_pages {
+
+.c-hero-container_pages {
   z-index: 2;
   position: absolute;
   top: 200px;
@@ -83,6 +84,7 @@ h2.c-hero-container_pages {
   color: #ffffff;
   font-size: 48px;
 }
+
 .c-hero-container-outer {
   background-color: black;
   opacity: 0.5;
@@ -100,6 +102,7 @@ h2.c-hero-container_pages {
   font-weight: bold;
   font-size: 68px;
 }
+
 .c-hero-container-mission {
   top: -425px;
   margin-left: auto;
@@ -111,13 +114,14 @@ h2.c-hero-container_pages {
   color: #ffffff;
   font-size: 27px;
 }
+
 .center-login {
   top: -355px;
- margin-left: auto;
- margin-right: auto;
- position: relative;
- background-color: white;
- font-size: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: white;
+  font-size: 15px;
 }
 
 
@@ -139,12 +143,17 @@ h2.c-hero-container_pages {
 }
 
 .user-img {
-  text-align: center;
+  padding-right: 10px;
   float: left;
-  height: 120px;
-  width: 80px;
-  margin: 75px;
-  -webkit-justify-content: space-around;
+  position:relative;
+  left:65px;
+  margin-right: 30px;
+  width: 375px;
+  display: block;
+  height: 150px;
+  /*top: -75px;*/
+  text-align: center;
+  /*margin-bottom: 25px;*/
 }
 
 .user-img-border {
@@ -233,10 +242,10 @@ h2.c-hero-container_pages {
   transform: translate(-50%, 0);
 }
 .img-shadowed {
-    -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
-    filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='drop-shadow'><feGaussianBlur in='SourceAlpha' stdDeviation='4'/><feOffset dx='12' dy='12' result='offsetblur'/><feFlood flood-color='rgba(0,0,0,0.5)'/><feComposite in2='offsetblur' operator='in'/><feMerge><feMergeNode/><feMergeNode in='SourceGraphic'/></feMerge></filter></svg>#drop-shadow");
-    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
-    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
+  filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='drop-shadow'><feGaussianBlur in='SourceAlpha' stdDeviation='4'/><feOffset dx='12' dy='12' result='offsetblur'/><feFlood flood-color='rgba(0,0,0,0.5)'/><feComposite in2='offsetblur' operator='in'/><feMerge><feMergeNode/><feMergeNode in='SourceGraphic'/></feMerge></filter></svg>#drop-shadow");
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
 }
 .content-titles {
   font-size: 12px;
