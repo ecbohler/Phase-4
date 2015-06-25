@@ -397,6 +397,7 @@ hr.user-content {
   z-index: 2;
   width: 890px;
 }
+
 .chal-box-user {
   padding: 10px;
   float: left;
@@ -405,6 +406,11 @@ hr.user-content {
   display: block;
   background: #993300;
   border: 3px solid #993300;
+}
+/*-------------------------------------------------*/
+
+
+.home-link {
   text-align: center;
   color: white;
   border-radius: 10px;
@@ -420,6 +426,20 @@ hr.user-content {
   font-size: 15px;
 }
 /*-------------------------------------------------*/
+
+
+/*----------RESOURCE PAGES--------------------*/
+.p-name {
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 18px;
+}
+
+.r-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
 
 
 

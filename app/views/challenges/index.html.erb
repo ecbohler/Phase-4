@@ -1,10 +1,12 @@
 <div>
 
-  <form class="search box fl-r">
+  <form class="search box fl-r" action="/users/<%= current_user.id %>/challenges" method="get">
     <label for='Search It'>Search: </label>
-    <input type="text_field" />
+    <input type="text" name="search_string"/>
     <input type="submit" value="SEARCH" />
   </form>
+
+
 
 <div class="c-hero-challenge"></div>
 

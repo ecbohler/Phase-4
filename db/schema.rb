@@ -112,6 +112,8 @@ ActiveRecord::Schema.define(version: 20150620212907) do
     t.string   "provider"
     t.string   "uid"
     t.string   "gravatar_url"
+    t.string   "cohort"
+    t.integer  "cohort_year"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

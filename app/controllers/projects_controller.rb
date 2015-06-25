@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  include Filterable
+
   def new
     @project = Project.new
     @user = User.find(1)
@@ -25,7 +27,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = get_filtered_resources(Project.all)
   end
 
   def show
@@ -33,10 +35,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     user_id = @project.user_id
     @user = User.find(user_id)
-    @comment = @project.comments.first
-    p @comment
-    commenter_id = @comment.user_id
-    @commenter = User.find(commenter_id)
+    # @comment = @project.comments.first
+    # p @comment
+    # commenter_id = @comment.user_id
+    # @commenter = User.find(commenter_id)
   end
 
   def destroy

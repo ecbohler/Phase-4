@@ -27,6 +27,9 @@ class User < ActiveRecord::Base
       user.name = auth["info"]["name"]
       # ADDED
       user.gravatar_url = user.get_gravatar(auth["info"]["email"])
+      user.email = auth["info"]["email"]
+      user.github = auth["info"]["github"]
+      user.location = auth["info"]["location"]
 
       # user.gravatar_url = auth["info"]["image"]
 

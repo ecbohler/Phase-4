@@ -12,15 +12,20 @@
 
     <div class="c-hero-container-outer">
     </div>
-
-    <div>
+    <br>
+    <div class="p-name r-table">
       <% @resources.each do |resource| %>
-      <p><%= link_to "#{resource.title}", user_resource_path(id: resource.id) %></p>
-      <p>Title: <%= resource.title %></p>
-      <p>Description: <%= resource.description %></p>
-      <br>
-      <% end %>
+        <table style="width:100%">
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <%= link_to "#{resource.title}", user_resource_path(id: resource.id) %>
+            Description: <%= resource.description %></tr>
+          </table>
+        <% end %>
+      </div>
+      <!-- this is the page that will display a (partial) form to edit a challenge -->
     </div>
-    <!-- this is the page that will display a (partial) form to edit a challenge -->
   </div>
-</div>

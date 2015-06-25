@@ -13,6 +13,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.string :gravatar_url
+      t.string :cohort
+      t.integer :cohort_year
+
+
       t.timestamps null: false
     end
   end
