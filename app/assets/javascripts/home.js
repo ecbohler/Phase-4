@@ -10,6 +10,7 @@ $(document).on('page:change', function(){
       gitLogin();
     })
     // ----------------------------------
+
     $('.login').hover(function(){
       $(this).css('cursor','pointer');
       $(this).animate({backgroundColor: '#000000'});
