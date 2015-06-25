@@ -439,6 +439,8 @@ hr.user-content {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 5px;
+    text-align: left;
+    /*margin-right: 50px;*/
 }
 
 
