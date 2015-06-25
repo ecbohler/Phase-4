@@ -178,10 +178,9 @@
   margin-right: 300px;
   width: 375px;
   display: block;
-  height: 380px;
-  background: black;
+  height: 180px;
+  background: grey;
   border: 1px solid black;
-  top: -75px;
   text-align: center;
   color: white;
   border-radius: 10px;
@@ -344,7 +343,7 @@
   color: #000066;
   font-weight: bold;
 }
-hr.user-content {
+.user-content {
   margin-left: 0px;
   width: 360px;
   border: 0; border-top: 2px solid #000066;
