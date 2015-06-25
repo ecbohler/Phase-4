@@ -1,6 +1,6 @@
   def get_gravatar(email)
     email_hash = Digest::MD5.hexdigest(email.downcase)
-    "http://www.gravatar.com/avatar/#{email_hash}?s=250"
+    "http://www.gravatar.com/avatar/#{email_hash}?s=200"
   end
 # <img src="<%= current_user.gravatar_url %>">
 # # This file should contain all the record creation needed to seed the database with its default values.
@@ -145,7 +145,7 @@ dbc_sanfrancisco = User.create(
   # workplace:
   # provider:
   # uid:
-  gravatar_url: ("https://avatars0.githubusercontent.com/u/1266578?v=3&s=80")
+  gravatar_url: ("https://avatars0.githubusercontent.com/u/1266578?v=3&s=200")
   )
 
 
@@ -1086,6 +1086,64 @@ robert_austin_resource = robert_austin.resources.create(title: "Magic",
 sebastien_cheraux_resource = sebastien_cheraux.resources.create(title: "More Magic",
                                                                description: "More Magic Fundamentals",
                                                                url: "http://www.MoreMagic.com")
+
+#******************************************************* CREATE COMMENTS ON RESOURCES *******************************************************
+
+andrew_carpenter_resource_comment = andrew_carpenter_resource.comments.create(title: "jQuery and the DOM",
+                                                                    description: "jQuery and the DOM",
+                                                                    user: angie_ellis)
+
+angie_ellis_resource_comment = angie_ellis_resource.comments.create(title: "javascript and the DOM",
+                                                   description: "javascript and the DOM",
+                                                   user: anthony_hernandez)
+
+anthony_hernandez_resource_comment = anthony_hernandez_resource.comments.create(title: "ajax and the DOM",
+                                                               description: "ajax and the DOM",
+                                                               user: colette_speer)
+
+colette_speer_resource_comment = colette_speer_resource.comments.create(title: "Ruby",
+                                                       description: "Ruby Fundamentals",
+                                                       user: teresa_martyny)
+
+teresa_martyny_resource_comment = teresa_martyny_resource.comments.create(title: "Javascript",
+                                                         description: "Javascript Fundamentals",
+                                                         user: danielle_rigsby)
+
+jacob_moyle_resource_comment = jacob_moyle_resource.comments.create(title: "ActiveRecord",
+                                                           description: "ActiveRecord Fundamentals",
+                                                           user: joshua_croff)
+
+joshua_croff_resource_comment = joshua_croff_resource.comments.create(title: "Rails",
+                                                     description: "Rails Fundamentals",
+                                                     user: katy_duncan)
+
+katy_duncan_resource_comment = katy_duncan_resource.comments.create(title: "Discrete Math",
+                                                   description: "Discrete Math Fundamentals",
+                                                   user: miranda_pakozdi)
+
+miranda_pakozdi_resource_comment = miranda_pakozdi_resource.comments.create(title: "Algorithms",
+                                                           description: "Algorithms Fundamentals",
+                                                           user: mary_wallace)
+
+mary_wallace_resource_comment = mary_wallace_resource.comments.create(title: "Sinatra",
+                                                     description: "Sinatra Fundamentals",
+                                                     user: majd_murad)
+
+majd_murad_resource_comment = majd_murad_resource.comments.create(title: "HTML",
+                                                 description: "HTML Fundamentals",
+                                                 user: kei_oka)
+
+kei_oka_resource_comment = kei_oka_resource.comments.create(title: "CSS",
+                                           description: "CSS Fundamentals",
+                                           user: robert_austin)
+
+robert_austin_resource_comment = robert_austin_resource.comments.create(title: "Magic",
+                                                       description: "Magic Fundamentals",
+                                                       user: sebastien_cheraux)
+
+sebastien_cheraux_resource_comment = sebastien_cheraux_resource.comments.create(title: "More Magic",
+                                                               description: "More Magic Fundamentals",
+                                                               user: alex_carpenter)
 
 #******************************************************* CREATE VOTES ON THINGS *******************************************************
 
