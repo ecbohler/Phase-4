@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   def get_gravatar(email)
     email_hash = Digest::MD5.hexdigest(email.downcase)
-    "http://www.gravatar.com/avatar/#{email_hash}"
+    "http://www.gravatar.com/avatar/#{email_hash}?s=200"
   end
   # validates :name, presence: true
   # validates :email, presence: true
