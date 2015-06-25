@@ -5,14 +5,28 @@ html {
   box-sizing: inherit;
 }
 
-a:link {
-  text-decoration: none;
-}
-
-a:hover, a:active, a:visited {
+a.projects-index:link {
+  color:#ffffff;
   text-decoration: underline;
 }
 
+a.projects-index:hover, a.projects-index:active, a.projects-index:visited {
+  color:#cccccc;
+  text-decoration: underline;
+}
+a.user-profile:link {
+  color:#ffffff;
+  text-decoration: none;
+}
+
+a.user-profile:active, a.user-profile:visited {
+  color:#cccccc;
+  text-decoration: none;
+}
+a.user-profile:hover {
+  color:#000000;
+  text-decoration: none;
+}
 .form {
   background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
   background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);

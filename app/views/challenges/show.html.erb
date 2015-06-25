@@ -1,47 +1,84 @@
- <h1>Challenge Show Page</h1><br>
+ <section class="c-hero-challenge">
 
-  User ID: <%= @challenge.user_id %>
+  <h2 class="c-hero-container_pages">Challenges</h2>
+  <div class="c-hero-container-outer"></div>
 
-  <br/ ><br/ >
+</section>
 
 <div class="asset-render">
 
-  <span class=""></span><span class=""></span><span class=""></span>
+  <span style="display: none" class="asset-class-type"><%= @challenge.class %></span>
+  <span style="display: none" class="asset-class-id"><%= @challenge.id %></span>
+  <span style="display: none" class="user-id"><%= session[:user_id] %></span>
 
-  <strong>Title:</strong> <%= @challenge.title %><br>
-  Description: <%= @challenge.description %><br>
-  Github url: <%= @challenge.github_url %><br>
-  External url: <%= @challenge.external_url %><br>
-  Image url: <%= @challenge.image_url %><br>
-  Difficulty: <%= @challenge.difficulty %><br>
-  Class: <%= @challenge.class %>
+<!-- CONTENT BOX ALL START -->
+   <!-- CONTENT BOX BODY START -->
+  <div class = "content-box">
+    <!-- VOTES START -->
+      <div class="challenge-votes">
+         <span>Votes: <%= @challenge.votes.count %></span>
+         <a href ="/votes" class="asset-create-vote">
+          <%= image_tag('thumbs_up.jpg', width:'18') %></a>
+      </div>
+    <!-- VOTES END -->
+    <!-- CHALLENGE CONTENT START -->
+    <div class="content-box-title">
+      <%= @challenge.title %></div><br />
+    <div class="content-box-body">
+    <div class="content-titles">Description: </div>
+    <div class="content-body">
+      <%= @challenge.description %></div><br />
+    <div class="content-titles">Github url: </div>
+    <div class="content-body">
+    <%=link_to @challenge.github_url %></div><br />
+    <span class="content-titles">Author: </span>
+    <span class="content-body">
+      <%= @user.name %>
+    </span><br /><br />
+    <span class="content-titles">Created on: </span>
+    <span class="content-body">
+      <%= @challenge.created_at.strftime("%b %d, %Y") %>
+    </span><br /><br />
+    <!-- CHALLENGE CONTENT END -->
+    <!-- COMMENTS/SOLUTIONS LINKS START -->
+    <div class="content-body">
+      <a href="/comments" class="show-comments">View Comments</a> |
+      <a href="#">View Solution</a>
+    </div>
+    <!-- COMMENTS/SOLUTIONS LINKS END -->
+    <br />
+    <div class="content-body">
 
-  <br /><br />
+    <!-- POST COMMENT BUTTON START -->
+        <div class="comment-button">
+            <form>
+              <input type="submit" class="asset-create-comment" value="Post a comment">
+            </form>
+        </div>
+    <!-- POST COMMENT BUTTON END -->
+    <!-- TAG FORM START -->
+     <div class="tagit-form">
+      <form class="asset-tag-form" action="/tags">
+        <span class="content-titles">
+          <label for='Tag It'>Tag this: </label>
+        </span>
+        <input class="tag-field" type="text_field" />
+        <input type="submit" class="asset-create-tag" value="Tag It" />
+      </form>
+    </div>
+    <!-- TAG FORM END -->
+  </div>
+    <!-- CONTENT BOX BODY END -->
 
-  <!-- COMMENTS/SOLUTIONS LINKS START -->
-    <a href="#" class="show-comments">View Comments</a> |
-    <a href="#">View Solution</a>
-  <!-- COMMENTS/SOLUTIONS LINKS END -->
 
-  <br /><br />
 
-  <!-- TAG FORM START -->
-    <form class="asset-tag-form">
-      <label for='Tag It'>Tag this: </label>
-      <input type="text_field" />
-      <input type="submit" value="Tag It" />
-    </form>
-  <!-- TAG FORM END -->
 
-  <!-- VOTES START -->
-    Votes: <%= @challenge.votes.count %> -
-    <a href ="#" class="asset-create-vote">
-    <%= image_tag('thumbs_up.jpg', width:'18') %></a>
-  <!-- VOTES END -->
-
-  <br /><br />
-
-  <%= link_to "Challenges Home", user_challenges_path(@challenge.user_id) %>
-
+</div></div>
+<div class="comments-container" ></div>
+<div class="home-link">
+<%= link_to "Challenges Home", user_challenges_path(@challenge.user_id) %>
 </div>
+<!-- CONTENT BOX ALL END -->
+
+
 

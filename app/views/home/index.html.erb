@@ -1,30 +1,30 @@
 <!-- this is the splash landing page - it should contail buttons for user sign-in/sign-up -->
 <section class="c-hero">
   <div class="c-hero-container">
-    PHASE IV
+    </div>
+    <div class="c-hero-container-title">
+     PHASE IV
     <hr class = "hr_intro"  />
     <div class="hr_boxes_two"></div>
     <div class="hr_boxes_two"></div>
     <div class="hr_boxes_two"></div>
     <div class="hr_boxes_two"></div>
-    <div class="c-hero-container_copy">
-      A place for DBC students & <br />
-      alumni to continue learning.
     </div>
-    <br>
-    <div class="center-login login">
+    <div class="c-hero-container-mission">
+      A place for DBC students & <br />
+      alumni to continue learning
+    </div>
+   <div class="center-login login">
      <%if current_user%>
      Welcome <%=current_user.name%>
+       
      <% else %>
      LOGIN
      <br>
      WITH GITHUB
      <% end %>
    </div>
- </div>
 </section>
-
-
 
 <%if current_user%>
 Welcome <%=current_user.name%>

@@ -1,3 +1,8 @@
+  def get_gravatar(email)
+    email_hash = Digest::MD5.hexdigest(email.downcase)
+    "http://www.gravatar.com/avatar/#{email_hash}?s=200"
+  end
+# <img src="<%= current_user.gravatar_url %>">
 # # This file should contain all the record creation needed to seed the database with its default values.
 # # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 # #
@@ -10,7 +15,6 @@
 # d = User.create(name: 'dan')
 # j = User.create(name: 'jerome')
 
-
 # pc = p.challenges.create(title: "Arrays")
 # ec = e.challenges.create(title: "Hashes")
 # dc = d.challenges.create(title: "methods")
@@ -19,6 +23,7 @@
 # pc = p.challenges.create(title: "Arrays", description: "Array challenge description", github_url: "https://github.arrays.com", external_url: "https://arrays.com", difficulty: "Intermediate", image_url: "https://ruby.com")
 
 # pr = p.resources.create(title: "Array Resource", description: "Array resource description", url: "https://github.arrayresource.com")
+
 
 # pp = p.projects.create(title: "Array Project", description: "Array project description", url: "https://github.arrayproject.com")
 
@@ -42,14 +47,77 @@
 
 # dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
 
-# pces = pc.solutions.create(title: "erica's arrays Solution", user_id: 2)
-# pcds = pc.solutions.create(title: "dan's arrays Solution", user_id: 3)
-# pcjs = pc.solutions.create(title: "jerome's arrays solution", user_id: 4)
+
+# pp = p.projects.create(title: "Array Project", description: "Array project description", url: "https://github.arrayproject.com")
+
+# es = pc.solutions.create(title: "Arrays Solution", user_id: 2)
+
+# ec = p.challenges.create(title: "Javascript", description: "javascript challenge description", github_url: "https://github.javascripts.com", external_url: "https://javascripts.com", difficulty: "Intermediate", image_url: "https://javascript.com")
+
+# er = p.resources.create(title: "javascript Resource", description: "javascript resource description", url: "https://github.javascriptresource.com")
+
+# ep = p.projects.create(title: "javascript Project", description: "javascript project description", url: "https://github.javascriptproject.com")
+
+# jc = e.challenges.create(title: "Hashes", description: "Hashes challenge description", github_url: "https://github.Hashes.com", external_url: "https://Hashes.com", difficulty: "Intermediate", image_url: "https://ruby.com")
+
+# jr = p.resources.create(title: "hash Resource", description: "hash resource description", url: "https://github.hashresource.com")
+
+# jp = p.projects.create(title: "hash Project", description: "hash project description", url: "https://github.hashproject.com")
+
+# dc = d.challenges.create(title: "Methods", description: "methods challenge description", github_url: "https://github.methods.com", external_url: "https://methods.com", difficulty: "Intermediate", image_url: "https://ruby.com")
+
+# dr = p.resources.create(title: "method Resource", description: "method resource description", url: "https://github.methodresource.com")
+
+# dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
+
+
+
+# pp = p.projects.create(title: "Array Project", description: "Array project description", url: "https://github.arrayproject.com")
+
+# es = pc.solutions.create(title: "Arrays Solution", user_id: 2)
+
+# ec = p.challenges.create(title: "Javascript", description: "javascript challenge description", github_url: "https://github.javascripts.com", external_url: "https://javascripts.com", difficulty: "Intermediate", image_url: "https://javascript.com")
+
+# er = p.resources.create(title: "javascript Resource", description: "javascript resource description", url: "https://github.javascriptresource.com")
+
+# ep = p.projects.create(title: "javascript Project", description: "javascript project description", url: "https://github.javascriptproject.com")
+
+# jc = e.challenges.create(title: "Hashes", description: "Hashes challenge description", github_url: "https://github.Hashes.com", external_url: "https://Hashes.com", difficulty: "Intermediate", image_url: "https://ruby.com")
+
+# jr = p.resources.create(title: "hash Resource", description: "hash resource description", url: "https://github.hashresource.com")
+
+# jp = p.projects.create(title: "hash Project", description: "hash project description", url: "https://github.hashproject.com")
+
+# dc = d.challenges.create(title: "Methods", description: "methods challenge description", github_url: "https://github.methods.com", external_url: "https://methods.com", difficulty: "Intermediate", image_url: "https://ruby.com")
+
+# dr = p.resources.create(title: "method Resource", description: "method resource description", url: "https://github.methodresource.com")
+
+# dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
+
+
+# dp = p.projects.create(title: "method Project", description: "method project description", url: "https://github.methodproject.com")
+
+
+# # pces = pc.solutions.create(title: "erica's arrays Solution", user_id: 2)
+# # pcds = pc.solutions.create(title: "dan's arrays Solution", user_id: 3)
+# # pcjs = pc.solutions.create(title: "jerome's arrays solution", user_id: 4)
+
+
+
+
+
+# # de = d.events.create(title: "BDay Party")
+# de = d.events.create(title: "BDay Party")
 
 
 
 # de = d.events.create(title: "BDay Party")
+
 # de = d.events.create(title: "BDay Party")
+
+# de = d.events.create(title: "BDay Party")
+# de = d.events.create(title: "BDay Party")
+
 
 # pc.comments.create(title: "Erica's comment about arrays", user_id: e.id)
 
@@ -85,8 +153,24 @@
 #     end
 
 #******************************************************* CREATE USERS *******************************************************
+# User 1 THIS IS THE ADMIN USER *******************************************************
+dbc_sanfrancisco = User.create(
+  name: "DBC San Francisco",
+  email: "admin@devbootcamp.com",
+  github: "https://github.com/Devbootcamp",
+  location: "San Francisco, CA",
+  facebook: "https://www.facebook.com/devbootcamp",
+  # profile_pic:
+  twitter_handle:"https://twitter.com/devbootcamp",
+  linkedin: "https://www.linkedin.com/company/dev-bootcamp",
+  # workplace:
+  # provider:
+  # uid:
+  gravatar_url: ("https://avatars0.githubusercontent.com/u/1266578?v=3&s=200")
+  )
 
-# User 1 *******************************************************
+
+# User 2 *******************************************************
 alex_carpenter = User.create(
   name: "Andrew Carpenter",
   email: "andrewryancarpenter77@gmail.com",
@@ -99,10 +183,10 @@ alex_carpenter = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
   )
 
-# User 2 *******************************************************
+# User 3 *******************************************************
 angie_ellis = User.create(
   name: "Angie Ellis",
   email: "angiegrace84@gmail.com",
@@ -115,10 +199,10 @@ angie_ellis = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("angiegrace84@gmail.com")
   )
 
-# User 3 *******************************************************
+# User 4 *******************************************************
 anthony_hernandez = User.create(
   name: "Anthony Hernandez",
   email: "tony91139@gmail.com",
@@ -131,9 +215,9 @@ anthony_hernandez = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("tony91139@gmail.com")
   )
-# User 4 *******************************************************
+# User 5 *******************************************************
 colette_speer = User.create(
   name: "Colette Speer",
   email: "colette@nmh.com",
@@ -146,9 +230,9 @@ colette_speer = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("colette@nmh.com")
   )
-# User 5 *******************************************************
+# User 6 *******************************************************
 teresa_martyny = User.create(
   name: "Teresa Martyny",
   email: "teresamartyny@gmail.com",
@@ -161,9 +245,9 @@ teresa_martyny = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("teresamartyny@gmail.com")
   )
-# User 6 *******************************************************
+# User 7 *******************************************************
 danielle_rigsby = User.create(
   name: "Danielle Rigsby",
   email: "drigsby@hotmail.com",
@@ -175,9 +259,9 @@ danielle_rigsby = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("drigsby@hotmail.com")
   )
-# User 7 *******************************************************
+# User 8 *******************************************************
 jacob_moyle = User.create(
   name: "Jacob Moyle",
   email: "jacobmoyle@gmail.com",
@@ -190,9 +274,9 @@ jacob_moyle = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("jacobmoyle@gmail.com")
   )
-# User 8 *******************************************************
+# User 9 *******************************************************
 joshua_croff = User.create(
   name: "Joshua Croff",
   email: "joshua.croff@gmail.com",
@@ -205,9 +289,9 @@ joshua_croff = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("joshua.croff@gmail.com")
   )
-# User 9 *******************************************************
+# User 10 *******************************************************
 katy_duncan = User.create(
   name: "Katy Duncan",
   email: "duncan.katya@gmail.com",
@@ -219,9 +303,9 @@ katy_duncan = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("duncan.katya@gmail.com")
   )
-# User 10 *******************************************************
+# User 11 *******************************************************
 miranda_pakozdi = User.create(
   name: "Miranda Pakozdi",
   email: "super.y4n@gmail.com",
@@ -234,9 +318,9 @@ miranda_pakozdi = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("super.y4n@gmail.com")
   )
-# User 11 *******************************************************
+# User 12 *******************************************************
 mary_wallace = User.create(
   name: "Mary Wallace",
   email: "wallaceemee@gmail.com",
@@ -249,9 +333,9 @@ mary_wallace = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("wallaceemee@gmail.com")
   )
-# User 11 *******************************************************
+# User 13 *******************************************************
 majd_murad = User.create(
   name: "Majd Murad",
   email: "murad.majd@gmail.com",
@@ -259,14 +343,14 @@ majd_murad = User.create(
   # location:
   facebook: "https://www.facebook.com/majd.murad",
   # profile_pic:
-  twitter_handle:"https://twitter.com/ShaikhMajdi",
+  twitter_handle:"murad.majd@gmail.com",
   # linkedin:
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("murad.majd@gmail.com")
   )
-# User 12 *******************************************************
+# User 14 *******************************************************
 kei_oka = User.create(
   name: "Kei Oka",
   email: "koka0828us@gmail.com",
@@ -279,9 +363,9 @@ kei_oka = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("koka0828us@gmail.com")
   )
-# User 13 *******************************************************
+# User 15 *******************************************************
 robert_austin = User.create(
   name: "Robert Austin",
   email: "rob@jugglerdigital.com",
@@ -294,9 +378,9 @@ robert_austin = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("rob@jugglerdigital.com")
   )
-# User 14 *******************************************************
+# User 16 *******************************************************
 sebastien_cheraux = User.create(
   name: "Sebastien Cheraux",
   email: "scheraux@gmail.com",
@@ -309,9 +393,9 @@ sebastien_cheraux = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("scheraux@gmail.com")
   )
-# User 15 *******************************************************
+# User 17 *******************************************************
 spenser_huang = User.create(
   name: "Spenser Huang",
   email: "spenserhuang515@gmail.com",
@@ -324,9 +408,9 @@ spenser_huang = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("spenserhuang515@gmail.com")
   )
-# User 16 *******************************************************
+# User 18 *******************************************************
 tania_abdollahi = User.create(
   name: "Tania Abdollahi",
   email: "abdollahi.tania@gmail.com",
@@ -339,9 +423,9 @@ tania_abdollahi = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("abdollahi.tania@gmail.com")
   )
-# User 17 *******************************************************
+# User 19 *******************************************************
 tapley_stephenson = User.create(
   name: "Tapley Stephenson",
   email: "tapley.stephenson@gmail.com",
@@ -353,7 +437,7 @@ tapley_stephenson = User.create(
   # workplace:
   # provider:
   # uid:
-  # gravatar_id:
+  gravatar_url: get_gravatar("tapley.stephenson@gmail.com")
   )
 
 
@@ -407,6 +491,100 @@ anthony_hernandez_challenge1 = anthony_hernandez.challenges.create(
                                                                     # image_url:
                                                                     # user:
                                                                     )
+
+# Challenge 4 THIS IS MADE BY THE ADMIN *******************************************************
+
+dbc_sanfrancisco_challenge1 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Create a PezDispenser Class from User Stories",
+                                                                    description: "In this challenge, you will translate user stories into a Ruby class object. If you aren't sure what a user story is, use the power of Google to do some research.",
+
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+
+
+# Challenge 5 THIS IS MADE BY THE ADMIN *******************************************************
+dbc_sanfrancisco_challenge2 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Cipher Challenge",
+                                                                    description: "In this challenge, you'll work with a pair to refactor some existing code to make it more readable and follow Ruby best practices. Then you will compare your solution with the other solutions. This is a long method. Use your newly-developed skills with classes and driver test code to break this code into a class structure and call the methods within it.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-6/PezDispenser",
+
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+
+
+# Challenge 6 THIS IS MADE BY THE ADMIN *******************************************************
+dbc_sanfrancisco_challenge3 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Validate Credit Card",
+
+                                                                    description: "In this challenge you want to create a simple guessing game. Think in terms of when you were 7 and asked your friends to identify the number you were thinking.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/guessing-game",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+
+# Challenge 7 THIS IS MADE BY THE ADMIN 1- jquery*******************************************************
+dbc_sanfrancisco_challenge4 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Validate a Credit Card Number",
+                                                                    description: "For this challenge, you will need to break down the algorithm into the following steps. You will probably want to break these down into individual methods.",
+                                                                    # github_url:
+                                                                    external_url: "https://github.com/Devbootcamp/phase-0-unit-2/tree/master/week-5/validate-credit-card",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+
+# Challenge 8 THIS IS MADE BY THE ADMIN 2- jquery*******************************************************
+dbc_sanfrancisco_challenge5 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Searching the DOM",
+                                                                    description: "Use jquery selectors to manipulate the DOM",
+                                                                    # github_url:
+                                                                    external_url: "http://try.jquery.com/levels/2/sections/2",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+
+# Challenge 9 THIS IS MADE BY THE ADMIN 3- jquery*******************************************************
+dbc_sanfrancisco_challenge6 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Descendant Selector",
+                                                                    description: "Use jquery to change the content of the page. First, select all of the li elements within the #tours list using a descendant selector.",
+                                                                    # github_url:
+                                                                    external_url: "http://try.jquery.com/levels/2/sections/2",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 10 THIS IS MADE BY THE ADMIN 4- jquery*******************************************************
+dbc_sanfrancisco_challenge7 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Selecting Multiple Elements",
+                                                                    description: "Use Jquery to slect multiple elements. To sort the tours on the page, let's select all tours that are from Asia and all tours that are On Sale. You'll need to use multiple selectors for this, with the classes for .asia and .sale.",
+                                                                    # github_url:
+                                                                    external_url: "http://try.jquery.com/levels/2/sections/5",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+# Challenge 11 THIS IS MADE BY THE ADMIN 4- jquery*******************************************************
+dbc_sanfrancisco_challenge8 = dbc_sanfrancisco.challenges.create(
+                                                                    title: "Selecting Multiple Elements",
+                                                                    description: "Use jquery :first Pseudo Selector. Let's try a selector for finding the first tour. Use the :first pseudo selector to select the first tour in the list.",
+                                                                    # github_url:
+                                                                    external_url: "http://try.jquery.com/levels/2/sections/6",
+                                                                    difficulty: 1,
+                                                                    # image_url:
+                                                                    # user:
+                                                                    )
+
+
 #******************************************************* CREATE SOLUTIONS ON CHALLENGES *******************************************************
 # class CreateSolutions < ActiveRecord::Migration
 #   def change
@@ -599,6 +777,38 @@ alex_carpenter_comment3 = alex_carpenter_project1.comments.create(
                                                                   description: "sounds like fun - lets do this again sometime in March",
                                                                   user: robert_austin
   )
+alex_carpenter_comment4 = alex_carpenter_project2.comments.create(
+                                                                  title: "Wish I could join",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+
+alex_carpenter_comment5 = alex_carpenter_project2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "Any ideas?",
+                                                                  user: mary_wallace
+  )
+alex_carpenter_comment6 = alex_carpenter_project2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
+alex_carpenter_comment7 = alex_carpenter_project3.comments.create(
+                                                                  title: "Wish I could join",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+
+alex_carpenter_comment8 = alex_carpenter_project3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "Any ideas?",
+                                                                  user: mary_wallace
+  )
+alex_carpenter_comment9 = alex_carpenter_project3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
 #******************************************************* CREATE COMMENTS ON PROJECT1 robert_austin *******************************************************
 robert_austin_comment1 = robert_austin_project1.comments.create(
                                                                   title: "I'm in!",
@@ -616,6 +826,38 @@ robert_austin_comment3 = robert_austin_project1.comments.create(
                                                                   description: "sounds like fun - lets do this again sometime in March",
                                                                   user: robert_austin
   )
+robert_austin_comment4 = robert_austin_project2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+
+robert_austin_comment5 = robert_austin_project2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: mary_wallace
+  )
+robert_austin_comment6 = robert_austin_project2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
+robert_austin_comment7 = robert_austin_project3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+
+robert_austin_comment8 = robert_austin_project3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: mary_wallace
+  )
+robert_austin_comment9 = robert_austin_project3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
 
 #******************************************************* CREATE COMMENTS ON PROJECT1 teresa_martyny *******************************************************
 teresa_martyny_comment1 = teresa_martyny1.comments.create(
@@ -629,6 +871,36 @@ teresa_martyny_comment2 = teresa_martyny1.comments.create(
                                                                   user: mary_wallace
   )
 teresa_martyny_comment3 = teresa_martyny1.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
+teresa_martyny_comment4 = teresa_martyny2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+teresa_martyny_comment5 = teresa_martyny2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: mary_wallace
+  )
+teresa_martyny_comment6 = teresa_martyny2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
+teresa_martyny_comment7 = teresa_martyny3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+teresa_martyny_comment8 = teresa_martyny3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: mary_wallace
+  )
+teresa_martyny_comment9 = teresa_martyny3.comments.create(
                                                                   title: "I'm in!",
                                                                   description: "sounds like fun - lets do this again sometime in March",
                                                                   user: robert_austin
@@ -651,6 +923,36 @@ angie_ellis_challenge3 = angie_ellis_challenge1.comments.create(
                                                                   description: "sounds like fun - lets do this again sometime in March",
                                                                   user: mary_wallace
   )
+angie_ellis_challenge4 = angie_ellis_challenge2.comments.create(
+                                                                 title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
+angie_ellis_challenge5 = angie_ellis_challenge2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+angie_ellis_challenge6 = angie_ellis_challenge2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: mary_wallace
+  )
+angie_ellis_challenge7 = angie_ellis_challenge3.comments.create(
+                                                                 title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: robert_austin
+  )
+angie_ellis_challenge8 = angie_ellis_challenge3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+angie_ellis_challenge9 = angie_ellis_challenge3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: mary_wallace
+  )
 #******************************************************* CREATE COMMENT ON anthony_hernandez_challenge1 *******************************************************
 anthony_hernandez_challenge1 = anthony_hernandez_challenge1.comments.create(
                                                                   title: "I'm in!",
@@ -663,6 +965,36 @@ anthony_hernandez_challenge2 = anthony_hernandez_challenge1.comments.create(
                                                                   user: katy_duncan
   )
 anthony_hernandez_challenge3 = anthony_hernandez_challenge1.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+anthony_hernandez_challenge4 = anthony_hernandez_challenge2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: kei_oka
+  )
+anthony_hernandez_challenge5 = anthony_hernandez_challenge2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: katy_duncan
+  )
+anthony_hernandez_challenge6 = anthony_hernandez_challenge2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+anthony_hernandez_challenge7 = anthony_hernandez_challenge3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: kei_oka
+  )
+anthony_hernandez_challenge8 = anthony_hernandez_challenge3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: katy_duncan
+  )
+anthony_hernandez_challenge9 = anthony_hernandez_challenge3.comments.create(
                                                                   title: "I'm in!",
                                                                   description: "sounds like fun - lets do this again sometime in March",
                                                                   user: teresa_martyny
@@ -683,6 +1015,156 @@ alex_carpenter_challenge3 = alex_carpenter_challenge1.comments.create(
                                                                   description: "sounds like fun - lets do this again sometime in March",
                                                                   user: teresa_martyny
   )
+alex_carpenter_challenge4 = alex_carpenter_challenge2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: kei_oka
+  )
+alex_carpenter_challenge5 = alex_carpenter_challenge2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: katy_duncan
+  )
+alex_carpenter_challenge6 = alex_carpenter_challenge2.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+alex_carpenter_challenge7 = alex_carpenter_challenge3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: kei_oka
+  )
+alex_carpenter_challenge8 = alex_carpenter_challenge3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: katy_duncan
+  )
+alex_carpenter_challenge9 = alex_carpenter_challenge3.comments.create(
+                                                                  title: "I'm in!",
+                                                                  description: "sounds like fun - lets do this again sometime in March",
+                                                                  user: teresa_martyny
+  )
+
+#******************************************************* CREATE RESOURCES *******************************************************
+
+andrew_carpenter_resource = alex_carpenter.resources.create(title: "jQuery and the DOM",
+                                                             description: "jQuery and the DOM",
+                                                             url: "http://www.jquery.com")
+
+angie_ellis_resource = angie_ellis.resources.create(title: "javascript and the DOM",
+                                                   description: "javascript and the DOM",
+                                                   url: "http://www.javascript.com")
+
+anthony_hernandez_resource = anthony_hernandez.resources.create(title: "ajax and the DOM",
+                                                               description: "ajax and the DOM",
+                                                               url: "http://www.ajax.com")
+
+colette_speer_resource = colette_speer.resources.create(title: "Ruby",
+                                                       description: "Ruby Fundamentals",
+                                                       url: "http://www.ruby.com")
+
+teresa_martyny_resource = teresa_martyny.resources.create(title: "Javascript",
+                                                         description: "Javascript Fundamentals",
+                                                         url: "http://www.Javascript.com")
+
+danielle_rigsby_resource = danielle_rigsby.resources.create(title: "jQuery",
+                                                           description: "jQuery Fundamentals",
+                                                           url: "http://www.jQuery.com")
+
+jacob_moyle_resource = jacob_moyle.resources.create(title: "ActiveRecord",
+                                                           description: "ActiveRecord Fundamentals",
+                                                           url: "http://www.ActiveRecord.com")
+
+joshua_croff_resource = joshua_croff.resources.create(title: "Rails",
+                                                     description: "Rails Fundamentals",
+                                                     url: "http://www.Rails.com")
+
+katy_duncan_resource = katy_duncan.resources.create(title: "Discrete Math",
+                                                   description: "Discrete Math Fundamentals",
+                                                   url: "http://www.DiscreteMath.com")
+
+miranda_pakozdi_resource = miranda_pakozdi.resources.create(title: "Algorithms",
+                                                           description: "Algorithms Fundamentals",
+                                                           url: "http://www.Algorithms.com")
+
+mary_wallace_resource = mary_wallace.resources.create(title: "Sinatra",
+                                                     description: "Sinatra Fundamentals",
+                                                     url: "http://www.Sinatra.com")
+
+majd_murad_resource = majd_murad.resources.create(title: "HTML",
+                                                 description: "HTML Fundamentals",
+                                                 url: "http://www.HTML.com")
+
+kei_oka_resource = kei_oka.resources.create(title: "CSS",
+                                           description: "CSS Fundamentals",
+                                           url: "http://www.CSS.com")
+
+robert_austin_resource = robert_austin.resources.create(title: "Magic",
+                                                       description: "Magic Fundamentals",
+                                                       url: "http://www.Magic.com")
+
+sebastien_cheraux_resource = sebastien_cheraux.resources.create(title: "More Magic",
+                                                               description: "More Magic Fundamentals",
+                                                               url: "http://www.MoreMagic.com")
+
+#******************************************************* CREATE COMMENTS ON RESOURCES *******************************************************
+
+andrew_carpenter_resource_comment = andrew_carpenter_resource.comments.create(title: "jQuery and the DOM",
+                                                                    description: "jQuery and the DOM",
+                                                                    user: angie_ellis)
+
+angie_ellis_resource_comment = angie_ellis_resource.comments.create(title: "javascript and the DOM",
+                                                   description: "javascript and the DOM",
+                                                   user: anthony_hernandez)
+
+anthony_hernandez_resource_comment = anthony_hernandez_resource.comments.create(title: "ajax and the DOM",
+                                                               description: "ajax and the DOM",
+                                                               user: colette_speer)
+
+colette_speer_resource_comment = colette_speer_resource.comments.create(title: "Ruby",
+                                                       description: "Ruby Fundamentals",
+                                                       user: teresa_martyny)
+
+teresa_martyny_resource_comment = teresa_martyny_resource.comments.create(title: "Javascript",
+                                                         description: "Javascript Fundamentals",
+                                                         user: danielle_rigsby)
+
+jacob_moyle_resource_comment = jacob_moyle_resource.comments.create(title: "ActiveRecord",
+                                                           description: "ActiveRecord Fundamentals",
+                                                           user: joshua_croff)
+
+joshua_croff_resource_comment = joshua_croff_resource.comments.create(title: "Rails",
+                                                     description: "Rails Fundamentals",
+                                                     user: katy_duncan)
+
+katy_duncan_resource_comment = katy_duncan_resource.comments.create(title: "Discrete Math",
+                                                   description: "Discrete Math Fundamentals",
+                                                   user: miranda_pakozdi)
+
+miranda_pakozdi_resource_comment = miranda_pakozdi_resource.comments.create(title: "Algorithms",
+                                                           description: "Algorithms Fundamentals",
+                                                           user: mary_wallace)
+
+mary_wallace_resource_comment = mary_wallace_resource.comments.create(title: "Sinatra",
+                                                     description: "Sinatra Fundamentals",
+                                                     user: majd_murad)
+
+majd_murad_resource_comment = majd_murad_resource.comments.create(title: "HTML",
+                                                 description: "HTML Fundamentals",
+                                                 user: kei_oka)
+
+kei_oka_resource_comment = kei_oka_resource.comments.create(title: "CSS",
+                                           description: "CSS Fundamentals",
+                                           user: robert_austin)
+
+robert_austin_resource_comment = robert_austin_resource.comments.create(title: "Magic",
+                                                       description: "Magic Fundamentals",
+                                                       user: sebastien_cheraux)
+
+sebastien_cheraux_resource_comment = sebastien_cheraux_resource.comments.create(title: "More Magic",
+                                                               description: "More Magic Fundamentals",
+                                                               user: alex_carpenter)
 
 #******************************************************* CREATE VOTES ON THINGS *******************************************************
 

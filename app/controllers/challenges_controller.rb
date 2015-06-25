@@ -1,4 +1,6 @@
 class ChallengesController < ApplicationController
+  include Filterable
+
   def new
     @challenge = Challenge.new
     @user = User.find(1)
@@ -27,11 +29,17 @@ class ChallengesController < ApplicationController
   end
 
   def index
-    @challenges = Challenge.all
+    @challenges = get_filtered_resources(Challenge.all)
   end
 
   def show
+    @user = User.find(params[:user_id])
     @challenge = Challenge.find(params[:id])
+    user_id = @challenge.user_id
+    @user = User.find(user_id)
+    # @comment = @challenge.comments.first
+    # commenter_id = @comment.user_id
+    # @commenter = User.find(commenter_id)
   end
 
   def destroy

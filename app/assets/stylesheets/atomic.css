@@ -1,6 +1,7 @@
 .fl-l { float: left; }
 .fl-r { float: right; }
 .p-sm { padding: 20px; }
+
 .c-hero {
   background-image: url("http://www.fightyourticketsf.com/images/downtownsf.jpg");
   background-repeat: no-repeat;
@@ -10,17 +11,40 @@
   box-sizing: border-box;
   height: 900px;
 }
-hr.hr_intro {
-width: 560px;
-opacity: 0.5;
+
+.hr_intro {
+  width: 560px;
+  opacity: 0.5;
 }
+
+.c-hero-challenge {
+  background-image: url("challenge_hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  display: block;
+  box-sizing: border-box;
+  height: 265px;
+}
+
+.c-hero-user-profile {
+  background-image: url("user_profile_1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  display: block;
+  box-sizing: border-box;
+  height: 265px;
+}
+
 .hr_boxes_two {
   display: inline-block;
   position: relative;
   top: -84px;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
+  border: 2px solid #999999;
+  background-color: #ffff66;
   width: 18px;
   height: 18px;
 }
@@ -41,17 +65,412 @@ opacity: 0.5;
   font-weight: bold;
   font-size: 68px;
 }
-.c-hero-container_copy {
-  postion: relative;
-  margin-top: -40px;
+
+.c-hero-container-title {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -380px;
+  color: white;
+  text-align: center;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-weight: bold;
+  font-size: 68px;
+}
+
+.c-hero-container_pages {
+  z-index: 2;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, 0);
   font-weight: normal;
   font-family: verdana;
-  font-size: 28px;
+  color: #ffffff;
+  font-size: 48px;
 }
+
+.c-hero-container-outer {
+  background-color: black;
+  opacity: .5;
+  height: 265px;
+  width: 700px;
+  position:absolute;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  top: 99px;
+  color: white;
+  text-align: center;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-weight: bold;
+  font-size: 68px;
+}
+
+.c-hero-container-mission {
+  top: -425px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  font-weight: normal;
+  font-family: verdana;
+  color: #ffffff;
+  font-size: 27px;
+}
+
 .center-login {
- margin-left: auto;
- margin-right: auto;
- position: relative;
- background-color: white;
- font-size: 15px;
+  top: -355px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: white;
+  font-size: 15px;
 }
+
+.u-hero {
+  background-image: url("http://www.fightyourticketsf.com/images/downtownsf.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  display: block;
+  box-sizing: border-box;
+  height: 300px;
+}
+
+.center {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 48px;
+}
+
+.user-img {
+  padding-right: 10px;
+  float: left;
+  position:relative;
+  left:65px;
+  margin-bottom: 250px;
+  width: 275px;
+  display: block;
+  height: 50px;
+  text-align: center;
+}
+
+.user-img-border {
+  border:5px solid #021a40;
+  border-radius: 30px;
+}
+
+.user-name {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 18px;
+}
+
+.chal-box {
+  padding-right: 10px;
+  float: left;
+  position:relative;
+  left:185px;
+  margin-right: 300px;
+  width: 375px;
+  display: block;
+  height: 180px;
+  background: grey;
+  border: 1px solid black;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.content-box {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top:130px;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  z-index: 0;
+  width: 550px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+
+}
+.content-box-body {
+  z-index: 0;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+.content-box-title {
+  padding-top: 12px;
+  padding-left: 12px;
+  font-family: Futura;
+  color: #000066;
+  font-size: 24px;
+}
+
+.content-box-header {
+  opacity: 0.0;
+  text-align: right;
+  font-family: Futura;
+  color: #000066;
+  font-size: 24px;
+  padding: 15px;
+  position: absolute;
+  transform: translate(-50%, 0);
+  z-index: 2;
+  width: 550px;
+  height: 75px;
+  top: 450px;
+  left: 50%;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+.content-box-header-icon {
+  position: absolute;
+  z-index: 3;
+  width: 550px;
+  top: 420px;
+  left: 48%;
+  transform: translate(-50%, 0);
+}
+.img-shadowed {
+  -webkit-filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
+  filter: url("data:image/svg+xml;utf8,<svg height='0' xmlns='http://www.w3.org/2000/svg'><filter id='drop-shadow'><feGaussianBlur in='SourceAlpha' stdDeviation='4'/><feOffset dx='12' dy='12' result='offsetblur'/><feFlood flood-color='rgba(0,0,0,0.5)'/><feComposite in2='offsetblur' operator='in'/><feMerge><feMergeNode/><feMergeNode in='SourceGraphic'/></feMerge></filter></svg>#drop-shadow");
+  -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+}
+.content-titles {
+  font-size: 14px;
+  font-family: verdana;
+  color: #000066;
+  font-weight: bold;
+}
+.content-body {
+  font-size: 14px;
+  font-family: verdana;
+  color: #000000;
+  font-weight: normal;
+}
+.challenge-votes {
+  margin-top:16px;
+  font-family: verdana;
+  font-size: 11px;
+  float: right;
+}
+.challenge-home-link {
+  text-align: center;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+}
+.comment-votes {
+  margin-top:15px;
+  margin-right: 5px;
+  font-family: verdana;
+  font-size: 11px;
+  float: right;
+}
+.comment-button {
+  padding-bottom: 0px;
+  float: left;
+}
+.tagit-form {
+  padding-bottom: 10px;
+  margin-left: 185px;
+}
+.comment-box {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 4px;
+  width: 515px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+}
+.comment-box-body {
+  padding-top: 3px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+}
+
+/* USER PROFILE ---------------------------------*/
+.page-container-all{
+  height: 800px;
+  background-color:#666666;
+  border: 1px dotted;
+  margin-left: auto;
+  margin-right: auto;
+}
+.user-container-all{
+  position: relative;
+
+  display: table;
+  margin-top: -40px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#ffffff;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+}
+.user-content-box {
+  left: 25px;
+  overflow: hidden;
+  padding-top: 13px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  position: relative;
+  z-index: 2;
+  width: 690px;
+}
+.user-content-titles {
+  font-size: 16px;
+  font-family: verdana;
+  color: #000066;
+  font-weight: bold;
+}
+.user-content {
+  margin-left: 0px;
+  width: 360px;
+  border: 0; border-top: 2px solid #000066;
+}
+.user-name-title {
+  font-size: 32px;
+  font-family: futura;
+  color: #000066;
+  font-weight: bold;
+}
+.user-cohort-title {
+  font-size: 18px;
+  font-family: futura;
+  color: #000066;
+  font-weight: bold;
+}
+.user-content-body {
+  font-size: 16px;
+  font-family: verdana;
+  color: #000000;
+  font-weight: normal;
+}
+.user-pic {
+  position: relative;
+  z-index: 15;
+  margin-top: -50px;
+  float:left;
+  background-color: #000000;
+  margin-left: 50px;
+  border: solid 5px #ffffff;
+  width: 260px;
+  height: 260px;
+}
+.user-edit-button {
+  margin-right: 28px;
+  float: right;
+  font-family: verdana;
+}
+.user-owned-content {
+  /*border: solid 1px #000000;*/
+  text-align:center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  overflow: hidden;
+  padding-top: 11px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  position: relative;
+  z-index: 2;
+  width: 890px;
+}
+.chal-box-user {
+  border-radius: 10px;
+  padding: 10px;
+  float: left;
+  margin-top: 30px;
+  margin-left: 86px;
+  margin-bottom: 26px;
+  position:relative;
+  width: 180px;
+  height: 280px;
+  display: block;
+  background: #993300;
+  border: 3px solid #993300;
+}
+
+/*-------------------------------------------------*/
+
+
+.home-link {
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin-left: 60px;
+  margin-top: 40px;
+  margin-right: 50px;
+  margin-bottom: 85px;
+}
+.user-owned-title {
+  color: #000066;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 17px;
+}
+.user-owned-body {
+  color: #ffffff;
+  text-align: center;
+  font-weight: normal;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 15px;
+}
+hr.user-owned {
+  border: 0; border-top: 2px solid #cccccc;
+}
+.user-edit-button:hover {
+background-color: #cccccc;
+}
+.asset-create-comment:hover {
+background-color: #cccccc;
+}
+.asset-create-tag:hover {
+background-color: #cccccc;
+}
+/*-------------------------------------------------*/
+
+
+/*----------RESOURCE PAGES--------------------*/
+.p-name {
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 18px;
+}
+
+.r-table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+    /*margin-right: 50px;*/
+}
+
+
+
+
+
+
+
