@@ -18,7 +18,7 @@
 }
 
 .c-hero-challenge {
-  background-image: url("challenge_hero.jpg");
+  background-image: url("challenge_hero_alt.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
@@ -26,9 +26,26 @@
   box-sizing: border-box;
   height: 265px;
 }
-
+.c-hero-resources {
+  background-image: url("resources.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  display: block;
+  box-sizing: border-box;
+  height: 265px;
+}
+.c-hero-projects {
+  background-image: url("projects.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+  display: block;
+  box-sizing: border-box;
+  height: 265px;
+}
 .c-hero-user-profile {
-  background-image: url("user_profile_1.jpg");
+  background-image: url("user_profile_alt.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: black;
@@ -193,6 +210,7 @@
   margin-top:130px;
   padding-top: 0px;
   padding-right: 10px;
+
   padding-bottom: 5px;
   padding-left: 0px;
   z-index: 0;
@@ -411,6 +429,12 @@
   background: #993300;
   border: 3px solid #993300;
 }
+.tag-search-form {
+  float: right;
+  width: 310px;
+  height: 30px;
+  background-color: #ffffff;
+}
 
 /*-------------------------------------------------*/
 
@@ -467,7 +491,6 @@ background-color: #cccccc;
     text-align: left;
     /*margin-right: 50px;*/
 }
-
 
 
 
