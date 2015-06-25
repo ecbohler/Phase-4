@@ -1,6 +1,6 @@
   def get_gravatar(email)
     email_hash = Digest::MD5.hexdigest(email.downcase)
-    "http://www.gravatar.com/avatar/#{email_hash}"
+    "http://www.gravatar.com/avatar/#{email_hash}?s=250"
   end
 # <img src="<%= current_user.gravatar_url %>">
 # # This file should contain all the record creation needed to seed the database with its default values.
@@ -194,7 +194,7 @@ anthony_hernandez = User.create(
   # workplace:
   # provider:
   # uid:
-  gravatar_url: get_gravatar("andrewryancarpenter77@gmail.com")
+  gravatar_url: get_gravatar("tony91139@gmail.com")
   )
 # User 5 *******************************************************
 colette_speer = User.create(
