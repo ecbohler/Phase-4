@@ -26,7 +26,7 @@
   box-sizing: border-box;
   height: 265px;
 }
-<<<<<<< HEAD
+
 .c-hero-user-profile {
   background-image: url("user_profile_1.jpg");
   background-repeat: no-repeat;
@@ -35,16 +35,6 @@
   display: block;
   box-sizing: border-box;
   height: 265px;
-}
-hr.hr_intro {
-width: 560px;
-opacity: 0.5;
-=======
-
-.hr_intro {
-  width: 560px;
-  opacity: 0.5;
->>>>>>> upstream/master
 }
 
 .hr_boxes_two {
@@ -102,7 +92,7 @@ opacity: 0.5;
 
 .c-hero-container-outer {
   background-color: black;
-  opacity: 0.5;
+  opacity: .5;
   height: 265px;
   width: 700px;
   position:absolute;
@@ -139,7 +129,6 @@ opacity: 0.5;
   font-size: 15px;
 }
 
-
 .u-hero {
   background-image: url("http://www.fightyourticketsf.com/images/downtownsf.jpg");
   background-repeat: no-repeat;
@@ -166,9 +155,7 @@ opacity: 0.5;
   width: 375px;
   display: block;
   height: 150px;
-  /*top: -75px;*/
   text-align: center;
-  /*margin-bottom: 25px;*/
 }
 
 .user-img-border {
@@ -191,7 +178,7 @@ opacity: 0.5;
   margin-right: 300px;
   width: 375px;
   display: block;
-  height: 380px; c
+  height: 380px;
   background: black;
   border: 1px solid black;
   top: -75px;
@@ -223,8 +210,6 @@ opacity: 0.5;
   padding-bottom: 5px;
   padding-left: 15px;
 }
-
-
 
 .content-box-title {
   padding-top: 12px;
@@ -284,6 +269,13 @@ opacity: 0.5;
   font-size: 11px;
   float: right;
 }
+.challenge-home-link {
+  text-align: center;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+}
 .comment-votes {
   margin-top:15px;
   margin-right: 5px;
@@ -298,7 +290,6 @@ opacity: 0.5;
 .tagit-form {
   padding-bottom: 10px;
   margin-left: 185px;
-  /*float: right;*/
 }
 .comment-box {
   margin-right: auto;
@@ -317,22 +308,24 @@ opacity: 0.5;
 }
 
 /* USER PROFILE ---------------------------------*/
-.user-container-all{
-  display: table;
-  margin: auto;
+.page-container-all{
+  height: 800px;
+  background-color:#666666;
   border: 1px dotted;
   margin-left: auto;
   margin-right: auto;
 }
-.user_pic {
-  z-index: 15;
-  margin-top: -50px;
-  float:left;
-  background-color: #000000;
-  margin-left: 50px;
-  border: solid 5px #000000;
-  width: 260px;
-  height: 260px;
+.user-container-all{
+  position: relative;
+
+  display: table;
+  margin-top: -40px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#ffffff;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
 }
 .user-content-box {
   left: 25px;
@@ -343,18 +336,91 @@ opacity: 0.5;
   padding-left: 0px;
   position: relative;
   z-index: 2;
-  width: 420px;
+  width: 690px;
+}
+.user-content-titles {
+  font-size: 16px;
+  font-family: verdana;
+  color: #000066;
+  font-weight: bold;
+}
+hr.user-content {
+  margin-left: 0px;
+  width: 360px;
+  border: 0; border-top: 2px solid #000066;
+}
+.user-name-title {
+  font-size: 32px;
+  font-family: futura;
+  color: #000066;
+  font-weight: bold;
+}
+.user-cohort-title {
+  font-size: 18px;
+  font-family: futura;
+  color: #000066;
+  font-weight: bold;
+}
+.user-content-body {
+  font-size: 16px;
+  font-family: verdana;
+  color: #000000;
+  font-weight: normal;
+}
+.user-pic {
+  position: relative;
+  z-index: 15;
+  margin-top: -50px;
+  float:left;
+  background-color: #000000;
+  margin-left: 50px;
+  border: solid 5px #ffffff;
+  width: 260px;
+  height: 260px;
+}
+.user-edit-button {
+  margin-right: 28px;
+  float: right;
+  font-family: verdana;
+}
+.user-owned-content {
+  text-align:center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  overflow: hidden;
+  padding-top: 11px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 0px;
+  position: relative;
+  z-index: 2;
+  width: 890px;
+}
+.chal-box-user {
+  padding: 10px;
+  float: left;
+  position:relative;
+  width: 180px;
+  display: block;
+  background: #993300;
+  border: 3px solid #993300;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin-left: 60px;
+  margin-top: 40px;
+  margin-right: 50px;
+  margin-bottom: 85px;
+}
+.user-owned-title {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'AmsiPro-Regular','Helvetica Neue',Helvetica,sans-serif;
+  font-size: 15px;
 }
 /*-------------------------------------------------*/
 
-
-.challenge-home-link {
-  text-align: center;
-  margin-top: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  width:100%;
-}
 
 
 
