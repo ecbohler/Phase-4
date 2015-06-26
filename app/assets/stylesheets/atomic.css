@@ -187,13 +187,47 @@
   font-size: 18px;
 }
 
+.res-box {
+  padding-right: 10px;
+  float: left;
+  position:relative;
+  left:185px;
+  margin-right: 100px;
+  width: 365px;
+  display: block;
+  height: 290px;
+  background: #FF5C1B;
+  border: 1px solid black;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.proj-box {
+  padding-right: 10px;
+  float: left;
+  position:relative;
+  left:185px;
+  margin-right: 100px;
+  width: 365px;
+  display: block;
+  height: 290px;
+  background: #3C62B2;
+  border: 1px solid black;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
 .chal-box {
   padding-right: 10px;
   float: left;
   position:relative;
   left:185px;
   margin-right: 100px;
-  width: 375px;
+  width: 365px;
   display: block;
   height: 290px;
   background: black;
@@ -202,11 +236,6 @@
   color: white;
   border-radius: 10px;
   margin-bottom: 25px;
-}
-
-.char-box-size {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .content-box {
