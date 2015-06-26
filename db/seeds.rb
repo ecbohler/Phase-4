@@ -514,13 +514,13 @@ alex_solution3 = alex_carpenter_challenge1.solutions.create(
 
 alex_carpenter_challenge1_comment1 = alex_carpenter_challenge1.comments.create(
       title: "Intro jQuery",
-      description: "This challenged highlighted that I need more practice with jQuery.",
+      description: "This challenge was way too easy.",
       user: teresa_martyny
   )
 
 alex_carpenter_challenge1_comment2 = alex_carpenter_challenge1.comments.create(
       title: "Challenging",
-      description: "A wonderful way to teach the basics of jQuery but it was quite difficult for a beginner.",
+      description: "A wonderful way to teach the basics of jQuery but it wasn't difficult.",
       user: colette_speer
   )
 alex_carpenter_challenge1_comment3 = alex_carpenter_challenge1.comments.create(
